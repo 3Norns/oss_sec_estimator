@@ -3,7 +3,8 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions
 from time import sleep
-from copy import deepcopy
+from selenium.common.exceptions import StaleElementReferenceException
+import csv
 
 def get_record_release_year(selenium_item):
     record_release_date = selenium_item.find_element_by_xpath(release_date_xpath).text
@@ -15,8 +16,22 @@ def trim_relative_path(project_relative_path):
     trimmed_path = list[0].strip() + "/" + list[1].strip()
     return trimmed_path
 
+def save_data_to_csv(data, file_path):
+    with open(file_path, "w", newline="") as t:
+        writer = csv.writer(t)
+        label = ["GitHub relative path",
+                 "CVE number",
+                 "Vulnerability description",
+                 "Release date"]
+        writer.writerow(label)
+        writer.writerows(data)
+    print("data has been written into csv file")
+
+def save_data_to_mysql():
+    pass
+
 driver = webdriver.Chrome()
-driver.get("https://huntr.dev/")
+driver.maximize_window()
 driver.get("https://huntr.dev/bounties/hacktivity/")
 
 # locate hacktivity table
@@ -47,6 +62,8 @@ hacktivity_table = driver.find_elements_by_xpath(hacktivity_table_xpath)
 while True:
     first_record_release_year = get_record_release_year(hacktivity_table[total_record])
     last_record_release_year = get_record_release_year(hacktivity_table[len(hacktivity_table) - 1])
+    if len(hacktivity_table) <= total_record:
+        break
 
     if last_record_release_year >= 2020:
         for record in hacktivity_table[total_record : ]:
@@ -64,13 +81,22 @@ while True:
             record_table.append(row.copy())
 
         total_record = len(hacktivity_table)
+        print("table rows:", total_record)
 
+        print(record_table)
+        save_data_to_csv(record_table, "D:\\PycharmProjects\\oss_sec_estimator\\dataset\\vulnerable_project_data.csv")
+        break
         # 页面记录添加
-        show_more_button.click()
-        sleep(5)
-        hacktivity_table = driver.find_elements_by_xpath(hacktivity_table_xpath)
-        if len(hacktivity_table) <= total_record:
+        try:
+            show_more_button.click()
+        except StaleElementReferenceException:
+            print("a data has been load")
             break
+        while True:
+            hacktivity_table = driver.find_elements_by_xpath(hacktivity_table_xpath)
+            sleep(1)
+            if len(hacktivity_table) > total_record:
+                break
 
     elif first_record_release_year >= 2020 and last_record_release_year < 2020:
         flag = False
@@ -93,14 +119,13 @@ while True:
                 total_record += 1
             else:
                 flag = True
+                print("table rows:", total_record)
                 break
         if flag:
             break
 
     else:
         break
-
-    print("table rows:", total_record)
 
 
 driver.quit()

@@ -1,0 +1,70 @@
+GitHub relative path,CVE number,Vulnerability description,Release date
+gnuboard/gnuboard5,,Cross-site Scripting (XSS) - Reflected,Mar 11th 2022
+microweber/microweber,CVE-2022-0913,Integer Overflow or Wraparound,Mar 10th 2022
+microweber/microweber,CVE-2022-0912,Unrestricted Upload of File with Dangerous Type,Mar 10th 2022
+athlon1600/youtube-downloader,,Server-Side Request Forgery (SSRF),Mar 10th 2022
+fredhutch/motuz,,Improper Authorization,Mar 10th 2022
+prasathmani/tinyfilemanager,,Path Traversal,Mar 9th 2022
+microweber/microweber,CVE-2022-0906,Unrestricted file upload leads to stored XSS,Mar 9th 2022
+go-gitea/gitea,CVE-2022-0905,Improper Authorization,Mar 9th 2022
+microweber/microweber,,Insufficient Granularity of Access Control,Mar 9th 2022
+microweber/microweber,CVE-2022-0896,Improper Neutralization of Special Elements Used in a Template Engine,Mar 9th 2022
+microweber/microweber,CVE-2022-0895,Static Code Injection,Mar 9th 2022
+serviejs/popsicle-redirects,,Exposure of Sensitive Information to an Unauthorized Actor,Mar 9th 2022
+mruby/mruby,CVE-2022-0890,NULL Pointer Dereference,Mar 9th 2022
+mineweb/minewebcms,,Cross-site Scripting (XSS) - Stored,Mar 8th 2022
+chocobozzz/peertube,CVE-2022-0881,Insecure Storage of Sensitive Information,Mar 8th 2022
+star7th/showdoc,CVE-2022-0880,Cross-site Scripting (XSS) - Stored,Mar 8th 2022
+gpac/gpac,,NULL Pointer Dereference,Mar 7th 2022
+bookstackapp/bookstack,CVE-2022-0877,Cross-site Scripting (XSS) - Stored,Mar 7th 2022
+gpac/gpac,,Heap-based Buffer Overflow,Mar 7th 2022
+pokeapi/pokeapi,,Path Traversal,Mar 7th 2022
+medialize/uri.js,CVE-2022-0868,Open Redirect,Mar 5th 2022
+radareorg/radare2,CVE-2022-0849,Use After Free in r_reg_get_name_idx,Mar 4th 2022
+pytorchlightning/pytorch-lightning,CVE-2022-0845,Code Injection,Mar 4th 2022
+liquibase/liquibase,CVE-2022-0839,Improper Restriction of XML External Entity Reference,Mar 3rd 2022
+medialize/uri.js,CVE-2022-24723,Protocol/Hostname spoofing via Improper Input Validation,Mar 3rd 2022
+hestiacp/hestiacp,CVE-2022-0838,Cross-site Scripting (XSS) - Reflected,Mar 3rd 2022
+youzan/vant,,Overly Restrictive Regular Expression,Mar 3rd 2022
+pimcore/pimcore,CVE-2022-0832,Cross-site Scripting (XSS) - Stored,Mar 2nd 2022
+pimcore/pimcore,CVE-2022-0831,Cross-site Scripting (XSS) - Stored,Mar 2nd 2022
+ljharb/npm-lockfile,CVE-2022-0841,OS Command Injection,Mar 2nd 2022
+orchardcms/orchardcore,CVE-2022-0822,Cross-site Scripting (XSS) - Reflected,Mar 2nd 2022
+orchardcms/orchardcore,CVE-2022-0821,Improper Authorization,Mar 2nd 2022
+orchardcms/orchardcore,CVE-2022-0820,Cross-site Scripting (XSS) - Stored,Mar 2nd 2022
+part-db/part-db,CVE-2022-0848,OS Command Injection,Mar 2nd 2022
+microweber-dev/whmcs_plugin,CVE-2022-0855,Improper Resolution of Path Equivalence,Mar 2nd 2022
+dolibarr/dolibarr,CVE-2022-0819,Code Injection,Mar 1st 2022
+slidevjs/slidev,,External Control of File Name or Path,Mar 1st 2022
+tapjs/tap-mocha-reporter,,Inefficient Regular Expression Complexity,Mar 1st 2022
+microweber/microweber,CVE-2022-0777,Weak Password Recovery Mechanism for Forgotten Password,Feb 28th 2022
+hakimel/reveal.js,CVE-2022-0776,Cross-site Scripting (XSS) - DOM,Feb 28th 2022
+librenms/librenms,CVE-2022-0772,Cross-site Scripting (XSS) - Stored,Feb 28th 2022
+rudloff/alltube,CVE-2022-0768,Server-Side Request Forgery (SSRF),Feb 27th 2022
+cortezaproject/corteza-server,,Cross-site Scripting (XSS) - Reflected,Feb 26th 2022
+cortezaproject/corteza-server,,Improper Access Control,Feb 26th 2022
+janeczku/calibre-web,CVE-2022-0767,Server-Side Request Forgery (SSRF),Feb 26th 2022
+janeczku/calibre-web,CVE-2022-0766,Server-Side Request Forgery (SSRF),Feb 26th 2022
+strapi/strapi,CVE-2022-0764,Arbitrary Command Injection,Feb 25th 2022
+microweber/microweber,CVE-2022-0763,Cross-site Scripting (XSS) - Stored,Feb 25th 2022
+microweber/microweber,CVE-2022-0762,Business Logic Errors,Feb 25th 2022
+openwall/john,,Heap-based Buffer Overflow in john,Feb 25th 2022
+hestiacp/hestiacp,CVE-2022-0753,Cross-site Scripting (XSS) - Reflected,Feb 24th 2022
+hestiacp/hestiacp,CVE-2022-0752,Cross-site Scripting (XSS) - Generic,Feb 24th 2022
+dolibarr/dolibarr,CVE-2022-0746,Business Logic Errors,Feb 24th 2022
+getgrav/grav,CVE-2022-0743,Cross-site Scripting (XSS) - Stored,Feb 24th 2022
+radareorg/radare2,CVE-2022-0695,Denial of Service,Feb 24th 2022
+mlflow/mlflow,CVE-2022-0736,Insecure Temporary File,Feb 23rd 2022
+jspark311/buriedunderthenoisefloor,,Cross-site Scripting (XSS) - Reflected,Feb 23rd 2022
+jspark311/buriedunderthenoisefloor,,Unrestricted Upload of File with Dangerous Type,Feb 23rd 2022
+jspark311/buriedunderthenoisefloor,,Cross-site Scripting (XSS) - Stored,Feb 23rd 2022
+jspark311/buriedunderthenoisefloor,,Cross-Site Request Forgery (CSRF),Feb 23rd 2022
+nitely/spirit,CVE-2022-0869,Multiple Open Redirect,Feb 23rd 2022
+dolibarr/dolibarr,CVE-2022-0731,Improper Access Control (IDOR),Feb 23rd 2022
+vim/vim,CVE-2022-0729,Use of Out-of-range Pointer Offset,Feb 22nd 2022
+chocobozzz/peertube,CVE-2022-0727,Improper Access Control,Feb 22nd 2022
+chocobozzz/peertube,CVE-2022-0726,Improper Authorization,Feb 22nd 2022
+microweber/microweber,CVE-2022-0724,Insecure Storage of Sensitive Information,Feb 22nd 2022
+microweber/microweber,CVE-2022-0723,Cross-site Scripting (XSS) - Reflected,Feb 22nd 2022
+microweber/microweber,CVE-2022-0721,Insertion of Sensitive Information Into Debugging Code,Feb 22nd 2022
+microweber/microweber,CVE-2022-0719,Cross-site Scripting (XSS) - Reflected,Feb 22nd 2022
