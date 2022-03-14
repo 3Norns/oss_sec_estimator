@@ -4,6 +4,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions
 from time import sleep
 from selenium.common.exceptions import StaleElementReferenceException
+import pymysql
 import csv
 
 def get_record_release_year(selenium_item):
@@ -27,8 +28,25 @@ def save_data_to_csv(data, file_path):
         writer.writerows(data)
     print("data has been written into csv file")
 
-def save_data_to_mysql():
-    pass
+def save_data_to_mysql(data):
+    conn = pymysql.connect(
+        host="localhost",
+        user="root",
+        password="SteinsGate0",
+        database="oss_security_estimator",
+        charset="utf8"
+    )
+    cursor = conn.cursor()
+    sql = "INSERT INTO vulnerable_project_in_huntre (github_project_relative_path, cve_number, vulnerability_description, release_date) VALUES (%s, %s, %s, %s)"
+    try:
+        cursor.executemany(sql, data)
+        conn.commit()
+    except Exception:
+        print("error occurred", Exception)
+        conn.rollback()
+    finally:
+        cursor.close()
+        conn.close()
 
 driver = webdriver.Chrome()
 driver.maximize_window()
@@ -83,19 +101,20 @@ while True:
         total_record = len(hacktivity_table)
         print("table rows:", total_record)
 
-        print(record_table)
-        save_data_to_csv(record_table, "D:\\PycharmProjects\\oss_sec_estimator\\dataset\\vulnerable_project_data.csv")
-        break
         # 页面记录添加
         try:
             show_more_button.click()
         except StaleElementReferenceException:
-            print("a data has been load")
+            print("all data has been load")
             break
         while True:
+            try_count = 0
             hacktivity_table = driver.find_elements_by_xpath(hacktivity_table_xpath)
             sleep(1)
+            try_count += 1
             if len(hacktivity_table) > total_record:
+                break
+            if try_count >= 60:
                 break
 
     elif first_record_release_year >= 2020 and last_record_release_year < 2020:
@@ -127,5 +146,8 @@ while True:
     else:
         break
 
+save_data_to_mysql(record_table)
+
+# save_data_to_csv(record_table, "D:\\PycharmProjects\\oss_sec_estimator\\dataset\\vulnerable_project_data.csv")
 
 driver.quit()

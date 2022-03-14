@@ -1,5 +1,20 @@
 GitHub relative path,CVE number,Vulnerability description,Release date
+star7th/showdoc,CVE-2022-0941,Stored XSS due to Unrestricted File Upload,Mar 13th 2022
+star7th/showdoc,CVE-2022-0940,Stored XSS due to Unrestricted File Upload,Mar 13th 2022
+star7th/showdoc,CVE-2022-0938,Stored XSS via file upload,Mar 13th 2022
+star7th/showdoc,CVE-2022-0937,Stored xss in showdoc through file upload,Mar 13th 2022
+alanaktion/phproject,,Cross-site Scripting (XSS) - Stored,Mar 12th 2022
+alanaktion/phproject,,Cross-site Scripting (XSS) - Stored,Mar 12th 2022
+alanaktion/phproject,,Unrestricted Upload of File with Dangerous Type,Mar 12th 2022
+alanaktion/phproject,,Improper Access Control,Mar 12th 2022
+alanaktion/phproject,,Open Redirect,Mar 12th 2022
+alanaktion/phproject,,Open Redirect,Mar 12th 2022
+microweber/microweber,CVE-2022-0930,File upload filter bypass leading to stored XSS,Mar 11th 2022
+microweber/microweber,CVE-2022-0929,XSS on dynamic_text module,Mar 11th 2022
+microweber/microweber,CVE-2022-0928,Cross-site Scripting (XSS) - Stored,Mar 11th 2022
+microweber/microweber,CVE-2022-0926,File upload filter bypass leading to stored XSS,Mar 11th 2022
 gnuboard/gnuboard5,,Cross-site Scripting (XSS) - Reflected,Mar 11th 2022
+microweber/microweber,CVE-2022-0921,Abusing Backup/Restore feature to achieve Remote Code Execution,Mar 11th 2022
 microweber/microweber,CVE-2022-0913,Integer Overflow or Wraparound,Mar 10th 2022
 microweber/microweber,CVE-2022-0912,Unrestricted Upload of File with Dangerous Type,Mar 10th 2022
 athlon1600/youtube-downloader,,Server-Side Request Forgery (SSRF),Mar 10th 2022
@@ -19,7 +34,10 @@ gpac/gpac,,NULL Pointer Dereference,Mar 7th 2022
 bookstackapp/bookstack,CVE-2022-0877,Cross-site Scripting (XSS) - Stored,Mar 7th 2022
 gpac/gpac,,Heap-based Buffer Overflow,Mar 7th 2022
 pokeapi/pokeapi,,Path Traversal,Mar 7th 2022
+gogs/gogs,CVE-2022-0871,Improper Authorization,Mar 6th 2022
+gogs/gogs,CVE-2022-0870,Server-Side Request Forgery (SSRF),Mar 6th 2022
 medialize/uri.js,CVE-2022-0868,Open Redirect,Mar 5th 2022
+cobbler/cobbler,CVE-2022-0860,Improper Authorization,Mar 4th 2022
 radareorg/radare2,CVE-2022-0849,Use After Free in r_reg_get_name_idx,Mar 4th 2022
 pytorchlightning/pytorch-lightning,CVE-2022-0845,Code Injection,Mar 4th 2022
 liquibase/liquibase,CVE-2022-0839,Improper Restriction of XML External Entity Reference,Mar 3rd 2022
@@ -68,3 +86,1731 @@ microweber/microweber,CVE-2022-0724,Insecure Storage of Sensitive Information,Fe
 microweber/microweber,CVE-2022-0723,Cross-site Scripting (XSS) - Reflected,Feb 22nd 2022
 microweber/microweber,CVE-2022-0721,Insertion of Sensitive Information Into Debugging Code,Feb 22nd 2022
 microweber/microweber,CVE-2022-0719,Cross-site Scripting (XSS) - Reflected,Feb 22nd 2022
+mruby/mruby,CVE-2022-0717,Out-of-bounds Read,Feb 22nd 2022
+webmin/webmin,,Improper Access Control in File Manager module,Feb 22nd 2022
+vim/vim,CVE-2022-0714,Heap-based Buffer Overflow,Feb 22nd 2022
+radareorg/radare2,CVE-2022-0713,Heap-based Buffer Overflow,Feb 22nd 2022
+mautic/mautic,,Improper Access Control,Feb 22nd 2022
+radareorg/radare2,CVE-2022-0712,NULL Pointer Dereference,Feb 22nd 2022
+laravelio/laravel.io,,Cross-Site Request Forgery (CSRF),Feb 21st 2022
+silvanmelchior/rpi_cam_web_interface,,Path Traversal in silvanmelchior/RPi_Cam_Web_Interface,Feb 21st 2022
+archivy/archivy,CVE-2022-0697,Open Redirect,Feb 21st 2022
+webmin/webmin,CVE-2022-0824,Improper Access Control to Remote Code Execution,Feb 21st 2022
+vim/vim,CVE-2022-0696,NULL Pointer Dereference,Feb 21st 2022
+radareorg/radare2,CVE-2022-0476,Denial of Service,Feb 21st 2022
+rudloff/alltube,CVE-2022-0692,Open Redirect on Rudloff/alltube,Feb 20th 2022
+unshiftio/url-parse,CVE-2022-0691,Authorization Bypass Through User-Controlled Key,Feb 20th 2022
+webmin/webmin,CVE-2022-0829,Improper Authorization,Feb 20th 2022
+microweber/microweber,CVE-2022-0690,Cross-site Scripting (XSS) - Reflected,Feb 19th 2022
+microweber/microweber,CVE-2022-0689,Use multiple time the one-time coupon,Feb 19th 2022
+microweber/microweber,CVE-2022-0688,Business Logic Errors,Feb 19th 2022
+microweber/microweber,,Uncaught Exception,Feb 19th 2022
+unshiftio/url-parse,CVE-2022-0686,Authorization Bypass Through User-Controlled Key,Feb 19th 2022
+vim/vim,CVE-2022-0685,Use of Out-of-range Pointer Offset,Feb 19th 2022
+rhizome-conifer/conifer,,Improper Privilege Management,Feb 19th 2022
+salesagility/suitecrm,CVE-2022-0754,SQL Injection,Feb 18th 2022
+salesagility/suitecrm,CVE-2022-0755,Improper Access Control,Feb 18th 2022
+salesagility/suitecrm,CVE-2022-0756,Improper Authorization,Feb 18th 2022
+microweber/microweber,CVE-2022-0678,Cross-site Scripting (XSS) - Reflected,Feb 18th 2022
+radareorg/radare2,CVE-2022-0676,Heap-based Buffer Overflow,Feb 18th 2022
+microweber/microweber,,Improper Handling of Length Parameter Inconsistency,Feb 17th 2022
+microweber/microweber,,Improper Input Validation,Feb 17th 2022
+microweber/microweber,CVE-2022-0666,CRLF Injection leads to Stack Trace Exposure due to lack of filtering at https://demo.microweber.org/,Feb 17th 2022
+pimcore/pimcore,CVE-2022-0665,Path Traversal,Feb 17th 2022
+gravitl/netmaker,CVE-2022-0664,Use of Hard-coded Cryptographic Key,Feb 17th 2022
+microweber/microweber,CVE-2022-0660,Generation of Error Message Containing Sensitive Information,Feb 17th 2022
+fgribreau/node-request-retry,CVE-2022-0654,Exposure of Sensitive Information to an Unauthorized Actor,Feb 17th 2022
+zulip/zulip,CVE-2021-3967,Improper Access Control,Feb 17th 2022
+unshiftio/url-parse,CVE-2022-0639,Authorization Bypass Through User-Controlled Key,Feb 17th 2022
+microweber/microweber,CVE-2022-0638,Cross-Site Request Forgery (CSRF),Feb 17th 2022
+mruby/mruby,CVE-2022-0632,NULL Pointer Dereference,Feb 16th 2022
+mruby/mruby,CVE-2022-0631,Heap-based Buffer Overflow,Feb 16th 2022
+mruby/mruby,CVE-2022-0630,Out-of-bounds Read,Feb 16th 2022
+vim/vim,CVE-2022-0629,Stack-based Buffer Overflow,Feb 16th 2022
+pheditor/pheditor,,Cross-Site Request Forgery (CSRF),Feb 16th 2022
+mruby/mruby,CVE-2022-0623,Out-of-bounds Read,Feb 16th 2022
+helloxz/onenav,,Authentication Bypass by Primary Weakness,Feb 16th 2022
+snipe/snipe-it,CVE-2022-0622,Generation of Error Message Containing Sensitive Information,Feb 16th 2022
+helloxz/onenav,,Cross-site Scripting (XSS) - Stored,Feb 16th 2022
+mruby/mruby,CVE-2022-0614,Use of Out-of-range Pointer Offset,Feb 15th 2022
+medialize/uri.js,CVE-2022-0613,Authorization Bypass Through User-Controlled Key,Feb 15th 2022
+livehelperchat/livehelperchat,CVE-2022-0612,Cross-site Scripting (XSS) - Stored,Feb 15th 2022
+snipe/snipe-it,CVE-2022-0611,Improper Privilege Management,Feb 15th 2022
+yeswiki/yeswiki,,Unrestricted Upload of File with Dangerous Type,Feb 14th 2022
+microweber/microweber,CVE-2022-0597,Open Redirect,Feb 14th 2022
+microweber/microweber,CVE-2022-0596,Business Logic Errors,Feb 14th 2022
+thexxturboxx/dex2jar,,Relative Path Traversal,Feb 14th 2022
+librenms/librenms,CVE-2022-0589,Cross-site Scripting (XSS) - Stored,Feb 14th 2022
+librenms/librenms,CVE-2022-0588,Exposure of Sensitive Information to an Unauthorized Actor,Feb 14th 2022
+librenms/librenms,CVE-2022-0587,Improper Authorization,Feb 14th 2022
+liangliangyy/djangoblog,,Improper Removal of Sensitive Information Before Storage or Transfer,Feb 14th 2022
+liangliangyy/djangoblog,,Improper Access Control,Feb 14th 2022
+librenms/librenms,CVE-2022-0580,Improper Access Control,Feb 14th 2022
+snipe/snipe-it,CVE-2022-0579,Improper Privilege Management,Feb 14th 2022
+gitpython-developers/gitpython,,Inefficient Regular Expression Complexity,Feb 13th 2022
+scrapy/scrapy,CVE-2022-0577,Exposure of Sensitive Information to an Unauthorized Actor,Feb 13th 2022
+librenms/librenms,CVE-2022-0576,Cross-site Scripting (XSS) - Generic,Feb 13th 2022
+librenms/librenms,CVE-2022-0575,Cross-site Scripting (XSS) - Stored,Feb 13th 2022
+vim/vim,CVE-2022-0572,Heap-based Buffer Overflow,Feb 12th 2022
+phoronix-test-suite/phoronix-test-suite,CVE-2022-0571,Cross-site Scripting (XSS) - Reflected,Feb 12th 2022
+mruby/mruby,CVE-2022-0570,Heap-based Buffer Overflow,Feb 12th 2022
+snipe/snipe-it,CVE-2022-0569,Exposure of Sensitive Information to an Unauthorized Actor,Feb 12th 2022
+snipe/snipe-it,,Incorrect Privilege Assignment,Feb 12th 2022
+pimcore/pimcore,CVE-2022-0565,Exposure of Sensitive Information to an Unauthorized Actor,Feb 11th 2022
+liukuo362573/yishaadmin,,Improper Access Control,Feb 11th 2022
+liangliangyy/djangoblog,,Cross-site Scripting (XSS) - Stored,Feb 11th 2022
+liangliangyy/djangoblog,,Improper Privilege Management,Feb 11th 2022
+effgarces/bookedscheduler,,Cross-site Scripting (XSS) - Reflected,Feb 11th 2022
+microweber/microweber,CVE-2022-0560,Open Redirect,Feb 10th 2022
+radareorg/radare2,CVE-2022-0559,Use After Free,Feb 10th 2022
+microweber/microweber,CVE-2022-0558,Cross-site Scripting (XSS) - Stored,Feb 10th 2022
+microweber/microweber,CVE-2022-0557,OS Command Injection,Feb 10th 2022
+liukuo362573/yishaadmin,,Path Traversal,Feb 10th 2022
+liukuo362573/yishaadmin,,Improper Access Control,Feb 10th 2022
+vim/vim,CVE-2022-0554,Use of Out-of-range Pointer Offset,Feb 10th 2022
+ptrofimov/beanstalk_console,CVE-2022-0539,Cross-site Scripting (XSS) - Stored,Feb 8th 2022
+follow-redirects/follow-redirects,CVE-2022-0536,Exposure of Sensitive Information to an Unauthorized Actor,Feb 8th 2022
+transloadit/uppy,CVE-2022-0528,Exposure of Sensitive Information to an Unauthorized Actor,Feb 8th 2022
+chatwoot/chatwoot,CVE-2022-0527,Cross-site Scripting (XSS) - Stored,Feb 8th 2022
+chatwoot/chatwoot,CVE-2022-0526,Cross-site Scripting (XSS) - Stored,Feb 8th 2022
+mruby/mruby,CVE-2022-0525,Out-of-bounds Read,Feb 8th 2022
+publify/publify,CVE-2022-0524,Business Logic Errors,Feb 8th 2022
+radareorg/radare2,CVE-2022-0523,Expired Pointer Dereference,Feb 8th 2022
+radareorg/radare2,CVE-2022-0522,Access of Memory Location Before Start of Buffer,Feb 8th 2022
+radareorg/radare2,CVE-2022-0521,Access of Memory Location After End of Buffer,Feb 8th 2022
+radareorg/radare2,CVE-2022-0520,Use After Free,Feb 8th 2022
+radareorg/radare2,CVE-2022-0519,Buffer Access with Incorrect Length Value,Feb 8th 2022
+radareorg/radare2,CVE-2022-0518,Heap-based Buffer Overflow,Feb 8th 2022
+unshiftio/url-parse,CVE-2022-0512,Authorization Bypass Through User-Controlled Key,Feb 7th 2022
+clasp-developers/clasp,,Generation of Error Message Containing Sensitive Information,Feb 7th 2022
+pimcore/pimcore,CVE-2022-0510,Cross-site Scripting (XSS) - Reflected,Feb 7th 2022
+pimcore/pimcore,CVE-2022-0509,Cross-site Scripting (XSS) - Stored,Feb 7th 2022
+chocobozzz/peertube,CVE-2022-0508,Server-Side Request Forgery (SSRF),Feb 7th 2022
+microweber/microweber,CVE-2022-0506,Cross-site Scripting (XSS) - Stored,Feb 7th 2022
+microweber/microweber,CVE-2022-0505,Cross-Site Request Forgery (CSRF),Feb 7th 2022
+microweber/microweber,CVE-2022-0504,Generation of Error Message Containing Sensitive Information,Feb 7th 2022
+microweber/microweber,,External Control of File Name or Path,Feb 7th 2022
+isaacs/minimatch,,Inefficient Regular Expression Complexity,Feb 7th 2022
+cjferna/photo-services-mashup,,Exposure of Sensitive Information to an Unauthorized Actor,Feb 6th 2022
+livehelperchat/livehelperchat,CVE-2022-0502,Cross-site Scripting (XSS) - Stored,Feb 6th 2022
+liukuo362573/yishaadmin,,Improper Authentication,Feb 6th 2022
+liukuo362573/yishaadmin,,Improper Authorization,Feb 6th 2022
+luigirizzo/netmap,,Generation of Error Message Containing Sensitive Information,Feb 6th 2022
+bytebase/bytebase,,Cross-site Scripting (XSS) - Stored,Feb 5th 2022
+vim/vim,,Floating Point Comparison with Incorrect Operator,Feb 5th 2022
+rhizome-conifer/conifer,,Improper Privilege Management,Feb 5th 2022
+ptrofimov/beanstalk_console,CVE-2022-0501,Cross-site Scripting (XSS) - Reflected,Feb 4th 2022
+cortezaproject/corteza-server,,Insufficient Session Expiration,Feb 4th 2022
+cortezaproject/corteza-server,,Incorrect Implementation of Authentication Algorithm,Feb 4th 2022
+cortezaproject/corteza-server,,Out-of-bounds Write,Feb 4th 2022
+cortezaproject/corteza-server,,Insufficient Granularity of Access Control,Feb 4th 2022
+cortezaproject/corteza-server,,Use of a Key Past its Expiration Date,Feb 4th 2022
+gpac/gpac,,NULL Pointer Dereference,Feb 4th 2022
+log4js-node/log4js-node,,Incorrect Ownership Assignment,Feb 4th 2022
+navigatecms/navigate-cms,,Cross-site Scripting (XSS) - Reflected,Feb 3rd 2022
+alextselegidis/easyappointments,CVE-2022-0482,Exposure of Private Personal Information to an Unauthorized Actor,Feb 3rd 2022
+bytebase/bytebase,,Improper Authorization,Feb 3rd 2022
+mruby/mruby,CVE-2022-0481,NULL Pointer Dereference,Feb 3rd 2022
+s-cart/core,,Cross-site Scripting (XSS) - Stored,Feb 3rd 2022
+s-cart/s-cart,,Cross-site Scripting (XSS) - Stored,Feb 3rd 2022
+quickbox/qb,,Code Injection,Feb 3rd 2022
+pimcore/customer-data-framework,,Cross-site Scripting (XSS) - Stored,Feb 2nd 2022
+ibotpeaches/apktool,,Command Injection,Feb 2nd 2022
+chatwoot/chatwoot,,Improper Input Validation,Feb 2nd 2022
+jsdecena/laracom,CVE-2022-0472,Unrestricted Upload of File with Dangerous Type,Feb 2nd 2022
+mostafa-samir/zip-local,,Relative Path Traversal,Feb 2nd 2022
+gpac/gpac,CVE-2021-4043,NULL Pointer Dereference,Feb 1st 2022
+vim/vim,CVE-2022-0443,Use After Free,Feb 1st 2022
+karma-runner/karma,CVE-2022-0437,Cross-site Scripting (XSS) - DOM,Feb 1st 2022
+mastodon/mastodon,CVE-2022-0432,Prototype Pollution,Jan 31st 2022
+radareorg/radare2,CVE-2022-0419,NULL Pointer Dereference,Jan 31st 2022
+vim/vim,CVE-2022-0417,Heap-based Buffer Overflow,Jan 30th 2022
+heroiclabs/nakama,,Observable Response Discrepancy,Jan 30th 2022
+requarks/wiki,,Cross-Site Request Forgery (CSRF),Jan 30th 2022
+dolibarr/dolibarr,CVE-2022-0414,Business Logic Errors,Jan 29th 2022
+vim/vim,CVE-2022-0413,Use After Free,Jan 29th 2022
+star7th/showdoc,CVE-2022-0409,Unrestricted Upload of File with Dangerous Type,Jan 29th 2022
+vim/vim,CVE-2022-0408,Stack-based Buffer Overflow,Jan 29th 2022
+vim/vim,CVE-2022-0407,Heap-based Buffer Overflow,Jan 29th 2022
+x360ce/x360ce,,Use of a Broken or Risky Cryptographic Algorithm,Jan 29th 2022
+x360ce/x360ce,,Use of a Risky Cryptographic Primitive,Jan 29th 2022
+mybatis/generator,,Improper Restriction of XML External Entity Reference,Jan 28th 2022
+delgan/loguru,,Improper Neutralization of Equivalent Special Elements,Jan 28th 2022
+alanaktion/phproject,,Cross-site Scripting (XSS) - Stored,Jan 28th 2022
+alanaktion/phproject,,Open Redirect,Jan 28th 2022
+livehelperchat/livehelperchat,CVE-2022-0395,Cross-site Scripting (XSS) - Stored,Jan 28th 2022
+livehelperchat/livehelperchat,CVE-2022-0394,Cross-site Scripting (XSS) - Stored,Jan 28th 2022
+vim/vim,CVE-2022-0393,Out-of-bounds Read,Jan 28th 2022
+vim/vim,CVE-2022-0392,Heap-based Buffer Overflow,Jan 28th 2022
+saleor/saleor,CVE-2022-0932,Improper Authorization,Jan 27th 2022
+pimcore/customer-data-framework,,Cross-site Scripting (XSS) - Stored,Jan 27th 2022
+gpac/gpac,,Heap-based Buffer Overflow,Jan 27th 2022
+livehelperchat/livehelperchat,CVE-2022-0387,Cross-site Scripting (XSS) - Stored,Jan 27th 2022
+saleor/saleor-dashboard,,Cross-site Scripting (XSS) - Stored,Jan 26th 2022
+microweber/microweber,CVE-2022-0379,Cross-site Scripting (XSS) - Stored,Jan 26th 2022
+microweber/microweber,CVE-2022-0378,Cross-site Scripting (XSS) - Reflected,Jan 26th 2022
+livehelperchat/livehelperchat,CVE-2022-0375,Cross-site Scripting (XSS) - Stored,Jan 26th 2022
+livehelperchat/livehelperchat,CVE-2022-0374,Cross-site Scripting (XSS) - Stored,Jan 26th 2022
+crater-invoice/crater,CVE-2022-0372,Cross-site Scripting (XSS) - Stored,Jan 26th 2022
+livehelperchat/livehelperchat,CVE-2022-0370,Cross-site Scripting (XSS) - Stored,Jan 26th 2022
+vim/vim,CVE-2022-0368,Out-of-bounds Read,Jan 26th 2022
+e107inc/e107,,Cross-site Scripting (XSS) - Stored,Jan 26th 2022
+star7th/showdoc,CVE-2022-0362,SQL Injection,Jan 25th 2022
+vim/vim,CVE-2022-0361,Heap-based Buffer Overflow,Jan 25th 2022
+pimcore/data-hub,,Cross-site Scripting (XSS) - Reflected,Jan 25th 2022
+vim/vim,CVE-2022-0359,Heap-based Buffer Overflow,Jan 25th 2022
+python/cpython,,Inefficient Regular Expression Complexity,Jan 25th 2022
+pimcore/data-hub,,Cross-site Scripting (XSS) - Stored,Jan 25th 2022
+liukuo362573/yishaadmin,,Improper Authorization,Jan 25th 2022
+liukuo362573/yishaadmin,,Improper Privilege Management,Jan 25th 2022
+liukuo362573/yishaadmin,,Improper Authentication,Jan 25th 2022
+liukuo362573/yishaadmin,,Improper Access Control,Jan 25th 2022
+feross/simple-get,CVE-2022-0355,Exposure of Sensitive Information to an Unauthorized Actor,Jan 25th 2022
+janeczku/calibre-web,CVE-2022-0352,Cross-site Scripting (XSS) - Reflected,Jan 25th 2022
+vim/vim,CVE-2022-0351,Access of Memory Location Before Start of Buffer,Jan 25th 2022
+pimcore/web2print-tools,,Cross-site Scripting (XSS) - Stored,Jan 25th 2022
+pimcore/pimcore,CVE-2022-0348,Cross-site Scripting (XSS) - Stored,Jan 24th 2022
+liangliangyy/djangoblog,,Cross-Site Request Forgery (CSRF),Jan 24th 2022
+getgrav/grav,,Reliance on Cookies without Validation and Integrity Checking,Jan 24th 2022
+egorovsa/json-unflat,,Prototype Pollution,Jan 24th 2022
+vanessa219/vditor,CVE-2022-0341,Cross-site Scripting (XSS) - Stored,Jan 24th 2022
+liukuo362573/yishaadmin,,Improper Privilege Management,Jan 24th 2022
+liukuo362573/yishaadmin,,Improper Authentication,Jan 24th 2022
+liukuo362573/yishaadmin,,Improper Authorization,Jan 24th 2022
+gibbonedu/core,,Static Code Injection,Jan 24th 2022
+gibbonedu/core,,Cross-site Scripting (XSS) - Reflected,Jan 24th 2022
+domcloud/dom-portal,,Prototype Pollution,Jan 23rd 2022
+requarks/wiki,,Cross-Site Request Forgery (CSRF),Jan 23rd 2022
+janeczku/calibre-web,CVE-2022-0339,Server-Side Request Forgery (SSRF),Jan 23rd 2022
+gpac/gpac,,NULL Pointer Dereference,Jan 22nd 2022
+mermaid-js/mermaid-live-editor,,Cross-site Scripting (XSS) - Reflected,Jan 22nd 2022
+delgan/loguru,CVE-2022-0338,Improper Privilege Management,Jan 22nd 2022
+getgrav/grav-plugin-admin,,Cross-site Scripting (XSS) - Stored,Jan 22nd 2022
+gpac/gpac,,Heap-based Buffer Overflow,Jan 22nd 2022
+gpac/gpac,,Heap-based Buffer Overflow,Jan 21st 2022
+gpac/gpac,,Classic Buffer Overflow,Jan 21st 2022
+gpac/gpac,,Stack-based Buffer Overflow,Jan 21st 2022
+gpac/gpac,,Use After Free,Jan 21st 2022
+gpac/gpac,,Use After Free,Jan 21st 2022
+parallax/jspdf,,Inefficient Regular Expression Complexity,Jan 21st 2022
+mruby/mruby,CVE-2022-0326,NULL Pointer Dereference,Jan 21st 2022
+mastodon/mastodon,,Improper Restriction of Names for Files and Other Resources,Jan 21st 2022
+bobthecow/mustache.php,CVE-2022-0323,Improper Neutralization of Special Elements Used in a Template Engine,Jan 21st 2022
+admidio/admidio,,Cross-site Scripting (XSS) - Stored,Jan 20th 2022
+vim/vim,CVE-2022-0319,Out-of-bounds Read,Jan 20th 2022
+vim/vim,CVE-2022-0318,Heap-based Buffer Overflow,Jan 20th 2022
+playframework/play-samples,,Static Code Injection,Jan 20th 2022
+admidio/admidio,,Cross-site Scripting (XSS) - Stored,Jan 20th 2022
+part-db/part-db,,Cross-site Scripting (XSS) - Reflected,Jan 20th 2022
+pimcore/pimcore,CVE-2022-0285,Cross-site Scripting (XSS) - Stored,Jan 19th 2022
+microweber/microweber,CVE-2022-0282,Code Injection,Jan 19th 2022
+microweber/microweber,CVE-2022-0281,Exposure of Sensitive Information to an Unauthorized Actor,Jan 19th 2022
+microweber/microweber,CVE-2022-0278,Cross-site Scripting (XSS) - Stored,Jan 19th 2022
+microweber/microweber,CVE-2022-0277,Improper Access Control,Jan 19th 2022
+projectsend/projectsend,,Incorrect Privilege Assignment,Jan 19th 2022
+orchardcms/orchardcore,CVE-2022-0274,Cross-site Scripting (XSS) - Stored,Jan 19th 2022
+janeczku/calibre-web,CVE-2022-0273,Improper Access Control,Jan 19th 2022
+yetiforcecompany/yetiforcecrm,CVE-2022-0269,Cross-Site Request Forgery (CSRF),Jan 18th 2022
+getgrav/grav,CVE-2022-0268,Cross-site Scripting (XSS) - Stored,Jan 18th 2022
+zikula/core,,Cross-site Scripting (XSS) - Stored,Jan 18th 2022
+livehelperchat/livehelperchat,CVE-2022-0266,Authorization Bypass Through User-Controlled Key,Jan 18th 2022
+cyrisxd/love-lock-card,,Cross-site Scripting (XSS) - Stored,Jan 18th 2022
+hazelcast/hazelcast,CVE-2022-0265,Improper Restriction of XML External Entity Reference,Jan 18th 2022
+pimcore/pimcore,CVE-2022-0263,Unrestricted Upload of File with Dangerous Type,Jan 17th 2022
+pimcore/pimcore,CVE-2022-0262,Cross-site Scripting (XSS) - Stored,Jan 17th 2022
+gpac/gpac,,Heap-based Buffer Overflow,Jan 17th 2022
+vim/vim,CVE-2022-0261,Heap-based Buffer Overflow,Jan 17th 2022
+pimcore/pimcore,CVE-2022-0260,Cross-site Scripting (XSS) - Stored,Jan 17th 2022
+pimcore/pimcore,CVE-2022-0258,SQL Injection,Jan 17th 2022
+pimcore/pimcore,CVE-2022-0257,Cross-site Scripting (XSS) - Stored,Jan 17th 2022
+pimcore/pimcore,CVE-2022-0256,Cross-site Scripting (XSS) - Stored,Jan 17th 2022
+icecoder/icecoder,CVE-2021-3862,Cross-site Scripting (XSS) - Reflected,Jan 17th 2022
+gpac/gpac,,NULL Pointer Dereference,Jan 17th 2022
+gpac/gpac,,NULL Pointer Dereference,Jan 17th 2022
+livehelperchat/livehelperchat,CVE-2022-0253,Cross-site Scripting (XSS) - Stored,Jan 17th 2022
+sscarduzio/elasticsearch-readonlyrest-plugin,,Exposure of Sensitive Information to an Unauthorized Actor,Jan 17th 2022
+pimcore/pimcore,CVE-2022-0251,Cross-site Scripting (XSS) - Stored,Jan 17th 2022
+livehelperchat/livehelperchat,,Improper Use of Validation Framework,Jan 17th 2022
+livehelperchat/livehelperchat,CVE-2022-0245,Cross-Site Request Forgery (CSRF),Jan 17th 2022
+orchardcms/orchardcore,CVE-2022-0243,Cross-site Scripting (XSS) - Stored,Jan 17th 2022
+mineweb/minewebcms,,Failure to Sanitize Special Elements into a Different Plane (Special Element Injection),Jan 17th 2022
+crater-invoice/crater,CVE-2022-0242,Unrestricted Upload of File with Dangerous Type,Jan 17th 2022
+mruby/mruby,CVE-2022-0240,NULL Pointer Dereference,Jan 16th 2022
+mineweb/minewebcms,,Cross-site Scripting (XSS) - Stored,Jan 16th 2022
+mineweb/minewebcms,,Cross-site Scripting (XSS) - DOM,Jan 16th 2022
+mineweb/minewebcms,,Cross-site Scripting (XSS) - Stored,Jan 16th 2022
+stanfordnlp/corenlp,CVE-2022-0239,Improper Restriction of XML External Entity Reference,Jan 16th 2022
+tsolucio/corebos,,Cross-site Scripting (XSS) - Reflected,Jan 16th 2022
+tsolucio/corebos,,SQL Injection,Jan 16th 2022
+phoronix-test-suite/phoronix-test-suite,CVE-2022-0238,Cross-Site Request Forgery (CSRF),Jan 15th 2022
+node-fetch/node-fetch,CVE-2022-0235,Exposure of Sensitive Information to an Unauthorized Actor,Jan 15th 2022
+znixbtw/panel-v2,,Cross-site Scripting (XSS) - Reflected,Jan 14th 2022
+znixbtw/panel-v2,,Cross-site Scripting (XSS) - Reflected,Jan 14th 2022
+znixbtw/panel-v2,,Cross-site Scripting (XSS) - Reflected,Jan 14th 2022
+znixbtw/panel-v2,,Cross-site Scripting (XSS) - Reflected,Jan 14th 2022
+znixbtw/panel-v2,,Cross-site Scripting (XSS) - Reflected,Jan 14th 2022
+znixbtw/panel-v2,,Cross-site Scripting (XSS) - Reflected,Jan 14th 2022
+znixbtw/panel-v2,,Cross-site Scripting (XSS) - Reflected,Jan 14th 2022
+projectsend/projectsend,,Cross-site Scripting (XSS) - Generic,Jan 14th 2022
+livehelperchat/livehelperchat,CVE-2022-0231,Cross-Site Request Forgery (CSRF),Jan 14th 2022
+chaskiq/chaskiq,,Cross-site Scripting (XSS) - Stored,Jan 14th 2022
+chaskiq/chaskiq,CVE-2021-3857,Cross-site Scripting (XSS) - Stored,Jan 14th 2022
+silverstripe/silverstripe-framework,CVE-2022-0227,Business Logic Errors,Jan 14th 2022
+livehelperchat/livehelperchat,CVE-2022-0226,Cross-Site Request Forgery (CSRF),Jan 14th 2022
+dolibarr/dolibarr,CVE-2022-0224,SQL Injection,Jan 14th 2022
+skylot/jadx,CVE-2022-0219,Improper Restriction of XML External Entity Reference,Jan 14th 2022
+chaskiq/chaskiq,CVE-2021-3853,Cross-site Scripting (XSS) - Stored,Jan 13th 2022
+vim/vim,CVE-2022-0213,Heap-based Buffer Overflow,Jan 13th 2022
+crater-invoice/crater,CVE-2022-0203,Improper Access Control,Jan 12th 2022
+stanfordnlp/corenlp,CVE-2022-0198,Improper Restriction of XML External Entity Reference,Jan 12th 2022
+phoronix-test-suite/phoronix-test-suite,CVE-2022-0197,Cross-Site Request Forgery (CSRF),Jan 12th 2022
+phoronix-test-suite/phoronix-test-suite,CVE-2022-0196,Cross-Site Request Forgery (CSRF),Jan 12th 2022
+konloch/bytecode-viewer,CVE-2022-21675,Path Traversal,Jan 12th 2022
+vim/vim,,Allocation of Resources Without Limits or Throttling,Jan 12th 2022
+outline/outline,,Cross-site Scripting (XSS) - Stored,Jan 12th 2022
+snipe/snipe-it,CVE-2022-0179,Improper Access Control,Jan 11th 2022
+snipe/snipe-it,CVE-2022-0178,Improper Access Control,Jan 11th 2022
+mrdoob/three.js,,Cross-site Scripting (XSS) - DOM,Jan 11th 2022
+dotcms/core,,Improper Restriction of XML External Entity Reference,Jan 11th 2022
+dolibarr/dolibarr,CVE-2022-0174,Business Logic Errors,Jan 11th 2022
+radareorg/radare2,CVE-2022-0173,Out-of-bounds Read,Jan 11th 2022
+chocobozzz/peertube,CVE-2022-0170,Improper Access Control,Jan 10th 2022
+orchardcms/orchardcore,CVE-2022-0159,Cross-site Scripting (XSS) - Stored,Jan 10th 2022
+vim/vim,CVE-2022-0158,Heap-based Buffer Overflow,Jan 9th 2022
+phoronix-test-suite/phoronix-test-suite,CVE-2022-0157,Cross-site Scripting (XSS) - Stored,Jan 9th 2022
+liukuo362573/yishaadmin,,Cross-Site Request Forgery (CSRF),Jan 9th 2022
+beestat/app,,Use of Predictable Algorithm in Random Number Generator,Jan 9th 2022
+adodb/adodb,CVE-2021-3850,Authentication Bypass by Primary Weakness,Jan 9th 2022
+vim/vim,CVE-2022-0156,Use After Free,Jan 8th 2022
+zulip/zulip,CVE-2021-3866,Cross-site Scripting (XSS) - Stored,Jan 8th 2022
+admidio/admidio,,Cross-site Scripting (XSS) - Stored,Jan 8th 2022
+follow-redirects/follow-redirects,CVE-2022-0155,Exposure of Private Personal Information to an Unauthorized Actor,Jan 8th 2022
+tensorflow/tensorflow,CVE-2022-23563,Insecure Temporary File,Jan 8th 2022
+rodber/chevereto-free,,Server-Side Request Forgery (SSRF),Jan 8th 2022
+shelljs/shelljs,CVE-2022-0144,Improper Privilege Management,Jan 7th 2022
+radareorg/radare2,CVE-2022-0139,Use After Free,Jan 7th 2022
+chocobozzz/peertube,CVE-2022-0133,Improper Access Control,Jan 6th 2022
+chocobozzz/peertube,CVE-2022-0132,Server-Side Request Forgery (SSRF),Jan 6th 2022
+projectsend/projectsend,,Cross-site Scripting (XSS) - Stored,Jan 6th 2022
+vim/vim,CVE-2022-0128,Out-of-bounds Read,Jan 6th 2022
+projectsend/projectsend,,Cross-site Scripting (XSS) - Stored,Jan 6th 2022
+projectsend/projectsend,,Execution with Unnecessary Privileges,Jan 5th 2022
+digitalbazaar/forge,CVE-2022-0122,Open Redirect,Jan 5th 2022
+hoppscotch/hoppscotch,CVE-2022-0121,Exposure of Sensitive Information to an Unauthorized Actor,Jan 5th 2022
+erudika/scoold,,Cross-site Scripting (XSS) - Stored,Jan 4th 2022
+zikula/core,,Insufficient Granularity of Access Control,Jan 4th 2022
+convos-chat/convos,,Unrestricted Upload of File with Dangerous Type,Jan 4th 2022
+neomutt/neomutt,,Heap-based Buffer Overflow,Jan 4th 2022
+keystonejs/keystone,CVE-2022-0087,Cross-site Scripting (XSS) - Reflected,Jan 4th 2022
+convos-chat/convos,,Cross-site Scripting (XSS) - Stored,Jan 4th 2022
+transloadit/uppy,CVE-2022-0086,Server-Side Request Forgery (SSRF),Jan 4th 2022
+livehelperchat/livehelperchat,CVE-2022-0083,Generation of Error Message Containing Sensitive Information,Jan 3rd 2022
+cacti/cacti,,Cross-site Scripting (XSS) - Stored,Jan 3rd 2022
+friends-of-forkcms/fork-cms-module-commerce,,Cross-site Scripting (XSS) - Stored,Jan 3rd 2022
+admidio/admidio,,Cross-site Scripting (XSS) - Stored,Jan 2nd 2022
+e107inc/e107,,Cross-Site Request Forgery (CSRF),Jan 2nd 2022
+mruby/mruby,CVE-2022-0080,Heap-based Buffer Overflow,Jan 1st 2022
+zikula/core,,Cross-site Scripting (XSS) - Stored,Jan 1st 2022
+star7th/showdoc,CVE-2022-0079,Generation of Error Message Containing Sensitive Information,Jan 1st 2022
+convos-chat/convos,CVE-2022-21649,Cross-site Scripting (XSS) - Stored,Dec 31st 2021
+bookstackapp/bookstack,CVE-2021-4194,Improper Access Control,Dec 31st 2021
+vim/vim,CVE-2021-4193,Out-of-bounds Read,Dec 30th 2021
+vim/vim,CVE-2021-4192,Use After Free,Dec 30th 2021
+erudika/scoold,,Open Redirect,Dec 30th 2021
+erudika/scoold,,Cross-Site Request Forgery (CSRF),Dec 30th 2021
+thorsten/phpmyfaq,,Cross-Site Request Forgery (CSRF),Dec 30th 2021
+thorsten/phpmyfaq,,Cross-Site Request Forgery (CSRF),Dec 30th 2021
+e107inc/e107,,Cross-Site Request Forgery (CSRF),Dec 30th 2021
+e107inc/e107,,Cross-Site Request Forgery (CSRF),Dec 30th 2021
+convos-chat/convos,CVE-2022-21650,Cross-site Scripting (XSS) - Stored,Dec 29th 2021
+idank/explainshell,,Inefficient Regular Expression Complexity,Dec 29th 2021
+mruby/mruby,CVE-2021-4188,NULL Pointer Dereference,Dec 29th 2021
+vim/vim,CVE-2021-4187,Use After Free,Dec 29th 2021
+zikula-modules/content,,Cross-Site Request Forgery (CSRF),Dec 28th 2021
+thorsten/phpmyfaq,,Cross-Site Request Forgery (CSRF),Dec 28th 2021
+convos-chat/convos,,Cross-site Scripting (XSS) - Stored,Dec 28th 2021
+tsolucio/corebos,,Cross-Site Request Forgery (CSRF),Dec 28th 2021
+opensourcepos/opensourcepos,,Cross-Site Request Forgery (CSRF),Dec 28th 2021
+livehelperchat/livehelperchat,CVE-2021-4179,Cross-site Scripting (XSS) - Stored,Dec 27th 2021
+livehelperchat/fbmessenger,,Cross-site Scripting (XSS) - Stored,Dec 27th 2021
+livehelperchat/livehelperchat,CVE-2021-4177,Generation of Error Message Containing Sensitive Information,Dec 27th 2021
+livehelperchat/livehelperchat,CVE-2021-4176,Cross-site Scripting (XSS) - Reflected,Dec 27th 2021
+livehelperchat/livehelperchat,CVE-2021-4175,Cross-site Scripting (XSS) - Stored,Dec 27th 2021
+vim/vim,CVE-2021-4173,Use After Free,Dec 26th 2021
+star7th/showdoc,CVE-2021-4172,Cross-site Scripting (XSS) - Stored,Dec 26th 2021
+janeczku/calibre-web,CVE-2021-4171,Business Logic Errors,Dec 26th 2021
+janeczku/calibre-web,CVE-2021-4170,Cross-site Scripting (XSS) - Stored,Dec 26th 2021
+livehelperchat/livehelperchat,CVE-2021-4169,Cross-site Scripting (XSS) - Reflected,Dec 26th 2021
+star7th/showdoc,CVE-2021-4168,Cross-Site Request Forgery (CSRF),Dec 25th 2021
+requarks/wiki,,Cross-site Scripting (XSS) - Stored,Dec 25th 2021
+vim/vim,CVE-2021-4166,Out-of-bounds Read,Dec 25th 2021
+vim/vim,,Untrusted Pointer Dereference,Dec 24th 2021
+janeczku/calibre-web,CVE-2021-4164,Cross-Site Request Forgery (CSRF),Dec 24th 2021
+janeczku/calibre-web,,Improperly Controlled Modification of Dynamically-Determined Object Attributes,Dec 24th 2021
+archivy/archivy,CVE-2021-4162,Cross-Site Request Forgery (CSRF),Dec 24th 2021
+michaelrsweet/htmldoc,,Out-of-bounds Read,Dec 22nd 2021
+admidio/admidio,,Cross-site Scripting (XSS) - Stored,Dec 22nd 2021
+pimcore/pimcore,CVE-2021-4146,Business Logic Errors,Dec 21st 2021
+pimcore/demo,,Inclusion of Sensitive Information in Source Code,Dec 21st 2021
+requarks/wiki,,Cross-site Scripting (XSS) - Reflected,Dec 21st 2021
+bigbluebutton/bigbluebutton,CVE-2021-4143,Cross-site Scripting (XSS) - Generic,Dec 21st 2021
+range-of-motion/budget,,Cross-site Scripting (XSS) - Stored,Dec 21st 2021
+pimcore/pimcore,CVE-2021-4139,Cross-site Scripting (XSS) - Stored,Dec 20th 2021
+gunet/openeclass,,Cross-Site Request Forgery (CSRF),Dec 20th 2021
+tsolucio/corebos,,Business Logic Errors,Dec 20th 2021
+openwhyd/openwhyd,,Cross-site Scripting (XSS) - Reflected,Dec 19th 2021
+openwhyd/openwhyd,,Open Redirect,Dec 19th 2021
+tsolucio/corebos,,Cross-site Scripting (XSS) - Stored,Dec 19th 2021
+vim/vim,CVE-2021-4136,Heap-based Buffer Overflow,Dec 19th 2021
+splitbrain/dokuwiki,,Cross-Site Request Forgery (CSRF),Dec 18th 2021
+splitbrain/dokuwiki,,Improper Access Control,Dec 17th 2021
+livehelperchat/livehelperchat,CVE-2021-4132,Cross-site Scripting (XSS) - Stored,Dec 17th 2021
+livehelperchat/livehelperchat,CVE-2021-4131,Cross-Site Request Forgery (CSRF),Dec 17th 2021
+snipe/snipe-it,CVE-2021-4130,Cross-Site Request Forgery (CSRF),Dec 17th 2021
+emoncms/emoncms,,Cross-site Scripting (XSS) - Reflected,Dec 17th 2021
+emoncms/emoncms,,Cross-site Scripting (XSS) - DOM,Dec 17th 2021
+netristv/ws-scrcpy,CVE-2021-3845,External Control of File Name or Path,Dec 16th 2021
+code16/sharp,,Cross-Site Request Forgery (CSRF),Dec 16th 2021
+shadow-maint/shadow,,Improper Privilege Management,Dec 15th 2021
+meetecho/janus-gateway,CVE-2021-4124,Cross-site Scripting (XSS) - Stored,Dec 15th 2021
+livehelperchat/livehelperchat,CVE-2021-4123,Cross-Site Request Forgery (CSRF),Dec 15th 2021
+yetiforcecompany/yetiforcecrm,CVE-2021-4121,Cross-site Scripting (XSS) - Stored,Dec 15th 2021
+tsolucio/corebos,,Cross-site Scripting (XSS) - Stored,Dec 15th 2021
+splitbrain/dokuwiki,,Cross-Site Request Forgery (CSRF),Dec 15th 2021
+bookstackapp/bookstack,CVE-2021-4119,Improper Access Control,Dec 15th 2021
+pytorchlightning/pytorch-lightning,CVE-2021-4118,Deserialization of Untrusted Data,Dec 15th 2021
+dotcms/core,,Improper Privilege Management,Dec 15th 2021
+yetiforcecompany/yetiforcecrm,CVE-2021-4117,Business Logic Errors,Dec 14th 2021
+yetiforcecompany/yetiforcecrm,CVE-2021-4116,Cross-site Scripting (XSS) - Stored,Dec 14th 2021
+patrowl/patrowlmanager,,Cross-Site Request Forgery (CSRF),Dec 14th 2021
+patrowl/patrowlmanager,,Improper Privilege Management,Dec 14th 2021
+patrowl/patrowlmanager,,Unrestricted Upload of File with Dangerous Type,Dec 14th 2021
+humhub/humhub,,Authorization Bypass Through User-Controlled Key,Dec 14th 2021
+yetiforcecompany/yetiforcecrm,CVE-2021-4111,Business Logic Errors,Dec 14th 2021
+yeswiki/yeswiki,,Cross-site Scripting (XSS) - Reflected,Dec 14th 2021
+gnuboard/gnuboard5,CVE-2021-3831,Cross-site Scripting (XSS) - Reflected,Dec 14th 2021
+mruby/mruby,CVE-2021-4110,NULL Pointer Dereference,Dec 14th 2021
+hdinnovations/unit3d-community-edition,,Cross-Site Request Forgery (CSRF),Dec 14th 2021
+convos-chat/convos,,Cross-Site Request Forgery (CSRF),Dec 14th 2021
+splitbrain/dokuwiki,,Cross-Site Request Forgery (CSRF),Dec 14th 2021
+snipe/snipe-it,CVE-2021-4108,Cross-site Scripting (XSS) - Stored,Dec 14th 2021
+dotcms/core,,Server-Side Request Forgery (SSRF),Dec 14th 2021
+yetiforcecompany/yetiforcecrm,CVE-2021-4107,Cross-site Scripting (XSS) - Reflected,Dec 13th 2021
+admidio/admidio,,Session Fixation,Dec 13th 2021
+splitbrain/dokuwiki,,Cross-Site Request Forgery (CSRF),Dec 12th 2021
+openwhyd/openwhyd,CVE-2021-3837,Improper Authorization,Dec 12th 2021
+vanessa219/vditor,CVE-2021-4103,Cross-site Scripting (XSS) - Stored,Dec 12th 2021
+tsolucio/corebos,,Cross-site Scripting (XSS) - Stored,Dec 12th 2021
+openwhyd/openwhyd,,Cross-site Scripting (XSS) - Stored,Dec 11th 2021
+yeswiki/yeswiki,,Cross-Site Request Forgery (CSRF),Dec 11th 2021
+phpservermon/phpservermon,CVE-2021-4097,CRLF Injection,Dec 11th 2021
+yetiforcecompany/yetiforcecrm,CVE-2021-4092,Cross-Site Request Forgery (CSRF),Dec 10th 2021
+gunet/openeclass,,Cross-Site Request Forgery (CSRF),Dec 10th 2021
+openwhyd/openwhyd,CVE-2021-3829,Open Redirect,Dec 10th 2021
+snipe/snipe-it,CVE-2021-4089,Improper Access Control,Dec 10th 2021
+kunstmaan/kunstmaanbundlescms,,Cross-Site Request Forgery (CSRF),Dec 9th 2021
+pimcore/pimcore,CVE-2021-4084,Cross-site Scripting (XSS) - Stored,Dec 9th 2021
+patrowl/patrowlmanager,,Cross-site Scripting (XSS) - Stored,Dec 9th 2021
+pimcore/pimcore,CVE-2021-4082,Cross-Site Request Forgery (CSRF),Dec 9th 2021
+pimcore/pimcore,CVE-2021-4081,Cross-site Scripting (XSS) - Reflected,Dec 9th 2021
+uiwjs/react-md-editor,,Cross-site Scripting (XSS) - Generic,Dec 9th 2021
+getgrav/grav,,Sensitive Cookie in HTTPS Session Without 'Secure' Attribute,Dec 9th 2021
+splitbrain/dokuwiki,,Cross-Site Request Forgery (CSRF),Dec 8th 2021
+crater-invoice/crater,CVE-2021-4080,Unrestricted Upload of File with Dangerous Type,Dec 8th 2021
+nltk/nltk,CVE-2021-3842,Inefficient Regular Expression Complexity,Dec 8th 2021
+gnuboard/gnuboard5,,Open Redirect,Dec 8th 2021
+tsolucio/corebos,,Cross-site Scripting (XSS) - Reflected,Dec 7th 2021
+croatiacontrolltd/asterix,,Heap-based Buffer Overflow,Dec 7th 2021
+snipe/snipe-it,CVE-2021-4075,Server-Side Request Forgery (SSRF),Dec 7th 2021
+admidio/admidio,CVE-2021-43810,Cross-site Scripting (XSS) - Reflected,Dec 7th 2021
+babybuddy/babybuddy,,Cross-Site Request Forgery (CSRF),Dec 6th 2021
+elgg/elgg,CVE-2021-4072,Cross-site Scripting (XSS) - Stored,Dec 6th 2021
+crater-invoice/crater,,PHP Remote File Inclusion,Dec 6th 2021
+v2fly/v2ray-core,CVE-2021-4070,Off-by-one Error,Dec 6th 2021
+tsolucio/corebos,,Cross-site Scripting (XSS) - Stored,Dec 6th 2021
+vim/vim,CVE-2021-4069,Use After Free,Dec 5th 2021
+frontaccountingerp/fa,,Sensitive Cookie in HTTPS Session Without 'Secure' Attribute,Dec 5th 2021
+tsolucio/corebos,,Cross-site Scripting (XSS) - Stored,Dec 4th 2021
+tsolucio/corebos,,Cross-Site Request Forgery (CSRF),Dec 4th 2021
+fcambus/logswan,,Use After Free,Dec 4th 2021
+livehelperchat/livehelperchat,CVE-2021-4050,Cross-site Scripting (XSS) - Stored,Dec 3rd 2021
+livehelperchat/livehelperchat,CVE-2021-4049,Cross-Site Request Forgery (CSRF),Dec 3rd 2021
+pimcore/demo,,Business Logic Errors,Dec 2nd 2021
+fabiocaccamo/utils.js,CVE-2021-3815,Prototype Pollution,Dec 2nd 2021
+evereux/flicket,,Cross-site Scripting (XSS) - Stored,Dec 1st 2021
+zikula/core,,Cross-site Scripting (XSS) - Stored,Dec 1st 2021
+zikula/core,,Cross-site Scripting (XSS) - Generic,Dec 1st 2021
+zikula/core,,Cross-site Scripting (XSS) - Reflected,Dec 1st 2021
+hdinnovations/unit3d-community-edition,,Cross-Site Request Forgery (CSRF),Nov 30th 2021
+allinurl/goaccess,,Heap-based Buffer Overflow,Nov 30th 2021
+kevinpapst/kimai2,CVE-2021-4033,Cross-Site Request Forgery (CSRF),Nov 30th 2021
+wbce/wbce_cms,CVE-2021-3817,SQL Injection,Nov 29th 2021
+krayin/laravel-crm,,Cross-site Scripting (XSS) - Stored,Nov 29th 2021
+cacti/cacti,,SQL Injection,Nov 29th 2021
+bookstackapp/bookstack,CVE-2021-4026,Improper Access Control,Nov 29th 2021
+tsolucio/corebos,,Cross-site Scripting (XSS) - Stored,Nov 28th 2021
+meetecho/janus-gateway,CVE-2021-4020,Cross-site Scripting (XSS) - Stored,Nov 25th 2021
+vim/vim,CVE-2021-4019,Heap-based Buffer Overflow,Nov 25th 2021
+snipe/snipe-it,CVE-2021-4018,Cross-site Scripting (XSS) - Stored,Nov 25th 2021
+star7th/showdoc,CVE-2021-4017,Cross-Site Request Forgery (CSRF),Nov 25th 2021
+allinurl/goaccess,,Heap-based Buffer Overflow,Nov 25th 2021
+amirsanni/mini-inventory-and-sales-management-system,,Observable Response Discrepancy,Nov 24th 2021
+amirsanni/mini-inventory-and-sales-management-system,,Cross-Site Request Forgery (CSRF),Nov 24th 2021
+firefly-iii/firefly-iii,CVE-2021-4015,Cross-Site Request Forgery (CSRF),Nov 24th 2021
+chatwoot/chatwoot,,Omission of Security-relevant Information,Nov 23rd 2021
+firefly-iii/firefly-iii,CVE-2021-4005,Cross-Site Request Forgery (CSRF),Nov 23rd 2021
+star7th/showdoc,CVE-2021-4000,Open Redirect,Nov 22nd 2021
+django-helpdesk/django-helpdesk,CVE-2021-3994,Cross-site Scripting (XSS) - Stored,Nov 22nd 2021
+collectiveaccess/providence,,Open Redirect,Nov 22nd 2021
+star7th/showdoc,CVE-2021-3993,Cross-Site Request Forgery (CSRF),Nov 22nd 2021
+tsolucio/corebos,,Out-of-bounds Write,Nov 22nd 2021
+kevinpapst/kimai2,CVE-2021-3992,Improper Access Control,Nov 21st 2021
+kunstmaan/kunstmaanbundlescms,,Cross-site Scripting (XSS) - Stored,Nov 21st 2021
+kunstmaan/kunstmaanbundlescms,,Cross-site Scripting (XSS) - Reflected,Nov 21st 2021
+collectiveaccess/providence,,Open Redirect,Nov 21st 2021
+dolibarr/dolibarr,CVE-2021-3991,Improper Authorization,Nov 20th 2021
+star7th/showdoc,CVE-2021-3990,Use of Cryptographically Weak Pseudo-Random Number Generator (PRNG),Nov 20th 2021
+star7th/showdoc,CVE-2021-3989,Open Redirect,Nov 20th 2021
+janeczku/calibre-web,CVE-2021-3988,Cross-site Scripting (XSS) - DOM,Nov 20th 2021
+janeczku/calibre-web,CVE-2021-3987,Improper Access Control,Nov 20th 2021
+janeczku/calibre-web,CVE-2021-3986,Generation of Error Message Containing Sensitive Information,Nov 20th 2021
+kevinpapst/kimai2,CVE-2021-3985,Cross-site Scripting (XSS) - Stored,Nov 20th 2021
+vim/vim,CVE-2021-3984,Heap-based Buffer Overflow,Nov 20th 2021
+kevinpapst/kimai2,CVE-2021-3983,Cross-site Scripting (XSS) - Stored,Nov 20th 2021
+elgg/elgg,CVE-2021-3980,Exposure of Private Personal Information to an Unauthorized Actor,Nov 19th 2021
+invoiceninja/invoiceninja,CVE-2021-3977,Cross-site Scripting (XSS) - Stored,Nov 19th 2021
+kevinpapst/kimai2,CVE-2021-3976,Cross-Site Request Forgery (CSRF),Nov 18th 2021
+vim/vim,CVE-2021-3974,Use After Free,Nov 18th 2021
+vim/vim,CVE-2021-3973,Heap-based Buffer Overflow,Nov 18th 2021
+vim/vim,CVE-2021-3968,Heap-based Buffer Overflow,Nov 18th 2021
+leantime/leantime,,Cross-site Scripting (XSS) - Stored,Nov 17th 2021
+hdinnovations/unit3d-community-edition,,Improper Authorization,Nov 17th 2021
+pterodactyl/panel,,Cross-Site Request Forgery (CSRF),Nov 17th 2021
+welliamcao/opsmanage,,Path Traversal,Nov 17th 2021
+hdinnovations/unit3d-community-edition,,Cross-Site Request Forgery (CSRF),Nov 17th 2021
+jitsi/jicofo,,Relative Path Traversal,Nov 17th 2021
+chatwoot/chatwoot,,Origin Validation Error,Nov 17th 2021
+elgg/elgg,CVE-2021-3964,Authorization Bypass Through User-Controlled Key,Nov 16th 2021
+kevinpapst/kimai2,CVE-2021-3963,Cross-Site Request Forgery (CSRF),Nov 16th 2021
+hdinnovations/unit3d-community-edition,,Cross-Site Request Forgery (CSRF),Nov 16th 2021
+snipe/snipe-it,CVE-2021-3961,Cross-site Scripting (XSS) - Stored,Nov 16th 2021
+hdinnovations/unit3d-community-edition,,Cross-Site Request Forgery (CSRF),Nov 16th 2021
+hdinnovations/unit3d-community-edition,,Cross-Site Request Forgery (CSRF),Nov 16th 2021
+hdinnovations/unit3d-community-edition,,Cross-Site Request Forgery (CSRF),Nov 15th 2021
+eventum/eventum,,Cross-site Scripting (XSS) - Stored,Nov 15th 2021
+kevinpapst/kimai2,CVE-2021-3957,Cross-Site Request Forgery (CSRF),Nov 15th 2021
+django-helpdesk/django-helpdesk,CVE-2021-3950,Cross-site Scripting (XSS) - Stored,Nov 13th 2021
+rhizome-conifer/conifer,,Path Traversal,Nov 12th 2021
+django-helpdesk/django-helpdesk,CVE-2021-3945,Cross-site Scripting (XSS) - Stored,Nov 11th 2021
+misp/misp-maltego,,Relative Path Traversal,Nov 11th 2021
+bookstackapp/bookstack,CVE-2021-3944,Cross-Site Request Forgery (CSRF),Nov 11th 2021
+cortezaproject/corteza-server,,Insufficient Session Expiration,Nov 10th 2021
+galette/galette,,Cross-Site Request Forgery (CSRF),Nov 10th 2021
+eventum/eventum,,Cross-site Scripting (XSS) - Stored,Nov 10th 2021
+eventum/eventum,,SQL Injection,Nov 10th 2021
+galette/galette,,SQL Injection,Nov 10th 2021
+patrowl/patrowlmanager,,Cross-site Scripting (XSS) - Stored,Nov 9th 2021
+bookstackapp/bookstack,,Cross-Site Request Forgery (CSRF),Nov 9th 2021
+galette/galette,,Cross-site Scripting (XSS) - Stored,Nov 9th 2021
+galette/galette,,Cross-Site Request Forgery (CSRF),Nov 9th 2021
+snipe/snipe-it,CVE-2021-3938,Cross-site Scripting (XSS) - Generic,Nov 9th 2021
+snipe/snipe-it,,Cross-Site Request Forgery (CSRF),Nov 9th 2021
+ohmyzsh/ohmyzsh,CVE-2021-3934,OS Command Injection,Nov 8th 2021
+baijunyao/laravel-bjyblog,,Cross-Site Request Forgery (CSRF),Nov 8th 2021
+cortezaproject/corteza-server,,Improper Privilege Management,Nov 8th 2021
+archerysec/archerysec,,Cross-site Scripting (XSS) - Stored,Nov 8th 2021
+tsolucio/corebos,,Code Injection,Nov 7th 2021
+hoene/libmysofa,,Heap-based Buffer Overflow,Nov 7th 2021
+zyantific/zydis,,Heap-based Buffer Overflow,Nov 7th 2021
+area17/twill,CVE-2021-3932,Cross-Site Request Forgery (CSRF),Nov 6th 2021
+sebastienheyd/boilerplate-media-manager,,Unrestricted Upload of File with Dangerous Type,Nov 6th 2021
+snipe/snipe-it,CVE-2021-3931,Cross-Site Request Forgery (CSRF),Nov 6th 2021
+tsolucio/corebos,,Cross-site Scripting (XSS) - Stored,Nov 5th 2021
+marcoax/magutticms,,Unrestricted Upload of File with Dangerous Type,Nov 5th 2021
+cortezaproject/corteza-server,,Denial of Service,Nov 5th 2021
+cortezaproject/corteza-webapp-workflow,,Cross-site Scripting (XSS) - Stored,Nov 5th 2021
+vim/vim,CVE-2021-3928,Use of Uninitialized Variable,Nov 4th 2021
+vim/vim,CVE-2021-3927,Heap-based Buffer Overflow,Nov 4th 2021
+getgrav/grav,CVE-2021-3924,Path Traversal,Nov 3rd 2021
+firefly-iii/firefly-iii,CVE-2021-3921,Cross-Site Request Forgery (CSRF),Nov 3rd 2021
+getgrav/grav-plugin-admin,CVE-2021-3920,Cross-site Scripting (XSS) - Stored,Nov 3rd 2021
+kriszyp/json-schema,CVE-2021-3918,Prototype Pollution,Nov 2nd 2021
+bookstackapp/bookstack,CVE-2021-3916,Path Traversal,Nov 1st 2021
+tsolucio/corebos,,Cross-site Scripting (XSS) - Reflected,Nov 1st 2021
+tsolucio/corebos,,Cross-Site Request Forgery (CSRF),Nov 1st 2021
+tsolucio/corebos,,PHP Remote File Inclusion,Nov 1st 2021
+tsolucio/corebos,,Cross-site Scripting (XSS) - Reflected,Nov 1st 2021
+filebrowser/filebrowser,,Improper Input Validation,Nov 1st 2021
+tsolucio/corebos,,Cross-Site Request Forgery (CSRF),Oct 31st 2021
+tsolucio/corebos,,Session Fixation,Oct 31st 2021
+tsolucio/corebos,,Authorization Bypass Through User-Controlled Key,Oct 31st 2021
+tsolucio/corebos,,Cross-Site Request Forgery (CSRF),Oct 31st 2021
+bookstackapp/bookstack,CVE-2021-3915,Unrestricted Upload of File with Dangerous Type,Oct 30th 2021
+openpetra/openpetra,,Cross-site Scripting (XSS) - Stored,Oct 30th 2021
+cortezaproject/corteza-server,,Weak Password Requirements,Oct 30th 2021
+pimcore/pimcore,,Cross-site Scripting (XSS) - Stored,Oct 29th 2021
+zmister2016/mrdoc,,Unverified Password Change,Oct 29th 2021
+microweber/microweber,,Improper Validation of Integrity Check Value,Oct 28th 2021
+microweber/microweber,,Cross-Site Request Forgery (CSRF),Oct 28th 2021
+thedevdojo/wave,,Insufficient Granularity of Access Control,Oct 28th 2021
+zmister2016/mrdoc,,Server-Side Request Forgery (SSRF),Oct 28th 2021
+kasuganosoras/pigeon,,Session Fixation,Oct 28th 2021
+zmister2016/mrdoc,,Use of Cryptographically Weak Pseudo-Random Number Generator (PRNG),Oct 27th 2021
+collectiveaccess/pawtucket2,,Improper Authorization,Oct 27th 2021
+simplcommerce/simplcommerce,,Business Logic Errors,Oct 27th 2021
+collectiveaccess/providence,,Cross-Site Request Forgery (CSRF),Oct 27th 2021
+collectiveaccess/providence,,Cross-site Scripting (XSS) - Reflected,Oct 27th 2021
+bookstackapp/bookstack,CVE-2021-3906,Unrestricted Upload of File with Dangerous Type,Oct 26th 2021
+shopware/shopware,,Cross-site Scripting (XSS) - Stored,Oct 26th 2021
+hzxie/voj,,Cross-Site Request Forgery (CSRF),Oct 26th 2021
+getgrav/grav,CVE-2021-3904,Cross-site Scripting (XSS) - Stored,Oct 26th 2021
+vim/vim,CVE-2021-3903,Heap-based Buffer Overflow,Oct 25th 2021
+dolibarr/dolibarr,,Improper Handling of Insufficient Privileges,Oct 25th 2021
+kasuganosoras/pigeon,,Sensitive Cookie Without 'HttpOnly' Flag,Oct 25th 2021
+dolibarr/dolibarr,,Improper Privilege Management,Oct 25th 2021
+dolibarr/dolibarr,,Improper Privilege Management,Oct 25th 2021
+kevinpapst/kimai2,,Cross-Site Request Forgery (CSRF),Oct 25th 2021
+yuda-lyu/w-zip,CVE-2022-0401,Path Traversal,Oct 25th 2021
+namelessmc/nameless,,Cross-Site Request Forgery (CSRF),Oct 25th 2021
+namelessmc/nameless,,Sensitive Cookie Without 'HttpOnly' Flag,Oct 25th 2021
+pimcore/pimcore,,Unrestricted Upload of File with Dangerous Type,Oct 25th 2021
+microweber/microweber,,Business Logic Errors,Oct 25th 2021
+microweber/microweber,,Cross-Site Request Forgery (CSRF),Oct 25th 2021
+appendium/flatpack,,Improper Restriction of XML External Entity Reference,Oct 25th 2021
+blogifierdotnet/blogifier,,Open Redirect,Oct 25th 2021
+firefly-iii/firefly-iii,,Authentication Bypass by Primary Weakness,Oct 24th 2021
+zmister2016/mrdoc,,Unrestricted Upload of File with Dangerous Type,Oct 24th 2021
+firefly-iii/firefly-iii,CVE-2021-3901,Cross-Site Request Forgery (CSRF),Oct 24th 2021
+pterodactyl/panel,,Cross-Site Request Forgery (CSRF),Oct 24th 2021
+boxbilling/boxbilling,,Cross-site Scripting (XSS) - Stored,Oct 24th 2021
+flatpressblog/flatpress,,Sensitive Cookie in HTTPS Session Without 'Secure' Attribute,Oct 24th 2021
+publify/publify,,Insufficient Granularity of Access Control,Oct 23rd 2021
+publify/publify,,Improper Authorization,Oct 23rd 2021
+firefly-iii/firefly-iii,CVE-2021-3900,Cross-Site Request Forgery (CSRF),Oct 23rd 2021
+zmister2016/mrdoc,,Cross-site Scripting (XSS) - Stored,Oct 23rd 2021
+zyantific/zydis,,Heap-based Buffer Overflow,Oct 22nd 2021
+microweber/microweber,,Improper Restriction of Power Consumption,Oct 22nd 2021
+microweber/microweber,,Session Fixation,Oct 22nd 2021
+gunet/openeclass,,Session Fixation,Oct 22nd 2021
+pimcore/pimcore,,Server-Side Request Forgery (SSRF),Oct 22nd 2021
+attendize/attendize,,Cross-Site Request Forgery (CSRF),Oct 22nd 2021
+attendize/attendize,,Insufficient Granularity of Access Control,Oct 22nd 2021
+clean-css/clean-css,,Inefficient Regular Expression Complexity,Oct 21st 2021
+rmuif/web,,Cross-site Scripting (XSS) - Stored,Oct 21st 2021
+admidio/admidio,,Cross-site Scripting (XSS) - Reflected,Oct 21st 2021
+admidio/admidio,,Session Fixation,Oct 21st 2021
+erxes/erxes,,Inefficient Regular Expression Complexity,Oct 21st 2021
+ampache/ampache,,SQL Injection,Oct 20th 2021
+pimcore/demo,,Cross-Site Request Forgery (CSRF),Oct 20th 2021
+pixelfed/pixelfed,,Insufficient Granularity of Access Control,Oct 20th 2021
+yeswiki/yeswiki,,SQL Injection,Oct 20th 2021
+opensourcepos/opensourcepos,,Cross-site Scripting (XSS) - Stored,Oct 20th 2021
+squell/id3,,Buffer Access with Incorrect Length Value,Oct 20th 2021
+fisharebest/webtrees,,Improper Restriction of Rendered UI Layers or Frames,Oct 19th 2021
+phili67/ecclesiacrm,,SQL Injection,Oct 19th 2021
+kunstmaan/kunstmaanbundlescms,,Cross-Site Request Forgery (CSRF),Oct 19th 2021
+admidio/admidio,,Cross-site Scripting (XSS) - Reflected,Oct 19th 2021
+msaari/relevanssi,,Cross-site Scripting (XSS) - Stored,Oct 19th 2021
+cfinke/typo.js,,Inefficient Regular Expression Complexity,Oct 19th 2021
+pkp/pkp-lib,,Cross-Site Request Forgery (CSRF),Oct 19th 2021
+pkp/ojs,,Cross-Site Request Forgery (CSRF),Oct 19th 2021
+ikus060/rdiffweb,,Cross-Site Request Forgery (CSRF),Oct 19th 2021
+ikus060/rdiffweb,,Cross-Site Request Forgery (CSRF),Oct 19th 2021
+chevereto/chevereto-free,,Improper Restriction of Rendered UI Layers or Frames,Oct 19th 2021
+stylelint/stylelint,,Inefficient Regular Expression Complexity,Oct 19th 2021
+hoene/libmysofa,,Heap-based Buffer Overflow,Oct 19th 2021
+atmosphere/atmosphere,,Improper Restriction of XML External Entity Reference,Oct 18th 2021
+openwhyd/openwhyd,,Open Redirect,Oct 18th 2021
+openwhyd/openwhyd,,Cross-site Scripting (XSS) - Stored,Oct 18th 2021
+ikus060/rdiffweb,,Cross-Site Request Forgery (CSRF),Oct 18th 2021
+ikus060/rdiffweb,,Cross-Site Request Forgery (CSRF),Oct 18th 2021
+sjord/checkmate,,Classic Buffer Overflow,Oct 18th 2021
+bytebase/bytebase,,Cross-Site Request Forgery (CSRF),Oct 18th 2021
+admidio/admidio,,Cross-site Scripting (XSS) - Reflected,Oct 18th 2021
+tsolucio/corebos,,Cross-site Scripting (XSS) - Generic,Oct 18th 2021
+tsolucio/corebos,,Cross-site Scripting (XSS) - Stored,Oct 18th 2021
+admidio/admidio,,Cross-site Scripting (XSS) - Stored,Oct 18th 2021
+admidio/admidio,,Cross-site Scripting (XSS) - Reflected,Oct 18th 2021
+mruby/mruby,,NULL Pointer Dereference,Oct 17th 2021
+timetoogo/ff-proxy,,Heap-based Buffer Overflow,Oct 17th 2021
+thorsten/phpmyfaq,,Cross-site Scripting (XSS) - Stored,Oct 17th 2021
+thorsten/phpmyfaq,,Sensitive Cookie in HTTPS Session Without 'Secure' Attribute,Oct 17th 2021
+admidio/admidio,,Improper Restriction of Rendered UI Layers or Frames,Oct 17th 2021
+robotichead/nearbeach,,The UI Performs the Wrong Action,Oct 17th 2021
+mruby/mruby,,NULL Pointer Dereference,Oct 17th 2021
+idno/known,,Use of a Broken or Risky Cryptographic Algorithm,Oct 16th 2021
+siwapp/siwapp,,Cross-site Scripting (XSS) - Stored,Oct 16th 2021
+hoene/libmysofa,,Heap-based Buffer Overflow,Oct 16th 2021
+pkp/omp,,Cross-Site Request Forgery (CSRF),Oct 16th 2021
+craigk5n/webcalendar,,Sensitive Cookie Without 'HttpOnly' Flag,Oct 16th 2021
+craigk5n/webcalendar,,Sensitive Cookie in HTTPS Session Without 'Secure' Attribute,Oct 15th 2021
+leantime/leantime,,Cross-site Scripting (XSS) - Stored,Oct 15th 2021
+yiminghe/async-validator,,Inefficient Regular Expression Complexity,Oct 15th 2021
+siwapp/siwapp,,Sensitive Cookie in HTTPS Session Without 'Secure' Attribute,Oct 15th 2021
+admidio/admidio,,Cross-site Scripting (XSS) - Stored,Oct 15th 2021
+ampache/ampache,,Cross-site Scripting (XSS) - Stored,Oct 15th 2021
+namelessmc/nameless,,Improper Restriction of Rendered UI Layers or Frames,Oct 15th 2021
+kasuganosoras/pigeon,,Cross-site Scripting (XSS) - Reflected,Oct 15th 2021
+mariotti94/webrisc-v,,Cross-site Scripting (XSS) - Reflected,Oct 15th 2021
+craigk5n/webcalendar,,Improper Restriction of Rendered UI Layers or Frames,Oct 15th 2021
+craigk5n/webcalendar,,Cross-site Scripting (XSS) - Reflected,Oct 15th 2021
+craigk5n/webcalendar,,Cross-site Scripting (XSS) - Stored,Oct 14th 2021
+bytebase/bytebase,,Session Fixation,Oct 14th 2021
+craigk5n/webcalendar,,Type Confusion,Oct 14th 2021
+flatcore/flatcore-cms,,SQL Injection,Oct 14th 2021
+flatcore/flatcore-cms,,Insufficient Session Expiration,Oct 14th 2021
+flatcore/flatcore-cms,CVE-2021-3745,Unrestricted Upload of File with Dangerous Type,Oct 14th 2021
+forkcms/forkcms,,Cross-site Scripting (XSS) - Reflected,Oct 14th 2021
+kunstmaan/kunstmaanbundlescms,,Cross-Site Request Forgery (CSRF),Oct 14th 2021
+flatcore/flatcore-cms,,Code Injection,Oct 14th 2021
+flatcore/flatcore-cms,,Use of Wrong Operator in String Comparison,Oct 14th 2021
+ampache/ampache,,SQL Injection,Oct 14th 2021
+star7th/showdoc,,Authentication Bypass Using an Alternate Path or Channel,Oct 14th 2021
+namelessmc/nameless,,Cross-Site Request Forgery (CSRF),Oct 14th 2021
+craigk5n/webcalendar,,Cross-Site Request Forgery (CSRF),Oct 14th 2021
+flatcore/flatcore-cms,,Improper Restriction of Rendered UI Layers or Frames,Oct 13th 2021
+flatcore/flatcore-cms,,Cross-Site Request Forgery (CSRF),Oct 13th 2021
+flatcore/flatcore-cms,,Unrestricted Upload of File with Dangerous Type,Oct 13th 2021
+flatcore/flatcore-cms,,Code Injection,Oct 13th 2021
+dmpop/mejiro,,Cross-site Scripting (XSS) - Reflected,Oct 13th 2021
+star7th/showdoc,,Authentication Bypass Using an Alternate Path or Channel,Oct 13th 2021
+vuestorefront/vue-storefront,,Sensitive Cookie in HTTPS Session Without 'Secure' Attribute,Oct 13th 2021
+vuestorefront/vue-storefront,,Sensitive Cookie Without 'HttpOnly' Flag,Oct 13th 2021
+pkp/omp,,Cross-site Scripting (XSS) - Reflected,Oct 13th 2021
+bytebase/bytebase,,Improper Restriction of Rendered UI Layers or Frames,Oct 12th 2021
+cronvel/terminal-kit,,Inefficient Regular Expression Complexity,Oct 12th 2021
+chocobozzz/peertube,,Inefficient Regular Expression Complexity,Oct 12th 2021
+fisharebest/webtrees,,Unrestricted Upload of File with Dangerous Type,Oct 12th 2021
+bytebase/bytebase,,Sensitive Cookie in HTTPS Session Without 'Secure' Attribute,Oct 12th 2021
+dmpop/mejiro,,Cross-site Scripting (XSS) - Reflected,Oct 12th 2021
+dmpop/mejiro,,Unrestricted Upload of File with Dangerous Type,Oct 12th 2021
+dmpop/mejiro,,Path Traversal,Oct 12th 2021
+snipe/snipe-it,CVE-2021-3879,Cross-site Scripting (XSS) - Stored,Oct 12th 2021
+stanfordnlp/corenlp,CVE-2021-3878,Improper Restriction of XML External Entity Reference,Oct 12th 2021
+dbeaver/dbeaver,CVE-2021-3836,Improper Restriction of XML External Entity Reference,Oct 11th 2021
+bookstackapp/bookstack,,External Control of File Name or Path,Oct 11th 2021
+spiral-project/ihatemoney,,Sensitive Cookie in HTTPS Session Without 'Secure' Attribute,Oct 11th 2021
+spiral-project/ihatemoney,,Unimplemented or Unsupported Feature in UI,Oct 11th 2021
+khodakhah/nodcms,,Cleartext Transmission of Sensitive Information,Oct 11th 2021
+dmpop/mejiro,,Cross-site Scripting (XSS) - Stored,Oct 10th 2021
+hoene/libmysofa,,Heap-based Buffer Overflow,Oct 10th 2021
+publify/publify,,Cross-Site Request Forgery (CSRF),Oct 10th 2021
+publify/publify,,Use of Cache Containing Sensitive Information,Oct 10th 2021
+publify/publify,,Sensitive Cookie in HTTPS Session Without 'Secure' Attribute,Oct 10th 2021
+ledgersmb/ledgersmb,CVE-2021-3882,Sensitive Cookie in HTTPS Session Without 'Secure' Attribute,Oct 10th 2021
+hdinnovations/unit3d-community-edition,,Cross-Site Request Forgery (CSRF),Oct 9th 2021
+vim/vim,CVE-2021-3875,Heap-based Buffer Overflow,Oct 9th 2021
+admidio/admidio,,Cross-site Scripting (XSS) - Stored,Oct 9th 2021
+opensourcepos/opensourcepos,,Cross-Site Request Forgery (CSRF),Oct 9th 2021
+fisharebest/webtrees,,Cross-site Scripting (XSS) - Stored,Oct 9th 2021
+bookstackapp/bookstack,CVE-2021-3874,Path Traversal,Oct 9th 2021
+pkp/pkp-lib,,Cross-Site Request Forgery (CSRF),Oct 9th 2021
+snipe/snipe-it,,Insufficient Granularity of Access Control,Oct 9th 2021
+vim/vim,CVE-2021-3872,Heap-based Buffer Overflow,Oct 9th 2021
+bookstackapp/bookstack,,Use of Cache Containing Sensitive Information,Oct 8th 2021
+i-love-flamingo/flamingo-commerce,,Cross-Site Request Forgery (CSRF),Oct 8th 2021
+weseek/growi,CVE-2021-3852,Authorization Bypass Through User-Controlled Key,Oct 8th 2021
+mruby/mruby,,NULL Pointer Dereference,Oct 8th 2021
+pheditor/pheditor,,Session Fixation,Oct 8th 2021
+pheditor/pheditor,,Improper Restriction of Names for Files and Other Resources,Oct 8th 2021
+stanfordnlp/corenlp,CVE-2021-3869,Improper Restriction of XML External Entity Reference,Oct 8th 2021
+pkp/ojs,,Sensitive Cookie Without 'HttpOnly' Flag,Oct 8th 2021
+opensourcepos/opensourcepos,,Cross-Site Request Forgery (CSRF),Oct 7th 2021
+terkelg/prompts,,Inefficient Regular Expression Complexity,Oct 7th 2021
+kevinpapst/kimai2,,Sensitive Cookie in HTTPS Session Without 'Secure' Attribute,Oct 7th 2021
+rotheross/otobo,,Open Redirect,Oct 7th 2021
+flarum/core,,The UI Performs the Wrong Action,Oct 7th 2021
+netdisco/netdisco,,Improper Restriction of Rendered UI Layers or Frames,Oct 6th 2021
+pkp/pkp-lib,,Cross-Site Request Forgery (CSRF),Oct 6th 2021
+anonaddy/anonaddy,,Use of a Broken or Risky Cryptographic Algorithm,Oct 6th 2021
+snipe/snipe-it,CVE-2021-3863,Cross-site Scripting (XSS) - Generic,Oct 6th 2021
+erikdubbelboer/phpredisadmin,,Use of Wrong Operator in String Comparison,Oct 6th 2021
+chevereto/chevereto-free,,Server-Side Request Forgery (SSRF),Oct 6th 2021
+yeswiki/yeswiki,,Cross-site Scripting (XSS) - Reflected,Oct 5th 2021
+yeswiki/yeswiki,,SQL Injection,Oct 5th 2021
+yeswiki/yeswiki,,Use of Wrong Operator in String Comparison,Oct 5th 2021
+yeswiki/yeswiki,,Sensitive Cookie Without 'HttpOnly' Flag,Oct 5th 2021
+yeswiki/yeswiki,,Cross-site Scripting (XSS) - Stored,Oct 5th 2021
+livehelperchat/livehelperchat,,The UI Performs the Wrong Action,Oct 5th 2021
+snipe/snipe-it,CVE-2021-3858,Cross-Site Request Forgery (CSRF),Oct 5th 2021
+snipe/snipe-it,,The UI Performs the Wrong Action,Oct 5th 2021
+opensourcepos/opensourcepos,,Cross-Site Request Forgery (CSRF),Oct 5th 2021
+livehelperchat/livehelperchat,,Use of a Broken or Risky Cryptographic Algorithm,Oct 5th 2021
+collectiveaccess/pawtucket2,,Cross-Site Request Forgery (CSRF),Oct 4th 2021
+janeczku/calibre-web,,Cross-Site Request Forgery (CSRF),Oct 4th 2021
+zikula/core,,The UI Performs the Wrong Action,Oct 4th 2021
+zikula/core,,The UI Performs the Wrong Action,Oct 4th 2021
+collectiveaccess/pawtucket2,,Use of Cache Containing Sensitive Information,Oct 4th 2021
+collectiveaccess/pawtucket2,,Cross-Site Request Forgery (CSRF),Oct 4th 2021
+firefly-iii/firefly-iii,,Insufficient Granularity of Access Control,Oct 4th 2021
+hoene/libmysofa,CVE-2021-3756,Heap-based Buffer Overflow,Oct 3rd 2021
+qkqpttgf/onemanager-php,,Cross-Site Request Forgery (CSRF),Oct 3rd 2021
+qkqpttgf/onemanager-php,,Cross-Site Request Forgery (CSRF),Oct 3rd 2021
+qkqpttgf/onemanager-php,,Cross-Site Request Forgery (CSRF),Oct 3rd 2021
+qkqpttgf/onemanager-php,,Cross-Site Request Forgery (CSRF),Oct 3rd 2021
+pheditor/pheditor,,Session Fixation,Oct 3rd 2021
+pheditor/pheditor,,The UI Performs the Wrong Action,Oct 3rd 2021
+netdisco/netdisco,,Sensitive Cookie in HTTPS Session Without 'Secure' Attribute,Oct 3rd 2021
+qkqpttgf/onemanager-php,,Cross-Site Request Forgery (CSRF),Oct 3rd 2021
+fisharebest/webtrees,,Insufficient Granularity of Access Control,Oct 2nd 2021
+unclebob/fitnesse,,Cross-site Scripting (XSS) - Stored,Oct 2nd 2021
+froxlor/froxlor,,Use of a Broken or Risky Cryptographic Algorithm,Oct 2nd 2021
+khodakhah/nodcms,,Sensitive Cookie in HTTPS Session Without 'Secure' Attribute,Oct 2nd 2021
+khodakhah/nodcms,,Insufficient Granularity of Access Control,Oct 2nd 2021
+firefly-iii/firefly-iii,CVE-2021-3851,Open Redirect,Oct 2nd 2021
+sbrl/pepperminty-wiki,,Open Redirect,Oct 2nd 2021
+admidio/admidio,,Cross-site Scripting (XSS) - Stored,Oct 2nd 2021
+pheditor/pheditor,,Cross-site Scripting (XSS) - Reflected,Oct 2nd 2021
+pheditor/pheditor,,Path Traversal,Oct 2nd 2021
+pheditor/pheditor,,Cross-Site Request Forgery (CSRF),Oct 2nd 2021
+fisharebest/webtrees,,Open Redirect,Oct 1st 2021
+fisharebest/webtrees,,Cross-site Scripting (XSS) - Stored,Oct 1st 2021
+openfun/openedx-docker,,Sensitive Cookie in HTTPS Session Without 'Secure' Attribute,Oct 1st 2021
+collectiveaccess/pawtucket2,,Improper Access Control,Oct 1st 2021
+blair2004/nexopos-4x,,Exposure of Sensitive Information to an Unauthorized Actor,Oct 1st 2021
+firefly-iii/firefly-iii,CVE-2021-3846,Unrestricted Upload of File with Dangerous Type,Oct 1st 2021
+blair2004/nexopos-4x,,Improper Authorization,Oct 1st 2021
+blair2004/nexopos-4x,,Sensitive Cookie in HTTPS Session Without 'Secure' Attribute,Oct 1st 2021
+blair2004/nexopos-4x,,Exposure of Sensitive Information to an Unauthorized Actor,Oct 1st 2021
+collectiveaccess/pawtucket2,,Static Code Injection,Oct 1st 2021
+opensourcepos/opensourcepos,,Use of Wrong Operator in String Comparison,Oct 1st 2021
+collectiveaccess/pawtucket2,,Improper Access Control,Oct 1st 2021
+gwsw/less,,Stack-based Buffer Overflow,Oct 1st 2021
+osticket/osticket,,Server-Side Request Forgery (SSRF),Sep 30th 2021
+osticket/osticket,,Observable Response Discrepancy,Sep 30th 2021
+crankyoldgit/irremoteesp8266,,Inefficient Regular Expression Complexity,Sep 30th 2021
+collectiveaccess/providence,,Cross-site Scripting (XSS) - Reflected,Sep 30th 2021
+podcastgenerator/podcastgenerator,,Cross-site Scripting (XSS) - Reflected,Sep 29th 2021
+fisharebest/webtrees,,Open Redirect,Sep 29th 2021
+cortezaproject/corteza-server,,Unrestricted Upload of File with Dangerous Type,Sep 29th 2021
+opensourcepos/opensourcepos,,Cross-Site Request Forgery (CSRF),Sep 29th 2021
+opensourcepos/opensourcepos,,Cross-site Scripting (XSS) - Reflected,Sep 29th 2021
+kcal-app/kcal,,Authorization Bypass Through User-Controlled Key,Sep 28th 2021
+jonschoning/espial,,Weak Password Requirements,Sep 28th 2021
+jonschoning/espial,,Improper Restriction of Rendered UI Layers or Frames,Sep 28th 2021
+jonschoning/espial,,Sensitive Cookie in HTTPS Session Without 'Secure' Attribute,Sep 28th 2021
+trentm/python-markdown2,,Inefficient Regular Expression Complexity,Sep 28th 2021
+jonschoning/espial,,Cross-site Scripting (XSS) - Stored,Sep 28th 2021
+gotify/server,,Insertion of Sensitive Information into Log File,Sep 28th 2021
+kcal-app/kcal,,Exposure of Sensitive Information to an Unauthorized Actor,Sep 27th 2021
+aces/loris,,Improper Restriction of Rendered UI Layers or Frames,Sep 27th 2021
+collectiveaccess/providence,,The UI Performs the Wrong Action,Sep 27th 2021
+ethibox/stacks,,Exposure of Sensitive Information Due to Incompatible Policies,Sep 27th 2021
+kcal-app/kcal,,The UI Performs the Wrong Action,Sep 27th 2021
+filegator/filegator,,Sensitive Cookie Without 'HttpOnly' Flag,Sep 27th 2021
+filegator/filegator,,Sensitive Cookie in HTTPS Session Without 'Secure' Attribute,Sep 27th 2021
+filegator/filegator,,Improper Restriction of Rendered UI Layers or Frames,Sep 27th 2021
+validatorjs/validator.js,CVE-2021-3765,Inefficient Regular Expression Complexity,Sep 27th 2021
+kcal-app/kcal,,Sensitive Cookie in HTTPS Session Without 'Secure' Attribute,Sep 27th 2021
+jonschoning/espial,,Cross-site Scripting (XSS) - Stored,Sep 27th 2021
+kcal-app/kcal,,Weak Password Requirements,Sep 27th 2021
+kcal-app/kcal,,Improper Restriction of Rendered UI Layers or Frames,Sep 27th 2021
+agentejo/cockpit,,Session Fixation,Sep 26th 2021
+collectiveaccess/providence,,Cross-Site Request Forgery (CSRF),Sep 26th 2021
+mruby/mruby,,Heap-based Buffer Overflow,Sep 26th 2021
+jonschoning/espial,,Open Redirect,Sep 26th 2021
+amirsanni/mini-inventory-and-sales-management-system,,Session Fixation,Sep 26th 2021
+collectiveaccess/providence,,Code Injection,Sep 26th 2021
+collectiveaccess/providence,,Cross-Site Request Forgery (CSRF),Sep 26th 2021
+collectiveaccess/providence,,Server-Side Request Forgery (SSRF),Sep 25th 2021
+namelessmc/nameless,,Cross-Site Request Forgery (CSRF),Sep 25th 2021
+sbrl/pepperminty-wiki,,Cross-site Scripting (XSS) - Reflected,Sep 25th 2021
+alvations/sacremoses,,Inefficient Regular Expression Complexity,Sep 25th 2021
+mucommander/mucommander,,Path Traversal,Sep 25th 2021
+collectiveaccess/providence,,Cross-site Scripting (XSS) - Stored,Sep 25th 2021
+collectiveaccess/providence,,Cross-site Scripting (XSS) - Reflected,Sep 25th 2021
+collectiveaccess/providence,,Open Redirect,Sep 25th 2021
+nltk/nltk,CVE-2021-3828,Inefficient Regular Expression Complexity,Sep 25th 2021
+mruby/mruby,,NULL Pointer Dereference,Sep 24th 2021
+hdinnovations/unit3d-community-edition,,Cross-Site Request Forgery (CSRF),Sep 24th 2021
+hdinnovations/unit3d-community-edition,,Cross-Site Request Forgery (CSRF),Sep 24th 2021
+hdinnovations/unit3d-community-edition,,Cross-Site Request Forgery (CSRF),Sep 24th 2021
+hdinnovations/unit3d-community-edition,,Cross-Site Request Forgery (CSRF),Sep 24th 2021
+hdinnovations/unit3d-community-edition,,Cross-Site Request Forgery (CSRF),Sep 24th 2021
+pyload/pyload,,Inefficient Regular Expression Complexity,Sep 24th 2021
+hdinnovations/unit3d-community-edition,,Cross-Site Request Forgery (CSRF),Sep 24th 2021
+hdinnovations/unit3d-community-edition,,Cross-Site Request Forgery (CSRF),Sep 24th 2021
+mruby/mruby,,Heap-based Buffer Overflow,Sep 23rd 2021
+liriliri/licia,,Prototype Pollution,Sep 22nd 2021
+liriliri/licia,,Inefficient Regular Expression Complexity,Sep 22nd 2021
+osticket/osticket,,Improper Restriction of Rendered UI Layers or Frames,Sep 22nd 2021
+josdejong/jsoneditor,CVE-2021-3822,Inefficient Regular Expression Complexity,Sep 22nd 2021
+sbrl/pepperminty-wiki,,Unrestricted Upload of File with Dangerous Type,Sep 21st 2021
+sbrl/pepperminty-wiki,,Open Redirect,Sep 21st 2021
+sbrl/pepperminty-wiki,,Cross-site Scripting (XSS) - Reflected,Sep 21st 2021
+opendatacube/odc-tools,,Exposure of Sensitive Information to an Unauthorized Actor,Sep 21st 2021
+pksunkara/inflect,CVE-2021-3820,Inefficient Regular Expression Complexity,Sep 21st 2021
+zikula/core,,Insufficient Granularity of Access Control,Sep 20th 2021
+zhongshaofa/easyadmin,,Cross-site Scripting (XSS) - Stored,Sep 20th 2021
+firefly-iii/firefly-iii,CVE-2021-3819,Cross-Site Request Forgery (CSRF),Sep 20th 2021
+getgrav/grav,CVE-2021-3818,Reliance on Cookies without Validation and Integrity Checking,Sep 20th 2021
+validatorjs/validator.js,,Inefficient Regular Expression Complexity,Sep 20th 2021
+zikula-modules/content,,Cross-site Scripting (XSS) - Stored,Sep 20th 2021
+zikula/core,,Cross-site Scripting (XSS) - Stored,Sep 20th 2021
+zikula/core,,Open Redirect,Sep 20th 2021
+zikula-modules/content,,Cross-site Scripting (XSS) - Stored,Sep 20th 2021
+justingit/dada-mail,,Cross-Site Request Forgery (CSRF),Sep 20th 2021
+justingit/dada-mail,,Cross-Site Request Forgery (CSRF),Sep 20th 2021
+justingit/dada-mail,,Cross-Site Request Forgery (CSRF),Sep 20th 2021
+justingit/dada-mail,,Cross-Site Request Forgery (CSRF),Sep 20th 2021
+justingit/dada-mail,,Cross-Site Request Forgery (CSRF),Sep 20th 2021
+justingit/dada-mail,,Cross-Site Request Forgery (CSRF),Sep 20th 2021
+justingit/dada-mail,,Cross-Site Request Forgery (CSRF),Sep 20th 2021
+justingit/dada-mail,,Cross-Site Request Forgery (CSRF),Sep 20th 2021
+cujanovic/ssrf-testing,,Cross-site Scripting (XSS) - Reflected,Sep 19th 2021
+dolibarr/dolibarr,,Improper Handling of Insufficient Privileges,Sep 19th 2021
+dolibarr/dolibarr,,Improper Privilege Management,Sep 19th 2021
+dolibarr/dolibarr,,Improper Handling of Insufficient Privileges,Sep 19th 2021
+zikula-modules/mediamodule,,Cross-site Scripting (XSS) - Stored,Sep 19th 2021
+zikula/core,,Cross-site Scripting (XSS) - Reflected,Sep 19th 2021
+dolibarr/dolibarr,,Improper Privilege Management,Sep 19th 2021
+dolibarr/dolibarr,,Cross-Site Request Forgery (CSRF),Sep 19th 2021
+dolibarr/dolibarr,,Cross-Site Request Forgery (CSRF),Sep 19th 2021
+dolibarr/dolibarr,,Cross-Site Request Forgery (CSRF),Sep 19th 2021
+dolibarr/dolibarr,,Cross-Site Request Forgery (CSRF),Sep 19th 2021
+dolibarr/dolibarr,,Cross-Site Request Forgery (CSRF),Sep 19th 2021
+dolibarr/dolibarr,,Cross-Site Request Forgery (CSRF),Sep 19th 2021
+dolibarr/dolibarr,,Cross-Site Request Forgery (CSRF),Sep 19th 2021
+bfabiszewski/libmobi,CVE-2021-3889,Use of Out-of-range Pointer Offset,Sep 19th 2021
+bfabiszewski/libmobi,CVE-2021-3881,Out-of-bounds Read,Sep 19th 2021
+bfabiszewski/libmobi,CVE-2021-3888,Use of Out-of-range Pointer Offset,Sep 19th 2021
+dolibarr/dolibarr,,Cross-Site Request Forgery (CSRF),Sep 19th 2021
+dolibarr/dolibarr,,Cross-Site Request Forgery (CSRF),Sep 19th 2021
+zikula/core,,Cross-site Scripting (XSS) - Reflected,Sep 19th 2021
+dolibarr/dolibarr,,Cross-Site Request Forgery (CSRF),Sep 19th 2021
+dolibarr/dolibarr,,Cross-Site Request Forgery (CSRF),Sep 19th 2021
+dolibarr/dolibarr,,Cross-Site Request Forgery (CSRF),Sep 19th 2021
+dolibarr/dolibarr,,Cross-Site Request Forgery (CSRF),Sep 19th 2021
+dolibarr/dolibarr,,Cross-Site Request Forgery (CSRF),Sep 19th 2021
+dolibarr/dolibarr,,Cross-Site Request Forgery (CSRF),Sep 19th 2021
+dolibarr/dolibarr,,Cross-Site Request Forgery (CSRF),Sep 19th 2021
+alovoa/alovoa,,Session Fixation,Sep 18th 2021
+chatwoot/chatwoot,CVE-2021-3813,Improper Privilege Management,Sep 17th 2021
+zoujingli/thinkadmin,,Cross-site Scripting (XSS) - DOM,Sep 17th 2021
+zoujingli/thinkadmin,,Cross-site Scripting (XSS) - Stored,Sep 17th 2021
+zoujingli/thinkadmin,,Exposure of Sensitive Information Due to Incompatible Policies,Sep 17th 2021
+cdr/code-server,CVE-2021-3810,Inefficient Regular Expression Complexity,Sep 17th 2021
+area17/twill,,Cross-site Scripting (XSS) - Reflected,Sep 17th 2021
+khodakhah/nodcms,,The UI Performs the Wrong Action,Sep 17th 2021
+chalk/ansi-regex,CVE-2021-3807,Inefficient Regular Expression Complexity,Sep 17th 2021
+tildeclub/site,,Failure to Sanitize Special Elements into a Different Plane (Special Element Injection),Sep 16th 2021
+fisharebest/webtrees,,Insufficient Isolation of System-Dependent Functions,Sep 16th 2021
+mariocasciaro/object-path,CVE-2021-3805,Prototype Pollution,Sep 16th 2021
+nervjs/taro,CVE-2021-3804,Inefficient Regular Expression Complexity,Sep 16th 2021
+fisharebest/webtrees,,Cross-site Scripting (XSS) - Stored,Sep 16th 2021
+babybuddy/babybuddy,,Sensitive Cookie Without 'HttpOnly' Flag,Sep 15th 2021
+babybuddy/babybuddy,,The UI Performs the Wrong Action,Sep 15th 2021
+babybuddy/babybuddy,,Weak Password Recovery Mechanism for Forgotten Password,Sep 15th 2021
+jerrod-lankford/google-voice-desktop-app,,Code Injection,Sep 15th 2021
+babybuddy/babybuddy,,Sensitive Cookie in HTTPS Session Without 'Secure' Attribute,Sep 15th 2021
+fb55/nth-check,CVE-2021-3803,Inefficient Regular Expression Complexity,Sep 15th 2021
+zoujingli/thinkadmin,,External Control of File Name or Path,Sep 15th 2021
+zoujingli/thinkadmin,,Code Injection,Sep 15th 2021
+zoujingli/thinkadmin,,Cross-site Scripting (XSS) - Stored,Sep 15th 2021
+zhongshaofa/easyadmin,,Cross-Site Request Forgery (CSRF),Sep 15th 2021
+zhongshaofa/easyadmin,,Cross-Site Request Forgery (CSRF),Sep 15th 2021
+zhongshaofa/easyadmin,,Cross-Site Request Forgery (CSRF),Sep 15th 2021
+zhongshaofa/easyadmin,,Cross-Site Request Forgery (CSRF),Sep 15th 2021
+zhongshaofa/easyadmin,,Cross-Site Request Forgery (CSRF),Sep 15th 2021
+zhongshaofa/easyadmin,,Cross-Site Request Forgery (CSRF),Sep 15th 2021
+zhongshaofa/easyadmin,,Cross-Site Request Forgery (CSRF),Sep 15th 2021
+zoujingli/thinkadmin,,Cross-site Scripting (XSS) - Stored,Sep 15th 2021
+e107inc/e107,,Cross-Site Request Forgery (CSRF),Sep 15th 2021
+e107inc/e107,,Cross-Site Request Forgery (CSRF),Sep 15th 2021
+e107inc/e107,,Cross-Site Request Forgery (CSRF),Sep 15th 2021
+e107inc/e107,,Cross-Site Request Forgery (CSRF),Sep 15th 2021
+e107inc/e107,,Cross-Site Request Forgery (CSRF),Sep 15th 2021
+e107inc/e107,,Cross-Site Request Forgery (CSRF),Sep 15th 2021
+e107inc/e107,,Cross-Site Request Forgery (CSRF),Sep 15th 2021
+prismjs/prism,CVE-2021-3801,Inefficient Regular Expression Complexity,Sep 15th 2021
+wwbn/avideo,,Open Redirect,Sep 15th 2021
+zhongshaofa/easyadmin,,Cross-Site Request Forgery (CSRF),Sep 15th 2021
+microweber/microweber,,Cross-Site Request Forgery (CSRF),Sep 14th 2021
+zoujingli/thinkadmin,,Improper Restriction of Rendered UI Layers or Frames,Sep 14th 2021
+zoujingli/thinkadmin,,Cross-site Scripting (XSS) - Reflected,Sep 14th 2021
+zoujingli/thinkadmin,,Origin Validation Error,Sep 14th 2021
+getgrav/grav-plugin-admin,CVE-2021-3799,Improper Restriction of Rendered UI Layers or Frames,Sep 14th 2021
+bigprof-software/online-invoicing-system,,Cross-Site Request Forgery (CSRF),Sep 14th 2021
+bigprof-software/online-invoicing-system,,Cross-Site Request Forgery (CSRF),Sep 14th 2021
+bigprof-software/online-invoicing-system,,Cross-Site Request Forgery (CSRF),Sep 14th 2021
+bfabiszewski/libmobi,CVE-2021-3751,Out-of-bounds Write,Sep 13th 2021
+bigprof-software/online-rental-property-manager,,Cross-Site Request Forgery (CSRF),Sep 13th 2021
+bigprof-software/online-rental-property-manager,,Cross-Site Request Forgery (CSRF),Sep 13th 2021
+bigprof-software/online-rental-property-manager,,Cross-Site Request Forgery (CSRF),Sep 13th 2021
+bigprof-software/online-rental-property-manager,,Cross-Site Request Forgery (CSRF),Sep 13th 2021
+bigprof-software/online-rental-property-manager,,Cross-Site Request Forgery (CSRF),Sep 13th 2021
+microweber/microweber,,Cross-Site Request Forgery (CSRF),Sep 13th 2021
+microweber/microweber,,Improper Privilege Management,Sep 13th 2021
+bigprof-software/online-rental-property-manager,,Cross-Site Request Forgery (CSRF),Sep 13th 2021
+bigprof-software/online-rental-property-manager,,Cross-Site Request Forgery (CSRF),Sep 13th 2021
+bigprof-software/online-invoicing-system,,Improper Privilege Management,Sep 13th 2021
+bigprof-software/online-invoicing-system,,Cross-Site Request Forgery (CSRF),Sep 13th 2021
+bigprof-software/online-invoicing-system,,Cross-site Scripting (XSS) - Generic,Sep 13th 2021
+bigprof-software/online-invoicing-system,,Cross-site Scripting (XSS) - Generic,Sep 13th 2021
+bigprof-software/online-invoicing-system,,Cross-site Scripting (XSS) - Generic,Sep 13th 2021
+tildeclub/site,,Cross-site Scripting (XSS) - Reflected,Sep 13th 2021
+gregberge/xstyled,,Prototype Pollution,Sep 13th 2021
+jonschlinkert/set-value,CVE-2021-23435,Prototype Pollution,Sep 12th 2021
+th3-822/rapidleech,,Cross-site Scripting (XSS) - Reflected,Sep 12th 2021
+vim/vim,CVE-2021-3796,Use After Free,Sep 12th 2021
+pi-hole/adminlte,CVE-2021-3706,Sensitive Cookie Without 'HttpOnly' Flag,Sep 12th 2021
+sindresorhus/semver-regex,CVE-2021-3795,Inefficient Regular Expression Complexity,Sep 11th 2021
+jaywcjlove/colors-cli,,Inefficient Regular Expression Complexity,Sep 11th 2021
+vuelidate/vuelidate,CVE-2021-3794,Inefficient Regular Expression Complexity,Sep 11th 2021
+alanaktion/mchostpanel,,Improper Access Control,Sep 11th 2021
+erikdubbelboer/phpredisadmin,,Cross-site Scripting (XSS) - Reflected,Sep 10th 2021
+erikdubbelboer/phpredisadmin,,Improper Restriction of Rendered UI Layers or Frames,Sep 10th 2021
+erikdubbelboer/phpredisadmin,,Cross-Site Request Forgery (CSRF),Sep 10th 2021
+erikdubbelboer/phpredisadmin,,Cross-Site Request Forgery (CSRF),Sep 10th 2021
+alanaktion/phproject,,Cross-Site Request Forgery (CSRF),Sep 10th 2021
+alanaktion/phproject,,Cross-Site Request Forgery (CSRF),Sep 10th 2021
+alanaktion/phproject,,Cross-Site Request Forgery (CSRF),Sep 10th 2021
+hestiacp/hestiacp,CVE-2021-3797,Use of Wrong Operator in String Comparison,Sep 10th 2021
+btcpayserver/btcpayserver,,Cross-site Scripting (XSS) - Stored,Sep 10th 2021
+agentejo/cockpit,,External Control of File Name or Path,Sep 10th 2021
+agentejo/cockpit,,Improper Access Control,Sep 10th 2021
+microweber/microweber,,Cross-Site Request Forgery (CSRF),Sep 9th 2021
+alanaktion/mchostpanel,,Path Traversal,Sep 9th 2021
+yourls/yourls,CVE-2021-3785,Cross-site Scripting (XSS) - Stored,Sep 9th 2021
+universaloj/uoj-system,,Cross-site Scripting (XSS) - Reflected,Sep 9th 2021
+yourls/yourls,CVE-2021-3783,Cross-site Scripting (XSS) - Reflected,Sep 9th 2021
+hestiacp/hestiacp,,External Control of File Name or Path,Sep 9th 2021
+microweber/microweber,,Cross-Site Request Forgery (CSRF),Sep 9th 2021
+universaloj/uoj-system,,Cross-site Scripting (XSS) - Reflected,Sep 9th 2021
+microweber/microweber,,Cross-Site Request Forgery (CSRF),Sep 9th 2021
+microweber/microweber,,Cross-Site Request Forgery (CSRF),Sep 9th 2021
+microweber/microweber,,Business Logic Errors,Sep 9th 2021
+hestiacp/hestiacp,,Cross-site Scripting (XSS) - Reflected,Sep 9th 2021
+fisharebest/webtrees,,Observable Response Discrepancy,Sep 9th 2021
+engintron/engintron,,Cross-site Scripting (XSS) - Reflected,Sep 9th 2021
+viking04/merge,CVE-2021-3645,Prototype Pollution,Sep 8th 2021
+chocobozzz/peertube,CVE-2021-3780,Cross-site Scripting (XSS) - Stored,Sep 8th 2021
+lampnick/doctron,,Path Traversal,Sep 8th 2021
+btcpayserver/btcpayserver,CVE-2021-3646,Cross-site Scripting (XSS) - Reflected,Sep 8th 2021
+phoronix-test-suite/phoronix-test-suite,,Cross-site Scripting (XSS) - Reflected,Sep 8th 2021
+th3-822/rapidleech,,Cross-site Scripting (XSS) - Reflected,Sep 8th 2021
+mailcow/mailcow-dockerized,,Cross-site Scripting (XSS) - Reflected,Sep 8th 2021
+andrewpaglusch/flashpaper,,Cross-site Scripting (XSS) - Reflected,Sep 8th 2021
+forkcms/forkcms,,Cross-Site Request Forgery (CSRF),Sep 8th 2021
+vim/vim,CVE-2021-3778,Heap-based Buffer Overflow,Sep 8th 2021
+daaku/nodejs-tmpl,CVE-2021-3777,Inefficient Regular Expression Complexity,Sep 7th 2021
+pi-hole/adminlte,CVE-2021-3812,Cross-site Scripting (XSS) - Reflected,Sep 7th 2021
+pi-hole/adminlte,CVE-2021-3811,Cross-site Scripting (XSS) - Reflected,Sep 7th 2021
+clientio/joint,,Prototype Pollution,Sep 7th 2021
+star7th/showdoc,CVE-2021-3776,Cross-Site Request Forgery (CSRF),Sep 6th 2021
+star7th/showdoc,CVE-2021-3775,Cross-Site Request Forgery (CSRF),Sep 6th 2021
+neorazorx/facturascripts,,Cross-Site Request Forgery (CSRF),Sep 6th 2021
+neorazorx/facturascripts,,Cross-Site Request Forgery (CSRF),Sep 6th 2021
+neorazorx/facturascripts,,Cross-Site Request Forgery (CSRF),Sep 6th 2021
+neorazorx/facturascripts,,Cross-Site Request Forgery (CSRF),Sep 6th 2021
+neorazorx/facturascripts,,Cross-Site Request Forgery (CSRF),Sep 6th 2021
+neorazorx/facturascripts,,Cross-Site Request Forgery (CSRF),Sep 6th 2021
+neorazorx/facturascripts,,Cross-Site Request Forgery (CSRF),Sep 6th 2021
+btcpayserver/btcpayserver,,Cross-site Scripting (XSS) - Stored,Sep 6th 2021
+btcpayserver/btcpayserver,CVE-2021-3830,Cross-site Scripting (XSS) - Stored,Sep 6th 2021
+ampache/ampache,,Cross-Site Request Forgery (CSRF),Sep 6th 2021
+admidio/admidio,,Cross-Site Request Forgery (CSRF),Sep 6th 2021
+admidio/admidio,,Cross-Site Request Forgery (CSRF),Sep 6th 2021
+admidio/admidio,,Cross-Site Request Forgery (CSRF),Sep 6th 2021
+admidio/admidio,,Cross-Site Request Forgery (CSRF),Sep 6th 2021
+admidio/admidio,,Cross-Site Request Forgery (CSRF),Sep 6th 2021
+admidio/admidio,,Cross-Site Request Forgery (CSRF),Sep 6th 2021
+admidio/admidio,,Cross-Site Request Forgery (CSRF),Sep 6th 2021
+admidio/admidio,,Cross-Site Request Forgery (CSRF),Sep 6th 2021
+fisharebest/webtrees,,Use of GET Request Method With Sensitive Query Strings,Sep 6th 2021
+vim/vim,CVE-2021-3770,Heap-based Buffer Overflow,Sep 5th 2021
+amirsanni/mini-inventory-and-sales-management-system,,Improper Privilege Management,Sep 5th 2021
+amirsanni/mini-inventory-and-sales-management-system,,Improper Privilege Management,Sep 5th 2021
+amirsanni/mini-inventory-and-sales-management-system,,Execution with Unnecessary Privileges,Sep 5th 2021
+apolloconfig/apollo,,Weak Password Requirements,Sep 5th 2021
+svenstaro/miniserve,,Path Traversal,Sep 5th 2021
+bookstackapp/bookstack,CVE-2021-3768,Cross-site Scripting (XSS) - Stored,Sep 4th 2021
+bookstackapp/bookstack,CVE-2021-3767,Cross-site Scripting (XSS) - Stored,Sep 4th 2021
+imran300/inventory,,Cross-site Scripting (XSS) - Stored,Sep 4th 2021
+imran300/inventory,,Cross-Site Request Forgery (CSRF),Sep 4th 2021
+imran300/inventory,,Cross-Site Request Forgery (CSRF),Sep 4th 2021
+imran300/inventory,,Cross-Site Request Forgery (CSRF),Sep 4th 2021
+imran300/inventory,,Improper Authorization,Sep 4th 2021
+imran300/inventory,,Improper Authorization,Sep 4th 2021
+imran300/inventory,,Improper Authorization,Sep 4th 2021
+imran300/inventory,,Improper Authorization,Sep 4th 2021
+myvesta/vesta,,Cross-Site Request Forgery (CSRF),Sep 4th 2021
+myvesta/vesta,,Cross-Site Request Forgery (CSRF),Sep 4th 2021
+myvesta/vesta,,Cross-Site Request Forgery (CSRF),Sep 4th 2021
+myvesta/vesta,,Cross-Site Request Forgery (CSRF),Sep 4th 2021
+myvesta/vesta,,Cross-Site Request Forgery (CSRF),Sep 4th 2021
+vincit/objection.js,CVE-2021-3766,Prototype Pollution,Sep 4th 2021
+ramda/ramda,,Inefficient Regular Expression Complexity,Sep 4th 2021
+poowf/invoiceneko,,Cross-site Scripting (XSS) - Stored,Sep 4th 2021
+apidoc/apidoc-core,,Inefficient Regular Expression Complexity,Sep 4th 2021
+imran300/inventory,,Cross-site Scripting (XSS) - Stored,Sep 3rd 2021
+zmister2016/mrdoc,,Cross-site Scripting (XSS) - Stored,Sep 3rd 2021
+zmister2016/mrdoc,,Cross-site Scripting (XSS) - Stored,Sep 3rd 2021
+zmister2016/mrdoc,CVE-2021-32568,Deserialization of Untrusted Data,Sep 3rd 2021
+pimcore/pimcore,,Observable Response Discrepancy,Sep 2nd 2021
+yogeshojha/rengine,,Path Traversal,Sep 2nd 2021
+forkcms/forkcms,,Cross-site Scripting (XSS) - DOM,Sep 2nd 2021
+slackero/phpwcms,,Forced Browsing,Sep 1st 2021
+slackero/phpwcms,,Forced Browsing,Sep 1st 2021
+slackero/phpwcms,,Session Fixation,Sep 1st 2021
+bookstackapp/bookstack,CVE-2021-3758,Server-Side Request Forgery (SSRF),Sep 1st 2021
+immerjs/immer,CVE-2021-3757,Prototype Pollution,Sep 1st 2021
+forkcms/forkcms,,Cross-site Scripting (XSS) - Reflected,Sep 1st 2021
+forkcms/forkcms,,Cross-site Scripting (XSS) - Reflected,Sep 1st 2021
+yogeshojha/rengine,,Cross-site Scripting (XSS) - Stored,Sep 1st 2021
+yogeshojha/rengine,,Cross-site Scripting (XSS) - Stored,Sep 1st 2021
+zikula/core,,Cross-site Scripting (XSS) - Stored,Sep 1st 2021
+zikula-modules/content,,Cross-site Scripting (XSS) - Stored,Aug 31st 2021
+pimcore/pimcore,,Cross-site Scripting (XSS) - Stored,Aug 31st 2021
+leantime/leantime,,Cross-site Scripting (XSS) - Stored,Aug 31st 2021
+leantime/leantime,,Cross-site Scripting (XSS) - Stored,Aug 31st 2021
+opensourcepos/opensourcepos,,Improper Restriction of Rendered UI Layers or Frames,Aug 31st 2021
+axios/axios,CVE-2021-3749,Inefficient Regular Expression Complexity,Aug 30th 2021
+pimcore/pimcore,,Cross-site Scripting (XSS) - Stored,Aug 30th 2021
+ampache/ampache,,Cross-site Scripting (XSS) - Stored,Aug 30th 2021
+ampache/ampache,,Cross-site Scripting (XSS) - Stored,Aug 30th 2021
+ampache/ampache,,Cross-site Scripting (XSS) - Stored,Aug 30th 2021
+ampache/ampache,,Cross-site Scripting (XSS) - Stored,Aug 30th 2021
+ampache/ampache,,Cross-site Scripting (XSS) - Stored,Aug 30th 2021
+ampache/ampache,,Cross-site Scripting (XSS) - Stored,Aug 30th 2021
+ampache/ampache,,Cross-site Scripting (XSS) - Stored,Aug 30th 2021
+leantime/leantime,,Cross-site Scripting (XSS) - Stored,Aug 30th 2021
+leantime/leantime,,Cross-site Scripting (XSS) - Reflected,Aug 30th 2021
+myvesta/vesta,,Cross-Site Request Forgery (CSRF),Aug 30th 2021
+forkcms/library,,Cross-site Scripting (XSS) - Generic,Aug 29th 2021
+myvesta/vesta,,Cross-Site Request Forgery (CSRF),Aug 29th 2021
+myvesta/vesta,,Cross-Site Request Forgery (CSRF),Aug 29th 2021
+aimeos/ai-client-html,,Cross-Site Request Forgery (CSRF),Aug 29th 2021
+yogeshojha/rengine,,Cross-site Scripting (XSS) - Stored,Aug 29th 2021
+namelessmc/nameless,,Cross-site Scripting (XSS) - Stored,Aug 29th 2021
+namelessmc/nameless,,Cross-Site Request Forgery (CSRF),Aug 29th 2021
+namelessmc/nameless,,Cross-Site Request Forgery (CSRF),Aug 29th 2021
+namelessmc/nameless,,Cross-Site Request Forgery (CSRF),Aug 28th 2021
+namelessmc/nameless,,Cross-Site Request Forgery (CSRF),Aug 28th 2021
+namelessmc/nameless,,Cross-Site Request Forgery (CSRF),Aug 28th 2021
+namelessmc/nameless,,Cross-site Scripting (XSS) - Stored,Aug 28th 2021
+namelessmc/nameless,,Cross-Site Request Forgery (CSRF),Aug 28th 2021
+namelessmc/nameless,,Cross-Site Request Forgery (CSRF),Aug 28th 2021
+yogeshojha/rengine,,Cross-site Scripting (XSS) - Stored,Aug 28th 2021
+azuracast/azuracast,,Cross-site Scripting (XSS) - Reflected,Aug 28th 2021
+opensourcepos/opensourcepos,,SQL Injection,Aug 28th 2021
+opensourcepos/opensourcepos,,SQL Injection,Aug 28th 2021
+aimeos/ai-client-html,,Cross-Site Request Forgery (CSRF),Aug 27th 2021
+pimcore/pimcore,,Cross-site Scripting (XSS) - Stored,Aug 27th 2021
+erikdubbelboer/phpredisadmin,,Cross-Site Request Forgery (CSRF),Aug 27th 2021
+opensourcepos/opensourcepos,,SQL Injection,Aug 27th 2021
+opensourcepos/opensourcepos,,SQL Injection,Aug 27th 2021
+azuracast/azuracast,,Sensitive Cookie in HTTPS Session Without 'Secure' Attribute,Aug 27th 2021
+azuracast/azuracast,,Cross-Site Request Forgery (CSRF),Aug 27th 2021
+azuracast/azuracast,,Sensitive Cookie Without 'HttpOnly' Flag,Aug 27th 2021
+namelessmc/nameless,,Cross-Site Request Forgery (CSRF),Aug 27th 2021
+namelessmc/nameless,,Cross-Site Request Forgery (CSRF),Aug 26th 2021
+pimcore/pimcore,,Cross-site Scripting (XSS) - Stored,Aug 26th 2021
+livehelperchat/livehelperchat,,Cross-site Scripting (XSS) - Stored,Aug 26th 2021
+circuitverse/circuitverse,,Improper Privilege Management,Aug 25th 2021
+froxlor/froxlor,,External Control of File Name or Path,Aug 25th 2021
+froxlor/froxlor,,Sensitive Cookie in HTTPS Session Without 'Secure' Attribute,Aug 25th 2021
+froxlor/froxlor,,Sensitive Cookie Without 'HttpOnly' Flag,Aug 25th 2021
+slackero/phpwcms,,SQL Injection,Aug 25th 2021
+slackero/phpwcms,,Cross-site Scripting (XSS) - Reflected,Aug 25th 2021
+slackero/phpwcms,,Sensitive Cookie in HTTPS Session Without 'Secure' Attribute,Aug 25th 2021
+slackero/phpwcms,,Sensitive Cookie Without 'HttpOnly' Flag,Aug 25th 2021
+livehelperchat/livehelperchat,,Cross-Site Request Forgery (CSRF),Aug 25th 2021
+livehelperchat/livehelperchat,,Cross-site Scripting (XSS) - Stored,Aug 25th 2021
+livehelperchat/livehelperchat,,Cross-Site Request Forgery (CSRF),Aug 25th 2021
+livehelperchat/livehelperchat,,Cross-Site Request Forgery (CSRF),Aug 25th 2021
+livehelperchat/livehelperchat,,Cross-site Scripting (XSS) - Stored,Aug 25th 2021
+livehelperchat/livehelperchat,,Cross-site Scripting (XSS) - Stored,Aug 25th 2021
+livehelperchat/livehelperchat,,Cross-site Scripting (XSS) - Stored,Aug 25th 2021
+circuitverse/circuitverse,,Execution with Unnecessary Privileges,Aug 25th 2021
+circuitverse/circuitverse,,Improper Privilege Management,Aug 25th 2021
+namelessmc/nameless,,Cross-site Scripting (XSS) - Stored,Aug 25th 2021
+namelessmc/nameless,,Code Injection,Aug 25th 2021
+yourls/yourls,CVE-2021-3734,Improper Restriction of Rendered UI Layers or Frames,Aug 25th 2021
+livehelperchat/livehelperchat,,Improper Restriction of Rendered UI Layers or Frames,Aug 24th 2021
+firefly-iii/firefly-iii,CVE-2021-3730,Cross-Site Request Forgery (CSRF),Aug 20th 2021
+firefly-iii/firefly-iii,CVE-2021-3729,Cross-Site Request Forgery (CSRF),Aug 20th 2021
+firefly-iii/firefly-iii,CVE-2021-3728,Cross-Site Request Forgery (CSRF),Aug 20th 2021
+slackero/phpwcms,,Cross-site Scripting (XSS) - Stored,Aug 20th 2021
+aces/loris,,Cross-Site Request Forgery (CSRF),Aug 20th 2021
+aces/loris,,Cross-Site Request Forgery (CSRF),Aug 20th 2021
+aces/loris,,Cross-Site Request Forgery (CSRF),Aug 20th 2021
+aces/loris,,Cross-Site Request Forgery (CSRF),Aug 20th 2021
+aces/loris,,Cross-Site Request Forgery (CSRF),Aug 20th 2021
+aces/loris,,Cross-Site Request Forgery (CSRF),Aug 20th 2021
+aces/loris,,Cross-Site Request Forgery (CSRF),Aug 20th 2021
+changeweb/unifiedtransform,,Cross-Site Request Forgery (CSRF),Aug 19th 2021
+apostrophecms/apostrophe,,Cross-site Scripting (XSS) - Stored,Aug 19th 2021
+apostrophecms/apostrophe,,Server-Side Request Forgery (SSRF),Aug 19th 2021
+munafio/chatify,,Cross-site Scripting (XSS) - Stored,Aug 18th 2021
+cronvel/string-kit,,Inefficient Regular Expression Complexity,Aug 17th 2021
+circuitverse/circuitverse,,Cross-site Scripting (XSS) - Stored,Aug 17th 2021
+circuitverse/circuitverse,,Cross-site Scripting (XSS) - Stored,Aug 17th 2021
+leantime/leantime,,Cross-site Scripting (XSS) - Stored,Aug 17th 2021
+leantime/leantime,,Cross-site Scripting (XSS) - Stored,Aug 17th 2021
+leantime/leantime,,Cross-site Scripting (XSS) - Reflected,Aug 17th 2021
+aces/loris,,Cross-site Scripting (XSS) - Stored,Aug 16th 2021
+serghey-rodin/vesta,,Use of a Broken or Risky Cryptographic Algorithm,Aug 16th 2021
+tsolucio/corebos,,Cross-Site Request Forgery (CSRF),Aug 16th 2021
+tsolucio/corebos,,Cross-Site Request Forgery (CSRF),Aug 16th 2021
+tsolucio/corebos,,Cross-Site Request Forgery (CSRF),Aug 16th 2021
+tsolucio/corebos,,Cross-Site Request Forgery (CSRF),Aug 16th 2021
+tsolucio/corebos,,Cross-Site Request Forgery (CSRF),Aug 16th 2021
+tsolucio/corebos,,Cross-Site Request Forgery (CSRF),Aug 16th 2021
+devcode-it/openstamanager,,Failure to Sanitize Special Elements into a Different Plane (Special Element Injection),Aug 15th 2021
+slackero/phpwcms,,Open Redirect,Aug 14th 2021
+changeweb/unifiedtransform,,Cross-Site Request Forgery (CSRF),Aug 14th 2021
+changeweb/unifiedtransform,,Cross-site Scripting (XSS) - Stored,Aug 14th 2021
+boxbilling/boxbilling,,Cross-Site Request Forgery (CSRF),Aug 10th 2021
+uvdesk/core-framework,,Improper Privilege Management,Aug 10th 2021
+erudika/scoold,,Cross-site Scripting (XSS) - Reflected,Aug 10th 2021
+erudika/scoold,,Server-Side Request Forgery (SSRF),Aug 10th 2021
+microweber/microweber,,Cross-Site Request Forgery (CSRF),Aug 10th 2021
+easysoft/zentaopms,,Cross-Site Request Forgery (CSRF),Aug 10th 2021
+boxbilling/boxbilling,,Use of a Broken or Risky Cryptographic Algorithm,Aug 10th 2021
+microweber/microweber,,Cross-Site Request Forgery (CSRF),Aug 10th 2021
+microweber/microweber,,Cross-Site Request Forgery (CSRF),Aug 9th 2021
+yiisoft/yii2,CVE-2021-3692,Use of Predictable Algorithm in Random Number Generator,Aug 9th 2021
+boxbilling/boxbilling,,Cross-Site Request Forgery (CSRF),Aug 9th 2021
+alanaktion/phproject,,Cross-Site Request Forgery (CSRF),Aug 9th 2021
+tsolucio/corebos,,Cross-Site Request Forgery (CSRF),Aug 8th 2021
+tsolucio/corebos,,Cross-Site Request Forgery (CSRF),Aug 8th 2021
+ampache/ampache,,Improper Restriction of Rendered UI Layers or Frames,Aug 8th 2021
+yiisoft/yii2,CVE-2021-3689,Use of Predictable Algorithm in Random Number Generator,Aug 8th 2021
+postfixadmin/postfixadmin,,Insufficient UI Warning of Dangerous Operations,Aug 5th 2021
+star7th/showdoc,CVE-2021-3683,Cross-Site Request Forgery (CSRF),Aug 5th 2021
+postfixadmin/postfixadmin,,Use of Cryptographically Weak Pseudo-Random Number Generator (PRNG),Aug 5th 2021
+hdinnovations/unit3d-community-edition,,Cross-Site Request Forgery (CSRF),Aug 5th 2021
+hdinnovations/unit3d-community-edition,,Cross-Site Request Forgery (CSRF),Aug 5th 2021
+hdinnovations/unit3d-community-edition,,Cross-Site Request Forgery (CSRF),Aug 5th 2021
+hdinnovations/unit3d-community-edition,,Cross-Site Request Forgery (CSRF),Aug 5th 2021
+hdinnovations/unit3d-community-edition,,Cross-Site Request Forgery (CSRF),Aug 5th 2021
+hdinnovations/unit3d-community-edition,,Cross-Site Request Forgery (CSRF),Aug 5th 2021
+hdinnovations/unit3d-community-edition,,Cross-Site Request Forgery (CSRF),Aug 5th 2021
+ampache/ampache,,Cross-Site Request Forgery (CSRF),Aug 4th 2021
+ampache/ampache,,Cross-Site Request Forgery (CSRF),Aug 4th 2021
+ampache/ampache,,Cross-Site Request Forgery (CSRF),Aug 4th 2021
+ampache/ampache,,Cross-Site Request Forgery (CSRF),Aug 4th 2021
+ampache/ampache,,Cross-Site Request Forgery (CSRF),Aug 4th 2021
+ampache/ampache,,Cross-Site Request Forgery (CSRF),Aug 4th 2021
+kalcaddle/kodexplorer,,Server-Side Request Forgery (SSRF),Aug 4th 2021
+kalcaddle/kodexplorer,,Cross-site Scripting (XSS) - Stored,Aug 4th 2021
+star7th/showdoc,CVE-2021-3680,Missing Cryptographic Step,Aug 4th 2021
+star7th/showdoc,CVE-2021-3678,Use of Cryptographically Weak Pseudo-Random Number Generator (PRNG),Aug 4th 2021
+francoisjacquet/rosariosis,,Cross-Site Request Forgery (CSRF),Aug 2nd 2021
+francoisjacquet/rosariosis,,Cross-Site Request Forgery (CSRF),Aug 2nd 2021
+francoisjacquet/rosariosis,,Cross-Site Request Forgery (CSRF),Aug 2nd 2021
+francoisjacquet/rosariosis,,Cross-Site Request Forgery (CSRF),Aug 2nd 2021
+francoisjacquet/rosariosis,,Cross-Site Request Forgery (CSRF),Aug 2nd 2021
+francoisjacquet/rosariosis,,Cross-Site Request Forgery (CSRF),Aug 2nd 2021
+francoisjacquet/rosariosis,,Cross-Site Request Forgery (CSRF),Aug 2nd 2021
+francoisjacquet/rosariosis,,Cross-Site Request Forgery (CSRF),Aug 2nd 2021
+erudika/scoold,,Insufficient Granularity of Access Control,Aug 2nd 2021
+erudika/scoold,,Insufficient Granularity of Access Control,Aug 2nd 2021
+erudika/scoold,,Open Redirect,Aug 2nd 2021
+emoncms/dashboard,,Misinterpretation of Input,Aug 2nd 2021
+emoncms/dashboard,,Cross-Site Request Forgery (CSRF),Aug 2nd 2021
+amirsanni/mini-inventory-and-sales-management-system,,Execution with Unnecessary Privileges,Aug 1st 2021
+devcode-it/openstamanager,,Cross-Site Request Forgery (CSRF),Aug 1st 2021
+devcode-it/openstamanager,,Cross-Site Request Forgery (CSRF),Aug 1st 2021
+devcode-it/openstamanager,,Cross-Site Request Forgery (CSRF),Aug 1st 2021
+devcode-it/openstamanager,,Cross-Site Request Forgery (CSRF),Aug 1st 2021
+devcode-it/openstamanager,,Cross-Site Request Forgery (CSRF),Aug 1st 2021
+devcode-it/openstamanager,,Cross-Site Request Forgery (CSRF),Aug 1st 2021
+devcode-it/openstamanager,,Cross-Site Request Forgery (CSRF),Aug 1st 2021
+erudika/scoold,,Open Redirect,Aug 1st 2021
+hdinnovations/unit3d-community-edition,,Use of a Broken or Risky Cryptographic Algorithm,Jul 31st 2021
+sergix44/xbackbone,,Cross-Site Request Forgery (CSRF),Jul 31st 2021
+babybuddy/babybuddy,,Exposure of Sensitive Information Due to Incompatible Policies,Jul 31st 2021
+sergix44/xbackbone,,Exposure of Sensitive Information Due to Incompatible Policies,Jul 31st 2021
+sergix44/xbackbone,,Cross-Site Request Forgery (CSRF),Jul 31st 2021
+sergix44/xbackbone,,Cross-Site Request Forgery (CSRF),Jul 31st 2021
+sergix44/xbackbone,,Cross-Site Request Forgery (CSRF),Jul 31st 2021
+sergix44/xbackbone,,Cross-Site Request Forgery (CSRF),Jul 31st 2021
+projectsend/projectsend,,Session Fixation,Jul 31st 2021
+zeromq/pyzmq,,Improper Certificate Validation,Jul 30th 2021
+babybuddy/babybuddy,,Cross-Site Request Forgery (CSRF),Jul 30th 2021
+babybuddy/babybuddy,,Cross-Site Request Forgery (CSRF),Jul 30th 2021
+babybuddy/babybuddy,,Cross-Site Request Forgery (CSRF),Jul 30th 2021
+erudika/scoold,,Weak Password Requirements,Jul 30th 2021
+pimcore/pimcore,,Cross-Site Request Forgery (CSRF),Jul 30th 2021
+chevereto/chevereto-free,,Cross-site Scripting (XSS) - Stored,Jul 30th 2021
+seriawei/zkeacms,,Business Logic Errors,Jul 29th 2021
+seriawei/zkeacms,,Cross-Site Request Forgery (CSRF),Jul 29th 2021
+pimcore/pimcore,,Cross-Site Request Forgery (CSRF),Jul 28th 2021
+pimcore/pimcore,,Weak Password Requirements,Jul 28th 2021
+projectsend/projectsend,,Cross-site Scripting (XSS) - Reflected,Jul 28th 2021
+projectsend/projectsend,,Cross-site Scripting (XSS) - Stored,Jul 28th 2021
+pimcore/pimcore,,Business Logic Errors,Jul 27th 2021
+janeczku/calibre-web,,Exposure of Private Personal Information to an Unauthorized Actor,Jul 27th 2021
+emoncms/dashboard,,Cross-Site Request Forgery (CSRF),Jul 27th 2021
+projectsend/projectsend,,Cross-site Scripting (XSS) - Reflected,Jul 27th 2021
+volmarg/personal-management-system,,Cross-site Scripting (XSS) - Stored,Jul 27th 2021
+alovoa/alovoa,,Incorrect Usage of Seeds in Pseudo-Random Number Generator (PRNG),Jul 26th 2021
+dolibarr/dolibarr,,Cross-site Scripting (XSS) - Reflected,Jul 26th 2021
+ampache/ampache,,Use of Cryptographically Weak Pseudo-Random Number Generator (PRNG),Jul 26th 2021
+janeczku/calibre-web,,Insufficient Session Expiration,Jul 24th 2021
+janeczku/calibre-web,,Improper Access Control,Jul 24th 2021
+alovoa/alovoa,,XML Injection (aka Blind XPath Injection),Jul 24th 2021
+janeczku/calibre-web,,Improperly Controlled Modification of Dynamically-Determined Object Attributes,Jul 24th 2021
+kestasjk/webdiplomacy,,Cross-Site Request Forgery (CSRF),Jul 23rd 2021
+causefx/organizr,,Code Injection,Jul 23rd 2021
+kestasjk/webdiplomacy,,Authentication Bypass by Primary Weakness,Jul 23rd 2021
+unshiftio/url-parse,CVE-2021-3664,Open Redirect,Jul 23rd 2021
+kestasjk/webdiplomacy,,Least Privilege Violation,Jul 23rd 2021
+kestasjk/webdiplomacy,,Cross-Site Request Forgery (CSRF),Jul 23rd 2021
+kestasjk/webdiplomacy,,Cross-Site Request Forgery (CSRF),Jul 23rd 2021
+kestasjk/webdiplomacy,,Cross-Site Request Forgery (CSRF),Jul 23rd 2021
+kestasjk/webdiplomacy,,Cross-Site Request Forgery (CSRF),Jul 23rd 2021
+emoncms/dashboard,,Cross-Site Request Forgery (CSRF),Jul 23rd 2021
+spiral-project/ihatemoney,,Cross-Site Request Forgery (CSRF),Jul 23rd 2021
+firefly-iii/firefly-iii,CVE-2021-3663,Improper Restriction of Excessive Authentication Attempts,Jul 23rd 2021
+kestasjk/webdiplomacy,,Improper Restriction of Rendered UI Layers or Frames,Jul 23rd 2021
+emoncms/emoncms,,Cross-Site Request Forgery (CSRF),Jul 23rd 2021
+emoncms/emoncms,,Improper Authorization in Handler for Custom URL Scheme,Jul 22nd 2021
+emoncms/emoncms,,Cross-Site Request Forgery (CSRF),Jul 22nd 2021
+emoncms/emoncms,,Cross-Site Request Forgery (CSRF),Jul 22nd 2021
+emoncms/emoncms,,Authorization Bypass Through User-Controlled Key,Jul 22nd 2021
+emoncms/emoncms,,Cross-site Scripting (XSS) - Generic,Jul 22nd 2021
+opensource-socialnetwork/opensource-socialnetwork,,Improper Privilege Management,Jul 22nd 2021
+opensource-socialnetwork/opensource-socialnetwork,,Improper Privilege Management,Jul 22nd 2021
+dolibarr/dolibarr,,Cross-Site Request Forgery (CSRF),Jul 21st 2021
+dolibarr/dolibarr,,Cross-Site Request Forgery (CSRF),Jul 21st 2021
+dolibarr/dolibarr,,Cross-Site Request Forgery (CSRF),Jul 21st 2021
+dolibarr/dolibarr,,Cross-Site Request Forgery (CSRF),Jul 21st 2021
+dolibarr/dolibarr,,Cross-Site Request Forgery (CSRF),Jul 21st 2021
+dolibarr/dolibarr,,Cross-Site Request Forgery (CSRF),Jul 21st 2021
+alovoa/alovoa,,Cross-site Scripting (XSS) - Reflected,Jul 19th 2021
+mautic/mautic,,Use of a Broken or Risky Cryptographic Algorithm,Jul 19th 2021
+alovoa/alovoa,,Cross-site Scripting (XSS) - DOM,Jul 19th 2021
+alovoa/alovoa,,Session Fixation,Jul 19th 2021
+spiral-project/ihatemoney,,Cross-Site Request Forgery (CSRF),Jul 18th 2021
+panique/huge,,Use of a Broken or Risky Cryptographic Algorithm,Jul 17th 2021
+mout/mout,CVE-2020-7792,Prototype Pollution,Jul 16th 2021
+allgay/jsonuri,,Prototype Pollution,Jul 16th 2021
+emoncms/emoncms,,Use of a Broken or Risky Cryptographic Algorithm,Jul 16th 2021
+mrchuckomo/poddycast,,OS Command Injection,Jul 15th 2021
+chatwoot/chatwoot,CVE-2021-3649,Inefficient Regular Expression Complexity,Jul 15th 2021
+medialize/uri.js,CVE-2021-3647,Open Redirect,Jul 14th 2021
+bigprof-software/online-rental-property-manager,,Cross-Site Request Forgery (CSRF),Jul 11th 2021
+bigprof-software/online-rental-property-manager,,Cross-site Scripting (XSS) - Stored,Jul 11th 2021
+bigprof-software/online-rental-property-manager,,Cross-site Scripting (XSS) - Stored,Jul 11th 2021
+bigprof-software/online-rental-property-manager,,Cross-site Scripting (XSS) - Stored,Jul 11th 2021
+bigprof-software/online-rental-property-manager,,Cross-site Scripting (XSS) - Stored,Jul 11th 2021
+bigprof-software/online-rental-property-manager,,Cross-site Scripting (XSS) - Stored,Jul 11th 2021
+bigprof-software/online-invoicing-system,,Cross-site Scripting (XSS) - Stored,Jul 11th 2021
+bigprof-software/online-invoicing-system,,Cross-site Scripting (XSS) - Stored,Jul 11th 2021
+bigprof-software/online-invoicing-system,,Cross-site Scripting (XSS) - Stored,Jul 11th 2021
+bigprof-software/online-invoicing-system,,Cross-site Scripting (XSS) - Stored,Jul 11th 2021
+bigprof-software/online-rental-property-manager,,Cross-site Scripting (XSS) - Stored,Jul 11th 2021
+bigprof-software/online-invoicing-system,,Cross-site Scripting (XSS) - Stored,Jul 11th 2021
+bigprof-software/online-invoicing-system,,Cross-site Scripting (XSS) - Stored,Jul 11th 2021
+bigprof-software/online-invoicing-system,,Cross-site Scripting (XSS) - Stored,Jul 11th 2021
+bigprof-software/online-invoicing-system,,Cross-site Scripting (XSS) - Stored,Jul 11th 2021
+bigprof-software/online-rental-property-manager,,Cross-site Scripting (XSS) - Stored,Jul 11th 2021
+bigprof-software/online-rental-property-manager,,Cross-site Scripting (XSS) - Stored,Jul 11th 2021
+erudika/scoold,,Reliance on Cookies without Validation and Integrity Checking,Jul 11th 2021
+bigprof-software/online-rental-property-manager,,Cross-site Scripting (XSS) - Stored,Jul 11th 2021
+bigprof-software/online-rental-property-manager,,Cross-site Scripting (XSS) - Stored,Jul 11th 2021
+bigprof-software/online-rental-property-manager,,Cross-site Scripting (XSS) - Stored,Jul 11th 2021
+bigprof-software/online-rental-property-manager,,Cross-site Scripting (XSS) - Stored,Jul 11th 2021
+tjenkinson/url-toolkit,,Open Redirect,Jul 10th 2021
+swiftyspiffy/twitch-token-generator,,Cross-site Scripting (XSS) - Reflected,Jul 10th 2021
+squell/id3,,Heap-based Buffer Overflow,Jul 10th 2021
+squell/id3,,Heap-based Buffer Overflow,Jul 10th 2021
+tl-its-umich-edu/my-learning-analytics,,Exposure of Sensitive Information to an Unauthorized Actor,Jul 9th 2021
+sergix44/xbackbone,,Cross-site Scripting (XSS) - Stored,Jul 8th 2021
+erudika/scoold,,Session Fixation,Jul 7th 2021
+erudika/scoold,,Server-Side Request Forgery (SSRF),Jul 7th 2021
+microweber/microweber,,Cross-site Scripting (XSS) - Stored,Jul 7th 2021
+aimeos/aimeos-core,,Server-Side Request Forgery (SSRF),Jul 7th 2021
+aimeos/aimeos-core,,Cross-site Scripting (XSS) - Stored,Jul 7th 2021
+omeka/omeka-s,,Cross-site Scripting (XSS) - Stored,Jul 7th 2021
+volmarg/personal-management-system,,Cross-site Scripting (XSS) - Stored,Jul 6th 2021
+aimeos/aimeos-laravel,,Cross-site Scripting (XSS) - Stored,Jul 6th 2021
+lavv17/lftp,,NULL Pointer Dereference,Jul 6th 2021
+filegator/filegator,,Session Fixation,Jul 5th 2021
+devcode-it/openstamanager,,Cross-site Scripting (XSS) - Stored,Jul 5th 2021
+bigprof-software/online-invoicing-system,,Cross-site Scripting (XSS) - Stored,Jul 4th 2021
+bigprof-software/online-rental-property-manager,,Cross-site Scripting (XSS) - Stored,Jul 4th 2021
+bigprof-software/online-rental-property-manager,,Cross-site Scripting (XSS) - Stored,Jul 4th 2021
+bigprof-software/online-rental-property-manager,,Cross-site Scripting (XSS) - Stored,Jul 4th 2021
+bigprof-software/online-rental-property-manager,,Cross-site Scripting (XSS) - Stored,Jul 4th 2021
+bigprof-software/online-rental-property-manager,,Cross-site Scripting (XSS) - Stored,Jul 4th 2021
+bigprof-software/online-rental-property-manager,,Cross-site Scripting (XSS) - Stored,Jul 4th 2021
+bigprof-software/online-rental-property-manager,,Cross-site Scripting (XSS) - Stored,Jul 4th 2021
+bigprof-software/online-rental-property-manager,,Cross-site Scripting (XSS) - Stored,Jul 4th 2021
+bigprof-software/online-rental-property-manager,,Improper Privilege Management,Jul 4th 2021
+bigprof-software/online-rental-property-manager,,Improper Privilege Management,Jul 4th 2021
+bigprof-software/online-rental-property-manager,,Execution with Unnecessary Privileges,Jul 4th 2021
+bigprof-software/online-rental-property-manager,,Execution with Unnecessary Privileges,Jul 4th 2021
+bigprof-software/online-rental-property-manager,,Cross-site Scripting (XSS) - Stored,Jul 4th 2021
+bigprof-software/online-rental-property-manager,,Cross-site Scripting (XSS) - Stored,Jul 4th 2021
+bigprof-software/online-rental-property-manager,,Cross-site Scripting (XSS) - Stored,Jul 4th 2021
+bigprof-software/online-rental-property-manager,,Cross-site Scripting (XSS) - Stored,Jul 4th 2021
+bigprof-software/online-rental-property-manager,,Cross-site Scripting (XSS) - Stored,Jul 4th 2021
+bigprof-software/online-rental-property-manager,,Cross-site Scripting (XSS) - Stored,Jul 4th 2021
+bigprof-software/online-rental-property-manager,,Cross-site Scripting (XSS) - Stored,Jul 4th 2021
+bigprof-software/online-rental-property-manager,,Cross-site Scripting (XSS) - Stored,Jul 4th 2021
+bigprof-software/online-rental-property-manager,,Cross-site Scripting (XSS) - Stored,Jul 4th 2021
+bigprof-software/online-rental-property-manager,,Cross-site Scripting (XSS) - Reflected,Jul 4th 2021
+bigprof-software/online-invoicing-system,,Cross-site Scripting (XSS) - Stored,Jul 4th 2021
+bigprof-software/online-rental-property-manager,,Cross-site Scripting (XSS) - Stored,Jul 4th 2021
+bigprof-software/online-rental-property-manager,,Cross-site Scripting (XSS) - Stored,Jul 4th 2021
+bigprof-software/online-rental-property-manager,,Cross-site Scripting (XSS) - Stored,Jul 4th 2021
+bigprof-software/online-invoicing-system,,Cross-site Scripting (XSS) - Stored,Jul 4th 2021
+bigprof-software/online-invoicing-system,,Cross-site Scripting (XSS) - Stored,Jul 4th 2021
+bigprof-software/online-invoicing-system,,Cross-site Scripting (XSS) - Stored,Jul 4th 2021
+bigprof-software/online-invoicing-system,,Cross-site Scripting (XSS) - Stored,Jul 3rd 2021
+bigprof-software/online-invoicing-system,,Cross-site Scripting (XSS) - Stored,Jul 3rd 2021
+bigprof-software/online-invoicing-system,,Cross-site Scripting (XSS) - Stored,Jul 3rd 2021
+bigprof-software/online-invoicing-system,,Cross-site Scripting (XSS) - Stored,Jul 3rd 2021
+bigprof-software/online-invoicing-system,,Cross-site Scripting (XSS) - Stored,Jul 3rd 2021
+bigprof-software/online-invoicing-system,,Cross-site Scripting (XSS) - Stored,Jul 3rd 2021
+beestat/app,,Use of Predictable Algorithm in Random Number Generator,Jul 3rd 2021
+rup0rt/pcapfix,,Stack-based Buffer Overflow,Jul 3rd 2021
+rup0rt/pcapfix,,Heap-based Buffer Overflow,Jul 3rd 2021
+rup0rt/pcapfix,,Heap-based Buffer Overflow,Jul 3rd 2021
+bigprof-software/online-invoicing-system,,Cross-site Scripting (XSS) - Stored,Jul 3rd 2021
+bigprof-software/online-invoicing-system,,Cross-site Scripting (XSS) - Stored,Jul 3rd 2021
+bigprof-software/online-invoicing-system,,Improper Privilege Management,Jul 3rd 2021
+bigprof-software/online-invoicing-system,,Improper Privilege Management,Jul 3rd 2021
+bigprof-software/online-invoicing-system,,Cross-site Scripting (XSS) - Stored,Jul 3rd 2021
+bigprof-software/online-invoicing-system,,Cross-site Scripting (XSS) - Stored,Jul 3rd 2021
+bigprof-software/online-invoicing-system,,Cross-site Scripting (XSS) - Stored,Jul 3rd 2021
+bigprof-software/online-invoicing-system,,Cross-site Scripting (XSS) - Stored,Jul 3rd 2021
+bigprof-software/online-invoicing-system,,Cross-site Scripting (XSS) - Stored,Jul 3rd 2021
+falconchristmas/fpp,,Cross-site Scripting (XSS) - Stored,Jul 3rd 2021
+falconchristmas/fpp,,Cross-site Scripting (XSS) - Reflected,Jul 3rd 2021
+bigprof-software/online-invoicing-system,,Cross-site Scripting (XSS) - Reflected,Jul 3rd 2021
+getgrav/grav,,Cross-site Scripting (XSS) - Stored,Jul 2nd 2021
+falconchristmas/fpp,,Cross-site Scripting (XSS) - Reflected,Jul 2nd 2021
+falconchristmas/fpp,,Cross-site Scripting (XSS) - Reflected,Jul 2nd 2021
+bigprof-software/online-invoicing-system,,Cross-site Scripting (XSS) - Stored,Jul 2nd 2021
+bigprof-software/online-invoicing-system,,Cross-site Scripting (XSS) - Stored,Jul 2nd 2021
+bigprof-software/online-invoicing-system,,Cross-site Scripting (XSS) - Stored,Jul 2nd 2021
+bigprof-software/online-invoicing-system,,Cross-site Scripting (XSS) - Stored,Jul 2nd 2021
+bigprof-software/online-invoicing-system,,Cross-site Scripting (XSS) - Reflected,Jul 2nd 2021
+kalcaddle/kodexplorer,,Path Traversal,Jul 1st 2021
+kalcaddle/kodexplorer,,Open Redirect,Jul 1st 2021
+kalcaddle/kodexplorer,,Server-Side Request Forgery (SSRF),Jul 1st 2021
+kalcaddle/kodexplorer,,Server-Side Request Forgery (SSRF),Jul 1st 2021
+kalcaddle/kodexplorer,,Unrestricted Upload of File with Dangerous Type,Jul 1st 2021
+kalcaddle/kodexplorer,,Execution with Unnecessary Privileges,Jul 1st 2021
+kalcaddle/kodexplorer,,Execution with Unnecessary Privileges,Jul 1st 2021
+donmccurdy/expression-eval,,Code Injection,Jul 1st 2021
+sofianehamlaoui/lockdoor-framework,,Command Injection,Jul 1st 2021
+sofianehamlaoui/lockdoor-framework,,Command Injection,Jul 1st 2021
+sofianehamlaoui/lockdoor-framework,,Command Injection,Jul 1st 2021
+sofianehamlaoui/lockdoor-framework,,Command Injection,Jul 1st 2021
+sofianehamlaoui/lockdoor-framework,,Command Injection,Jul 1st 2021
+bigprof-software/online-invoicing-system,,Cross-site Scripting (XSS) - Stored,Jul 1st 2021
+nebulade/meemo,,Cross-site Scripting (XSS) - Stored,Jul 1st 2021
+blockonomics/woocommerce-plugin,,Cross-site Scripting (XSS) - Reflected,Jun 30th 2021
+w7corp/easywechat,,Missing Cryptographic Step,Jun 29th 2021
+w7corp/easywechat,,Use of Predictable Algorithm in Random Number Generator,Jun 29th 2021
+w7corp/easywechat,,Use of Predictable Algorithm in Random Number Generator,Jun 29th 2021
+causefx/organizr,,Open Redirect,Jun 29th 2021
+monicahq/monica,,Session Fixation,Jun 29th 2021
+bigprof-software/online-invoicing-system,,Cross-Site Request Forgery (CSRF),Jun 28th 2021
+bigprof-software/online-invoicing-system,,Cross-Site Request Forgery (CSRF),Jun 28th 2021
+frenchbread/private-ip,,Server-Side Request Forgery (SSRF),Jun 28th 2021
+falconchristmas/fpp,,Cross-site Scripting (XSS) - Reflected,Jun 28th 2021
+falconchristmas/fpp,,Cross-site Scripting (XSS) - Reflected,Jun 28th 2021
+falconchristmas/fpp,,Cross-site Scripting (XSS) - Reflected,Jun 28th 2021
+monicahq/monica,,Cross-Site Request Forgery (CSRF),Jun 27th 2021
+rup0rt/pcapfix,,Heap-based Buffer Overflow,Jun 27th 2021
+falconchristmas/fpp,,Cross-site Scripting (XSS) - Reflected,Jun 27th 2021
+falconchristmas/fpp,,Cross-site Scripting (XSS) - Stored,Jun 27th 2021
+falconchristmas/fpp,,Cross-site Scripting (XSS) - Reflected,Jun 27th 2021
+falconchristmas/fpp,,OS Command Injection,Jun 27th 2021
+hascheksolutions/opentrashmail,,External Control of File Name or Path,Jun 26th 2021
+dani-garcia/vaultwarden,,Improper Access Control,Jun 26th 2021
+sofianehamlaoui/lockdoor-framework,,OS Command Injection,Jun 26th 2021
+fabio286/antares,,OS Command Injection,Jun 25th 2021
+phpservermon/phpservermon,,Reliance on Cookies without Validation and Integrity Checking,Jun 25th 2021
+phpservermon/phpservermon,,Use of Predictable Algorithm in Random Number Generator,Jun 24th 2021
+phpservermon/phpservermon,,Use of Predictable Algorithm in Random Number Generator,Jun 24th 2021
+cortezaproject/corteza-server,,Cross-site Scripting (XSS) - Stored,Jun 23rd 2021
+babybuddy/babybuddy,,Improper Restriction of Excessive Authentication Attempts,Jun 22nd 2021
+livehelperchat/livehelperchat,,Cross-site Scripting (XSS) - Stored,Jun 21st 2021
+livehelperchat/fbmessenger,,Cross-site Scripting (XSS) - Stored,Jun 21st 2021
+erudika/scoold,,Cross-Site Request Forgery (CSRF),Jun 21st 2021
+laravel/framework,,Code Injection,Jun 21st 2021
+polonel/trudesk,,Least Privilege Violation,Jun 21st 2021
+polonel/trudesk,,Improper Privilege Management,Jun 21st 2021
+polonel/trudesk,,Unrestricted Upload of File with Dangerous Type,Jun 21st 2021
+squell/id3,,Heap-based Buffer Overflow,Jun 20th 2021
+gskinner/regexr,,Improper Privilege Management,Jun 19th 2021
+babybuddy/babybuddy,,Cross-Site Request Forgery (CSRF),Jun 18th 2021
+thoughtbot/administrate,,Cross-site Scripting (XSS) - Stored,Jun 18th 2021
+hascheksolutions/opentrashmail,,External Control of File Name or Path,Jun 17th 2021
+idempiere/idempiere,,Cross-site Scripting (XSS) - Stored,Jun 16th 2021
+polonel/trudesk,,Cross-site Scripting (XSS) - Stored,Jun 16th 2021
+phpmailer/phpmailer,CVE-2021-3603,Inclusion of Functionality from Untrusted Control Sphere,Jun 15th 2021
+polonel/trudesk,,Cross-site Scripting (XSS) - Stored,Jun 15th 2021
+polonel/trudesk,,Cross-site Scripting (XSS) - Stored,Jun 14th 2021
+livehelperchat/livehelperchat,,Cross-site Scripting (XSS) - Stored,Jun 14th 2021
+sofianehamlaoui/lockdoor-framework,,Command Injection,Jun 14th 2021
+sofianehamlaoui/lockdoor-framework,,Command Injection,Jun 14th 2021
+laravel/framework,,Relative Path Traversal,Jun 13th 2021
+s-cart/core,,SQL Injection,Jun 12th 2021
+flarum/core,,Relative Path Traversal,Jun 12th 2021
+cortezaproject/corteza-server,,Cross-site Scripting (XSS) - Stored,Jun 11th 2021
+hascheksolutions/pictshare,,Insufficient Documentation of Error Handling Techniques,Jun 11th 2021
+rup0rt/pcapfix,,Heap-based Buffer Overflow,Jun 10th 2021
+sofianehamlaoui/lockdoor-framework,,Code Injection,Jun 9th 2021
+rockcarry/ffjpeg,,Integer Overflow or Wraparound,Jun 8th 2021
+alovoa/alovoa,,Weak Password Requirements,Jun 8th 2021
+typecho/typecho,,Cross-site Scripting (XSS) - Stored,Jun 8th 2021
+monicahq/monica,,Improper Privilege Management,Jun 6th 2021
+mailtrain-org/mailtrain,,Improper Privilege Management,Jun 6th 2021
+squell/id3,,Heap-based Buffer Overflow,Jun 6th 2021
+squell/id3,,Buffer Access with Incorrect Length Value,Jun 4th 2021
+apexcharts/apexcharts.js,,Cross-site Scripting (XSS) - DOM,Jun 4th 2021
+squell/id3,,Heap-based Buffer Overflow,Jun 3rd 2021
+firefly-iii/firefly-iii,,Cross-Site Request Forgery (CSRF),Jun 3rd 2021
+hstm/dotfiles,,Unprotected Storage of Credentials,Jun 2nd 2021
+thisistherk/fast_obj,,Integer Overflow or Wraparound,Jun 2nd 2021
+mcfriend99/bird,,Denial of Service,Jun 2nd 2021
+mcfriend99/bird,,Heap-based Buffer Overflow,Jun 2nd 2021
+mcfriend99/bird,,Out-of-bounds Write,Jun 2nd 2021
+miodec/monkeytype,,Authentication Bypass by Spoofing,Jun 2nd 2021
+falconchristmas/fpp,,OS Command Injection,May 30th 2021
+causefx/organizr,,Improper Access Control,May 29th 2021
+chatwoot/chatwoot,,Improper Privilege Management,May 26th 2021
+chatwoot/chatwoot,,Improper Privilege Management,May 26th 2021
+xamarin/googleplayservicescomponents,,Improper Access Control,May 26th 2021
+openwhyd/openwhyd,,Improper Access Control,May 26th 2021
+dolibarr/dolibarr,,Improper Privilege Management,May 25th 2021
+dolibarr/dolibarr,,Improper Privilege Management,May 25th 2021
+dolibarr/dolibarr,,Cross-site Scripting (XSS) - Stored,May 25th 2021
+codeplea/tinyexpr,,Stack-based Buffer Overflow,May 24th 2021
+thirtybees/thirtybees,,Cross-site Scripting (XSS) - Generic,May 24th 2021
+bramp/myip,,Improper Access Control,May 24th 2021
+mailtrain-org/mailtrain,,Cross-site Scripting (XSS) - Generic,May 23rd 2021
+teamultroid/ultroid,,Improper Access Control,May 22nd 2021
+kenzo-404/lynx-userbot,,Improper Access Control,May 22nd 2021
+dolibarr/dolibarr,,Improper Privilege Management,May 22nd 2021
+codingtrain/website,,Improper Access Control,May 21st 2021
+dolibarr/dolibarr,,Improper Privilege Management,May 21st 2021
+dolibarr/dolibarr,,Improper Privilege Management,May 21st 2021
+koel/koel,,Allocation of Resources Without Limits or Throttling,May 21st 2021
+dolibarr/dolibarr,,Cross-site Scripting (XSS) - Stored,May 21st 2021
+kalcaddle/kodexplorer,,Cross-site Scripting (XSS) - Stored,May 21st 2021
+kalcaddle/kodexplorer,,Path Traversal,May 21st 2021
+falconchristmas/fpp,,OS Command Injection,May 20th 2021
+chatwoot/chatwoot,,Improper Privilege Management,May 20th 2021
+sztheory/exifcleaner,,OS Command Injection,May 20th 2021
+ionicabizau/set-or-get.js,,Prototype Pollution,May 20th 2021
+silentmatt/expr-eval,,Prototype Pollution,May 20th 2021
+forkcms/forkcms,,Cross-site Scripting (XSS) - Generic,May 20th 2021
+forkcms/forkcms,,Cross-site Scripting (XSS) - Generic,May 20th 2021
+dominictarr/libnested,CVE-2020-28283,Prototype Pollution,May 20th 2021
+forkcms/forkcms,,Cross-site Scripting (XSS) - Stored,May 20th 2021
+microweber/microweber,CVE-2020-23138,Unrestricted Upload of File with Dangerous Type,May 20th 2021
+badopcode/nodash,,Prototype Pollution,May 20th 2021
+cythron/gcp,,Use of Hard-coded Credentials,May 20th 2021
+akshayp282/quizx,,SQL Injection,May 20th 2021
+stevearc/pypicloud,,Cross-site Scripting (XSS) - Stored,May 20th 2021
+jalik/js-deep-extend,,Prototype Pollution,May 19th 2021
+fiznool/body-parser-xml,CVE-2021-3666,Prototype Pollution,May 18th 2021
+tagspaces/tagspaces,,Unprotected Alternate Channel,May 18th 2021
+phplist/phplist3,,Cross-site Scripting (XSS) - Stored,May 18th 2021
+octobercms/library,,Cross-site Scripting (XSS) - Stored,May 18th 2021
+tagspaces/viewertext,,Cross-site Scripting (XSS) - Reflected,May 18th 2021
+knadh/listmonk,,Cross-site Scripting (XSS) - Stored,May 16th 2021
+utmsigep/member-directory,,Cross-site Scripting (XSS) - Stored,May 16th 2021
+utmsigep/member-directory,,Cross-site Scripting (XSS) - Generic,May 16th 2021
+utmsigep/member-directory,,Cross-site Scripting (XSS) - Generic,May 16th 2021
+utmsigep/member-directory,,Improper Handling of Values,May 16th 2021
+demon1a/discord-recon,,Path Traversal,May 15th 2021
+cythron/tweango,,Use of Hard-coded Credentials,May 13th 2021
+flitbit/json-ptr,,Code Injection,May 13th 2021
+axiomatic-systems/bento4,,NULL Pointer Dereference,May 13th 2021
+axiomatic-systems/bento4,,NULL Pointer Dereference,May 13th 2021
+cythron/tweango,,Unprotected Storage of Credentials,May 12th 2021
+rodrigocmoreira/sgt-fields,,Prototype Pollution,May 12th 2021
+thecoshman/http,,Cross-site Scripting (XSS) - Reflected,May 12th 2021
+forkcms/forkcms,,Cross-site Scripting (XSS) - Stored,May 12th 2021
+forkcms/forkcms,,Cross-site Scripting (XSS) - Reflected,May 12th 2021
+hotrodzphotography/hotrodzphotography.github.io,,Insufficiently Protected Credentials,May 11th 2021
+jam-py/jam-py,,Cross-site Scripting (XSS) - Stored,May 9th 2021
+yibn2008/find-process,,Command Injection,May 8th 2021
+thecodingmachine/mouf,,Path Traversal,May 7th 2021
+sofianehamlaoui/lockdoor-framework,,Command Injection,May 4th 2021
+c0oki3s/python-tools,,Code Injection,May 3rd 2021
+frappe/charts,,Cross-site Scripting (XSS) - Generic,May 3rd 2021
+frappe/charts,,Cross-site Scripting (XSS) - Generic,May 3rd 2021
+forkcms/forkcms,,Cross-site Scripting (XSS) - Stored,May 3rd 2021
+forkcms/forkcms,,Cross-site Scripting (XSS) - Generic,May 3rd 2021
+idno/known,,Improper Access Control,May 2nd 2021
+tensorflow/tfx,,Code Injection,Apr 29th 2021
+trentm/json,,Code Injection,Apr 26th 2021
+vishwanatharondekar/gitlab-cli,,Code Injection,Apr 23rd 2021
+traduora/traduora,,Exposure of Sensitive Information to an Unauthorized Actor,Apr 23rd 2021
+prasathmani/tinyfilemanager,,Server-Side Request Forgery (SSRF),Apr 22nd 2021
+prasathmani/tinyfilemanager,,Cross-site Scripting (XSS) - Generic,Apr 22nd 2021
+boxbilling/boxbilling,,Cross-site Scripting (XSS) - Generic,Apr 19th 2021
+boxbilling/boxbilling,,Cross-site Scripting (XSS) - Generic,Apr 19th 2021
+chatwoot/chatwoot,,Cross-site Scripting (XSS) - Generic,Apr 19th 2021
+boxbilling/boxbilling,,Cross-site Scripting (XSS) - Generic,Apr 19th 2021
+ssnau/xkit,,Prototype Pollution,Apr 18th 2021
+dimodimchev/access-control,,Code Injection,Apr 15th 2021
+thewawar/simple-http-server,,Cross-Site Request Forgery (CSRF),Apr 15th 2021
+braitsch/node-login,,Business Logic Errors,Apr 14th 2021
+harish81/digidocu,,Cross-site Scripting (XSS) - Stored,Apr 12th 2021
+robinvdvleuten/shvl,CVE-2020-28278,Prototype Pollution,Apr 12th 2021
+sebhildebrandt/systeminformation,,Failure to Sanitize Special Elements into a Different Plane (Special Element Injection),Apr 9th 2021
+bigprof-software/online-invoicing-system,,Cross-site Scripting (XSS) - Generic,Apr 8th 2021
+frenchbread/private-ip,CVE-2020-28360,Server-Side Request Forgery (SSRF),Apr 7th 2021
+storybookjs/telejson,,Code Injection,Apr 6th 2021
+prayag2/konsave,,Code Injection,Apr 4th 2021
+sterlp/svg2png,CVE-2020-11887,Server-Side Request Forgery (SSRF),Apr 4th 2021
+maxsite/cms,,Cross-site Scripting (XSS) - Generic,Apr 2nd 2021
+mailtrain-org/mailtrain,,Path Traversal,Mar 31st 2021
+aheckmann/mquery,,Prototype Pollution,Mar 29th 2021
+trenskow/keyd,,Prototype Pollution,Mar 29th 2021
+blackcatdevelopment/blackcatcms,,Cross-site Scripting (XSS) - Generic,Mar 27th 2021
+swig/swig,,Code Injection,Mar 27th 2021
+swooningfish/ffmpeg-web-gui,,Code Injection,Mar 26th 2021
+elcharitas/js-dot,,Prototype Pollution,Mar 25th 2021
+forkcms/forkcms,,Cross-site Scripting (XSS) - Generic,Mar 25th 2021
+forkcms/library,,Cross-site Scripting (XSS) - Generic,Mar 24th 2021
+azure/ms-rest-nodeauth,CVE-2021-28458,Command Injection,Mar 24th 2021
+forkcms/forkcms,,Open Redirect,Mar 24th 2021
+forkcms/forkcms,,Open Redirect,Mar 23rd 2021
+automattic/mongoose,,Prototype Pollution,Mar 22nd 2021
+xiaoyifan6/json-glat,,Prototype Pollution,Mar 22nd 2021
+prasathmani/tinyfilemanager,,Cross-site Scripting (XSS) - Generic,Mar 22nd 2021
+ciur/papermerge-js,,Cross-site Scripting (XSS) - Generic,Mar 20th 2021
+js-data/js-data,CVE-2020-28442,Prototype Pollution,Mar 20th 2021
+automattic/cli-table,,Prototype Pollution,Mar 15th 2021
+mozilla/node-convict,,Prototype Pollution,Mar 11th 2021
+antoinestudio/dok,,Code Injection,Mar 11th 2021
+facebook/create-react-app,CVE-2021-24033,Command Injection,Mar 9th 2021
+vitessio/arewefastyet,,Code Injection,Mar 5th 2021
+cronvel/tree-kit,,Prototype Pollution,Mar 5th 2021
+allain/propper,,Prototype Pollution,Mar 4th 2021
+sodadata/soda-sql,,Code Injection,Mar 1st 2021
+spotify/postgresql-metrics,,Code Injection,Feb 25th 2021
+fedeghe/objwun,,Prototype Pollution,Feb 25th 2021
+jeikeilim/kindle,,Code Injection,Feb 24th 2021
+tensorlayer/tensorlayer,,Code Injection,Feb 23rd 2021
+cmason3/jinjafx,,Cross-site Scripting (XSS) - Generic,Feb 22nd 2021
+rust-compress/rc-zip,,Path Traversal,Feb 22nd 2021
+maikelvl/dot-json,,Prototype Pollution,Feb 21st 2021
+sebhildebrandt/systeminformation,,Server-Side Request Forgery (SSRF),Feb 20th 2021
+ngockhanh5110/nlp-vietnamese-text-summarization,,Code Injection,Feb 20th 2021
+xdf8/deepfriedbot,,Code Injection,Feb 19th 2021
+forkcms/forkcms,,Cross-site Scripting (XSS) - Generic,Feb 18th 2021
+heartexlabs/label-studio,,Code Injection,Feb 16th 2021
+ciur/papermerge-js,,Cross-site Scripting (XSS) - Generic,Feb 16th 2021
+adobe/himl,,Code Injection,Feb 16th 2021
+adobe/ops-cli,,Code Injection,Feb 15th 2021
+sebhildebrandt/systeminformation,CVE-2021-21315,Denial of Service,Feb 14th 2021
+sebhildebrandt/systeminformation,CVE-2021-21388,Command Injection,Feb 14th 2021
+unix121/i3wm-themer,,Code Injection,Feb 13th 2021
+kettek/dot-dotty,,Prototype Pollution,Feb 13th 2021
+borderlesslabs/assign,,Prototype Pollution,Feb 12th 2021
+fabiospampinato/plain-object-merge,,Prototype Pollution,Feb 11th 2021
+ciur/papermerge,CVE-2020-29456,Cross-site Scripting (XSS) - Generic,Feb 9th 2021
+sttk/fav-prop.set-deep,,Prototype Pollution,Feb 9th 2021
+alexandervu/dot-prop-opt,,Prototype Pollution,Feb 7th 2021
+quobject/aws-cli-js,,Command Injection,Feb 6th 2021
+totaljs/framework,,Command Injection,Feb 5th 2021
+facebookresearch/parlai,,Code Injection,Feb 4th 2021
+ewels/multiqc,,Code Injection,Feb 3rd 2021
+baidu/cup,,Code Injection,Feb 3rd 2021
+indlekofer/object_set,,Prototype Pollution,Feb 3rd 2021
+tandrewnichols/safe-obj,CVE-2021-25928,Prototype Pollution,Feb 1st 2021
+nosarthur/gita,,Code Injection,Jan 31st 2021
+tensorspeech/tensorflowtts,,Code Injection,Jan 30th 2021
+netlify/netlify-cms,,Cross-site Scripting (XSS) - Generic,Jan 29th 2021
+a-maged/object-breacher,,Prototype Pollution,Jan 29th 2021
+geta/nestedobjectassign,CVE-2021-23329,Prototype Pollution,Jan 28th 2021
+lukeed/dset,CVE-2020-28277,Prototype Pollution,Jan 27th 2021
+thi-ng/umbrella,,Prototype Pollution,Jan 27th 2021
+yowainwright/common-utilities,,Prototype Pollution,Jan 27th 2021
+yomguithereal/baobab,,Prototype Pollution,Jan 27th 2021
+tensorflow/models,,Code Injection,Jan 26th 2021
+quernest/arr-flatten-unflatten,CVE-2020-7713,Prototype Pollution,Jan 26th 2021
+ultralytics/yolov3,,Code Injection,Jan 26th 2021
+nvidia/runx,,Deserialization of Untrusted Data,Jan 25th 2021
+svaarala/duktape,,Code Injection,Jan 25th 2021
+igniterealtime/openfire-bookmarks-plugin,,Cross-site Scripting (XSS) - Generic,Jan 25th 2021
+mozilla/deepspeech,,Code Injection,Jan 25th 2021
+uber/petastorm,,Code Injection,Jan 23rd 2021
+x-extends/xe-utils,,Prototype Pollution,Jan 22nd 2021
+babak-gholamzadeh/deeply-object-assign,,Prototype Pollution,Jan 22nd 2021
+archivy/archivy,,Code Injection,Jan 22nd 2021
+kekingcn/kkfileview,,Cross-site Scripting (XSS) - Generic,Jan 22nd 2021
+asaianudeep/deep-override,,Prototype Pollution,Jan 22nd 2021
+catalyst-team/catalyst,,Deserialization of Untrusted Data,Jan 21st 2021
+ultralytics/yolov5,,Code Injection,Jan 18th 2021
+apolloauto/apollo,,Code Injection,Jan 15th 2021
+bonnevoyager/nested-objects-util,,Prototype Pollution,Jan 15th 2021
+strider-cd/strider,,Cross-Site Request Forgery (CSRF),Jan 15th 2021
+microsoft/qlib,CVE-2021-23338,Code Injection,Jan 14th 2021
+react-atomic/react-atomic-organism,CVE-2020-28281,Prototype Pollution,Jan 14th 2021
+apexcharts/apexcharts.js,CVE-2021-23327,Cross-site Scripting (XSS) - Generic,Jan 14th 2021
+danieldelcore/object-deep-key,,Prototype Pollution,Jan 12th 2021
+ionicabizau/obj-def,,Prototype Pollution,Jan 11th 2021
+grpc/grpc-node,CVE-2020-7768,Prototype Pollution,Jan 8th 2021
+arachnys/cabot,,Cross-site Scripting (XSS) - Stored,Jan 5th 2021
+steveukx/properties,,Prototype Pollution,Dec 30th 2020
+generates/generates,,Prototype Pollution,Dec 29th 2020
+microsoft/nni,CVE-2021-31200,Code Injection,Dec 21st 2020
+evangelion1204/multi-ini,CVE-2020-28448,Prototype Pollution,Dec 20th 2020
+ionicabizau/obj-unflatten,,Prototype Pollution,Dec 18th 2020
+jadonk/bonescript,,Code Injection,Dec 17th 2020
+nodef/extra-object,,Prototype Pollution,Dec 16th 2020
+b-heilman/bmoor,CVE-2020-7736,Prototype Pollution,Dec 16th 2020
+imrefazekas/assign.js,,Prototype Pollution,Dec 3rd 2020
+s-cart/core,CVE-2020-28456,Cross-site Scripting (XSS) - Generic,Dec 1st 2020
+jsdecena/laracom,CVE-2019-15489,Cross-site Scripting (XSS) - Generic,Nov 23rd 2020
+simbco/httpster,,Path Traversal,Nov 20th 2020
+okunishinishi/node-objnest,,Prototype Pollution,Nov 17th 2020
+alibaba/bizcharts,,Cross-site Scripting (XSS) - Generic,Nov 16th 2020
+yeikos/js.merge,CVE-2020-28499,Prototype Pollution,Nov 14th 2020
+sonnyp/json8,,Prototype Pollution,Nov 8th 2020
+sonnyp/json8,,Prototype Pollution,Nov 8th 2020
+jquense/yup,,Prototype Pollution,Nov 4th 2020
+coderaiser/nessy,,Prototype Pollution,Nov 4th 2020
+dolibarr/dolibarr,,Cross-site Scripting (XSS) - Generic,Nov 3rd 2020
+acstll/deep-get-set,,Prototype Pollution,Nov 1st 2020
+heroku/heroku-exec-util,,Code Injection,Oct 26th 2020
+sagold/gson-query,,Prototype Pollution,Oct 26th 2020
+yargs/y18n,CVE-2020-7774,Prototype Pollution,Oct 25th 2020
+liriliri/licia,,Prototype Pollution,Oct 19th 2020
+ionicabizau/git-stats,,Code Injection,Oct 14th 2020
+seleniumhq/selenium,,Download of Code Without Integrity Check,Oct 14th 2020
+pierreinglebert/json-merge-patch,,Prototype Pollution,Oct 13th 2020
+mariocasciaro/object-path,CVE-2020-15256,Prototype Pollution,Oct 11th 2020
+courajs/node-svn,,Code Injection,Oct 5th 2020
+timstudd/node-wkhtmltoimage,,Code Injection,Sep 17th 2020
+nescalante/urlregex,,Denial of Service,Sep 16th 2020
+domharrington/node-gitlog,,Code Injection,Sep 15th 2020
+sidorares/node-wrk,,Code Injection,Sep 14th 2020
+elwerene/libreoffice-convert,,Code Injection,Sep 14th 2020
+monicahq/monica,CVE-2020-35660,Cross-site Scripting (XSS) - Stored,Sep 12th 2020
+adrieankhisbe/bundle-phobia-cli,,OS Command Injection,Sep 12th 2020
+easy-team/node-tool-utils,,Code Injection,Sep 11th 2020
+rapidfacture/pdf-toolz,,Code Injection,Sep 10th 2020
+kvz/locutus,CVE-2020-7700,Prototype Pollution,Sep 3rd 2020
+locutusjs/locutus,CVE-2020-7719,Denial of Service,Sep 3rd 2020
+gajus/url-regexp,,Denial of Service,Aug 27th 2020
+dolibarr/dolibarr,,Cross-site Scripting (XSS) - Generic,Aug 14th 2020
+z4nzu/hackingtool,,Code Injection,Aug 12th 2020
+boxbilling/boxbilling,,Cross-site Scripting (XSS) - Generic,Jul 27th 2020
+forsigner/node-pngdefry,,Command Injection,Jul 27th 2020
+eugeneware/windows-edge,,Code Injection,Jun 23rd 2020
+strider-cd/strider-git,,Code Injection,Jun 23rd 2020
+thebeet/idevicekit,,Command Injection,May 18th 2020
+node-virtualization/node-virtualbox,,Command Injection,May 5th 2020
+tuhinshubhra/extanalysis,,Cross-Site Request Forgery (CSRF),Apr 26th 2020
+ionicabizau/node-gry,,Command Injection,Apr 20th 2020
+keymetrics/vizion,,Code Injection,Apr 12th 2020
+zamotany/logkitty,CVE-2020-8149,Command Injection,Apr 7th 2020
+joeyism/node-git-lib,,Command Injection,Apr 4th 2020
+mateodelnorte/meta-git,,Code Injection,Mar 14th 2020
