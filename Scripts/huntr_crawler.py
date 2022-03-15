@@ -41,8 +41,8 @@ def save_data_to_mysql(data):
     try:
         cursor.executemany(sql, data)
         conn.commit()
-    except Exception:
-        print("error occurred", Exception)
+    except Exception as e:
+        print("error occurred", e)
         conn.rollback()
     finally:
         cursor.close()
@@ -90,6 +90,8 @@ while True:
             trimmed_path = trim_relative_path(project_relative_path)
             cve_number = record.find_element_by_xpath(cve_number_xpath).text
             vul_description = record.find_element_by_xpath(vul_description_xpath).text
+            if len(vul_description) > 200:
+                vul_description = vul_description[ : 200]
             date = record.find_element_by_xpath(release_date_xpath).text
 
             row.append(trimmed_path)
@@ -148,6 +150,6 @@ while True:
 
 save_data_to_mysql(record_table)
 
-# save_data_to_csv(record_table, "D:\\PycharmProjects\\oss_sec_estimator\\dataset\\vulnerable_project_data.csv")
+save_data_to_csv(record_table, "D:\\PycharmProjects\\oss_sec_estimator\\dataset\\vulnerable_project_data.csv")
 
 driver.quit()

@@ -1,4 +1,24 @@
 GitHub relative path,CVE number,Vulnerability description,Release date
+microweber/microweber,CVE-2022-0968,"The microweber application allows large characters to insert in the input field ""fist & last name"" which can allow attackers to cause a Denial of Service (DoS) via a crafted HTTP request. in microwebe",Mar 14th 2022
+star7th/showdoc,CVE-2022-0967,Stored XSS via File Upload in star7th/showdoc in star7th/showdoc,Mar 14th 2022
+star7th/showdoc,CVE-2022-0966,Stored XSS via File Upload in star7th/showdoc,Mar 14th 2022
+star7th/showdoc,CVE-2022-0965,Stored XSS viva .ofd file upload,Mar 14th 2022
+star7th/showdoc,CVE-2022-0964,Stored XSS viva .webmv file upload,Mar 14th 2022
+microweber/microweber,CVE-2022-0963,Unrestricted XML Files Leads to Stored XSS,Mar 14th 2022
+star7th/showdoc,CVE-2022-0962,Stored XSS viva .webma file upload,Mar 14th 2022
+microweber/microweber,CVE-2022-0961,"The microweber application allows large characters to insert in the input field ""post title"" which can allow attackers to cause a Denial of Service (DoS) via a crafted HTTP request.",Mar 14th 2022
+star7th/showdoc,CVE-2022-0960,Stored XSS viva .properties file upload,Mar 14th 2022
+star7th/showdoc,CVE-2022-0957,Stored XSS via File Upload,Mar 14th 2022
+star7th/showdoc,CVE-2022-0956,Stored XSS via File Upload,Mar 14th 2022
+microweber/microweber,CVE-2022-0954,"Multiple Stored Cross-site Scripting (XSS) Vulnerabilities in Shop's Other Settings, Shop's Autorespond E-mail Settings and Shops' Payments Methods",Mar 14th 2022
+star7th/showdoc,CVE-2022-0951,File Upload Restriction Bypass leading to Stored XSS Vulnerability,Mar 14th 2022
+star7th/showdoc,CVE-2022-0950,Unrestricted Upload of File with Dangerous Type,Mar 14th 2022
+star7th/showdoc,CVE-2022-0946,Stored XSS viva cshtm file upload,Mar 14th 2022
+star7th/showdoc,CVE-2022-0945,Stored XSS viva axd and cshtml file upload in star7th/showdoc,Mar 14th 2022
+sqlpad/sqlpad,CVE-2022-0944,Template injection in connection test endpoint leads to RCE,Mar 14th 2022
+openwall/john,,Classic Buffer Overflow in john,Mar 14th 2022
+vim/vim,CVE-2022-0943,Heap-based Buffer Overflow occurs in vim,Mar 14th 2022
+star7th/showdoc,CVE-2022-0942,Stored XSS due to Unrestricted File Upload,Mar 13th 2022
 star7th/showdoc,CVE-2022-0941,Stored XSS due to Unrestricted File Upload,Mar 13th 2022
 star7th/showdoc,CVE-2022-0940,Stored XSS due to Unrestricted File Upload,Mar 13th 2022
 star7th/showdoc,CVE-2022-0938,Stored XSS via file upload,Mar 13th 2022
@@ -223,6 +243,7 @@ gpac/gpac,CVE-2021-4043,NULL Pointer Dereference,Feb 1st 2022
 vim/vim,CVE-2022-0443,Use After Free,Feb 1st 2022
 karma-runner/karma,CVE-2022-0437,Cross-site Scripting (XSS) - DOM,Feb 1st 2022
 mastodon/mastodon,CVE-2022-0432,Prototype Pollution,Jan 31st 2022
+httpie/httpie,CVE-2022-0430,Exposure of Sensitive Information to an Unauthorized Actor,Jan 31st 2022
 radareorg/radare2,CVE-2022-0419,NULL Pointer Dereference,Jan 31st 2022
 vim/vim,CVE-2022-0417,Heap-based Buffer Overflow,Jan 30th 2022
 heroiclabs/nakama,,Observable Response Discrepancy,Jan 30th 2022
