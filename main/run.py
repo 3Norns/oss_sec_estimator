@@ -12,6 +12,9 @@ import datetime
 import github
 import os
 import json
+from bs4 import BeautifulSoup
+from urllib.parse import quote
+import re
 
 _CACHED_GITHUB_TOKEN = None
 _CACHED_GITHUB_TOKEN_OBJ = None
@@ -19,7 +22,7 @@ _CACHED_GITHUB_TOKEN_OBJ = None
 PARAMS = {
     "basic_information": [
         "name", "description", "created_since", "main_language", "star_count", "watcher_count", "clone_count",
-        "view_count", "contributor_count", "organization_count", "dependency_count"
+        "contributor_count", "organization_count", "dependency_count"
     ],
     "vulnerability_related_params": [
         "history_vulnerability_count", "unfixed_vulnerability_count", "dependency_vulnerability_count",
@@ -48,6 +51,8 @@ class Repository:
 
     def __init__(self, repo):
         self._repo = repo
+        self._dependencies = []
+        self._vulnerability_cve_numbers = []
 
     @property
     def name(self):
@@ -79,10 +84,6 @@ class Repository:
 
     @property
     def clone_count(self):
-        raise NotImplementedError
-
-    @property
-    def view_count(self):
         raise NotImplementedError
 
     @property
@@ -269,6 +270,7 @@ class GitHubRepository(Repository):
         return requests.get(url, headers=headers)
 
     def _get_first_commit_time(self):
+
         def __parse_links(response):
             link_string = response.headers.get("Link")
             if not link_string:
@@ -294,7 +296,7 @@ class GitHubRepository(Repository):
                         commits[-1]['commit']['committer']['date'])
                     return datetime.datetime.strptime(last_commit_time_string,
                                                       "%Y-%m-%dT%H:%M:%SZ")
-            time.sleep(2**i)
+            time.sleep(2 ** i)
 
         return None
 
@@ -314,8 +316,110 @@ class GitHubRepository(Repository):
         difference = datetime.datetime.utcnow() - creation_time
         return round(difference.days / 30)
 
+    @property
+    def main_language(self):
+        return self._repo.language
 
-# return expiry information of the given github tokne
+    @property
+    def star_count(self):
+        return self._repo.stargazers_count
+
+    @property
+    def watcher_count(self):
+        return self._repo.subscribers_count
+
+    @property
+    def clone_count(self):
+        return self._repo.forks_count
+
+    @property
+    def contributor_count(self):
+        try:
+            return self._repo.get_contributors(anon='true').totalCount
+        except Exception:
+            # Very large number of contributors, i.e. 5000+. Cap at 5,000.
+            return 5000
+
+    @property
+    def org_count(self):
+
+        def __filter_name(org_name):
+            return org_name.lower().replace('inc.', '').replace(
+                'llc', '').replace('@', '').replace(' ', '').rstrip(',')
+
+        orgs = set()
+        contributors = self._repo.get_contributors()[:TOP_CONTRIBUTOR_COUNT]
+        try:
+            for contributor in contributors:
+                if contributor.company:
+                    orgs.add(__filter_name(contributor.company))
+        except Exception:
+            # Very large number of contributors, i.e. 5000+. Cap at 10.
+            return 10
+        return len(orgs)
+
+    @property
+    def dependency_count(self):
+        if self._dependencies:
+            return len(self._dependencies)
+
+        url = self._repo.html_url + "/network/dependencies"
+        headers = {
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) "
+                          "Chrome/99.0.4844.74 Safari/537.36 "
+        }
+        response = requests.get(url=url, headers=headers)
+        dependencies = []
+        if response.status_code == 200:
+            html = response.text
+            bs = BeautifulSoup(html, "html.parser")
+            target_set = bs.find_all(name="a", attrs={"data-octo-click": "dep_graph_package"})
+            for target in target_set:
+                dependency = target.attrs["href"].split("/", 1)[1]
+                dependencies.append(dependency)
+        else:
+            raise Exception("page didn't properly loaded, status code:" + str(response.status_code))
+
+        self._dependencies = dependencies
+
+        return len(dependencies)
+
+    @property
+    def history_vulnerability_count(self):
+
+        def __pad_params(value):
+            return {
+                "keyword": quote(value)
+            }
+
+        if self._vulnerability_cve_numbers:
+            return len(self._vulnerability_cve_numbers)
+
+        vulnerability_cve_number = []
+        url = "https://cve.mitre.org/cgi-bin/cvekey.cgi"
+        headers = {
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) "
+                          "Chrome/99.0.4844.74 Safari/537.36 "
+        }
+
+        response = requests.get(url=url, headers=headers, params=__pad_params(self._repo.full_name))
+        if response.status_code == 200:
+            html = response.text
+            bs = BeautifulSoup(html, "html.parser")
+            cve_number_regex = re.compile("CVE-[0-9]{4}-[0-9]{4,}")
+            target_set = bs.find_all(name="a", text=cve_number_regex)
+            for target in target_set:
+                cve_number = target.text.strip()
+                vulnerability_cve_number.append(cve_number)
+
+        else:
+            raise Exception("history vulnerability query error, status code:" + str(response.status_code))
+
+        self._vulnerability_cve_numbers = vulnerability_cve_number
+        return len(vulnerability_cve_number)
+
+
+# return expiry information of the given github token
 def get_github_token_info(token_obj):
     rate_limit = token_obj.get_rate_limit()
     near_expiry = rate_limit.core.remaining < 50
@@ -362,8 +466,7 @@ def get_repository(url):
     if parsed_url.netloc.endswith("github.com"):
         repo = None
         try:
-            token_obj = get_github_auth_token()
-            repo = token_obj.get_repo(repo_url)
+            repo = get_github_auth_token().get_repo(repo_url)
         except github.GithubException as e:
             if e.status == 404:
                 return None
@@ -373,11 +476,18 @@ def get_repository(url):
 
 
 def main():
-    repo = get_repository("https://github.com/ossf/criticality_score")
-    repo.name
-    repo.url
-    repo.description
-    repo.created_since
+    repo = get_repository("https://github.com/microweber/microweber")
+    print(repo.name)
+    print(repo.url)
+    print(repo.description)
+    print(repo.created_since)
+    print(repo.main_language)
+    print(repo.star_count)
+    print(repo.watcher_count)
+    print(repo.clone_count)
+    print(repo.contributor_count)
+    print(repo.dependency_count)
+    print(repo.history_vulnerability_count)
     pass
 
 
