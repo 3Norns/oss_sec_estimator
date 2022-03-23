@@ -196,7 +196,7 @@ class Repository:
         raise NotImplementedError
 
     @property
-    def cii_best_prectice(self):
+    def cii_best_practice(self):
         raise NotImplementedError
 
     @property
@@ -418,6 +418,16 @@ class GitHubRepository(Repository):
         self._vulnerability_cve_numbers = self._get_vulnerability_cve_numbers()
         return len(self._vulnerability_cve_numbers)
 
+    def _get_branches_contain_given_commit(self, full_name, commit_sha):
+        url = f"https://api.github.com/repos/{full_name}/commits/{commit_sha}/branches-where-head"
+        headers = {
+            "Accept": "application/vnd.github.v3+json",
+            "Authorization": "token" + os.environ["GITHUB_AUTH_TOKEN"]
+        }
+        response = requests.get(url=url, headers=headers)
+        pass
+
+
     @property
     def unfixed_vulnerability_count(self):
         if self._unfixed_vulnerability_numbers:
@@ -442,11 +452,18 @@ class GitHubRepository(Repository):
             if response.status_code == 200:
                 html = response.text
                 bs = BeautifulSoup(html, "html.parser")
-                result_set = bs.select("tr > td > ul > li > a[target='_blank']")
+                result_set = bs.select("li a[target='_blank']")
                 for result in result_set:
-                    pass
+                    href = result.attrs["href"]
+                    expected_commit_path = "https://github.com/" + self._repo.full_name + "/commit"
+                    if expected_commit_path in href:
+                        # query commit
+                        commit_sha = href.split("/")[-1].strip()
+                        commit_obj = self._repo.get_commits(sha=commit_sha)
+                        pass
             else:
                 raise Exception("CVE info query error, status code:" + str(response.status_code))
+
 
 # return expiry information of the given github token
 def get_github_token_info(token_obj):
@@ -523,7 +540,9 @@ def main():
 
 if __name__ == "__main__":
     # http(s) proxy setting
-    os.environ["http_proxy"] = "http://127.0.0.1:33210"
-    os.environ["https_proxy"] = "http://127.0.0.1:33210"
+    os.environ["http_proxy"] = "http://127.0.0.1:60377"
+    os.environ["https_proxy"] = "http://127.0.0.1:60377"
+
+    os.environ["GITHUB_AUTH_TOKEN"] = "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"
 
     main()
