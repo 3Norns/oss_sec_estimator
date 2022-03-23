@@ -53,6 +53,7 @@ class Repository:
         self._repo = repo
         self._dependencies = []
         self._vulnerability_cve_numbers = []
+        self._unfixed_vulnerability_numbers = []
 
     @property
     def name(self):
@@ -373,9 +374,9 @@ class GitHubRepository(Repository):
         if response.status_code == 200:
             html = response.text
             bs = BeautifulSoup(html, "html.parser")
-            target_set = bs.find_all(name="a", attrs={"data-octo-click": "dep_graph_package"})
-            for target in target_set:
-                dependency = target.attrs["href"].split("/", 1)[1]
+            result_set = bs.find_all(name="a", attrs={"data-octo-click": "dep_graph_package"})
+            for result in result_set:
+                dependency = result.attrs["href"].split("/", 1)[1]
                 dependencies.append(dependency)
         else:
             raise Exception("page didn't properly loaded, status code:" + str(response.status_code))
@@ -384,40 +385,68 @@ class GitHubRepository(Repository):
 
         return len(dependencies)
 
-    @property
-    def history_vulnerability_count(self):
+    def _get_vulnerability_cve_numbers(self):
 
         def __pad_params(value):
             return {
                 "keyword": quote(value)
             }
 
-        if self._vulnerability_cve_numbers:
-            return len(self._vulnerability_cve_numbers)
-
-        vulnerability_cve_number = []
+        vulnerability_cve_numbers = []
         url = "https://cve.mitre.org/cgi-bin/cvekey.cgi"
-        headers = {
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) "
-                          "Chrome/99.0.4844.74 Safari/537.36 "
-        }
 
-        response = requests.get(url=url, headers=headers, params=__pad_params(self._repo.full_name))
+        response = requests.get(url=url, headers=HTTP_REQUEST_HEADER, params=__pad_params(self._repo.full_name))
         if response.status_code == 200:
             html = response.text
             bs = BeautifulSoup(html, "html.parser")
             cve_number_regex = re.compile("CVE-[0-9]{4}-[0-9]{4,}")
-            target_set = bs.find_all(name="a", text=cve_number_regex)
-            for target in target_set:
-                cve_number = target.text.strip()
-                vulnerability_cve_number.append(cve_number)
+            result_set = bs.find_all(name="a", text=cve_number_regex)
+            for result in result_set:
+                cve_number = result.text.strip()
+                vulnerability_cve_numbers.append(cve_number)
 
         else:
             raise Exception("history vulnerability query error, status code:" + str(response.status_code))
 
-        self._vulnerability_cve_numbers = vulnerability_cve_number
-        return len(vulnerability_cve_number)
+        return vulnerability_cve_numbers
 
+    @property
+    def history_vulnerability_count(self):
+        if self._vulnerability_cve_numbers:
+            return len(self._vulnerability_cve_numbers)
+
+        self._vulnerability_cve_numbers = self._get_vulnerability_cve_numbers()
+        return len(self._vulnerability_cve_numbers)
+
+    @property
+    def unfixed_vulnerability_count(self):
+        if self._unfixed_vulnerability_numbers:
+            return self._vulnerability_cve_numbers
+
+        # collecting unfixed cve vulnerability
+        unfixed_vulnerability_numbers = []
+        if self._vulnerability_cve_numbers:
+            vulnerability_cve_numbers = self._vulnerability_cve_numbers
+        else:
+            vulnerability_cve_numbers = self._get_vulnerability_cve_numbers()
+
+        def __pad_params(value):
+            return {
+                "name": value
+            }
+
+        url = "https://cve.mitre.org/cgi-bin/cvename.cgi"
+        for cve_number in vulnerability_cve_numbers:
+            # see if there is a commit for the CVE
+            response = requests.get(url=url, headers=HTTP_REQUEST_HEADER, params=__pad_params(cve_number))
+            if response.status_code == 200:
+                html = response.text
+                bs = BeautifulSoup(html, "html.parser")
+                result_set = bs.select("tr > td > ul > li > a[target='_blank']")
+                for result in result_set:
+                    pass
+            else:
+                raise Exception("CVE info query error, status code:" + str(response.status_code))
 
 # return expiry information of the given github token
 def get_github_token_info(token_obj):
@@ -477,17 +506,18 @@ def get_repository(url):
 
 def main():
     repo = get_repository("https://github.com/microweber/microweber")
-    print(repo.name)
-    print(repo.url)
-    print(repo.description)
-    print(repo.created_since)
-    print(repo.main_language)
-    print(repo.star_count)
-    print(repo.watcher_count)
-    print(repo.clone_count)
-    print(repo.contributor_count)
-    print(repo.dependency_count)
-    print(repo.history_vulnerability_count)
+    # print(repo.name)
+    # print(repo.url)
+    # print(repo.description)
+    # print(repo.created_since)
+    # print(repo.main_language)
+    # print(repo.star_count)
+    # print(repo.watcher_count)
+    # print(repo.clone_count)
+    # print(repo.contributor_count)
+    # print(repo.dependency_count)
+    # print(repo.history_vulnerability_count)
+    print(repo.unfixed_vulnerability_count)
     pass
 
 
