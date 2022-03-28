@@ -2,5 +2,8 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/main/Cookbook-https" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/temp_repository" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/temp_repository/microweber" vcs="Git" />
   </component>
 </project>

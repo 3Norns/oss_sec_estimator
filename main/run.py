@@ -15,6 +15,8 @@ import json
 from bs4 import BeautifulSoup
 from urllib.parse import quote
 import re
+import git
+import shutil
 
 _CACHED_GITHUB_TOKEN = None
 _CACHED_GITHUB_TOKEN_OBJ = None
@@ -22,14 +24,14 @@ _CACHED_GITHUB_TOKEN_OBJ = None
 PARAMS = {
     "basic_information": [
         "name", "description", "created_since", "main_language", "star_count", "watcher_count", "clone_count",
-        "contributor_count", "organization_count", "dependency_count"
+        "dependency_count"
     ],
     "vulnerability_related_params": [
         "history_vulnerability_count", "unfixed_vulnerability_count", "dependency_vulnerability_count",
-        "history_vulnerability_severity", "unfixed_vulnerability_severity", "vulnerability_exploit_ability"
+        "history_vulnerability_severity", "unfixed_vulnerability_severity"
     ],
     "project_vitality_params": [
-        "commit_count", "security_related_commit_count", "issue_count", "closed_issue_count", "pull_request_count",
+        "commit_count", "commit_frequency", "issue_count", "closed_issue_count", "pull_request_count",
         "release_count", "comment_frequency", "updated_since", "vulnerability_fix_timeliness"
     ],
     "contributor_related_params": [
@@ -88,14 +90,6 @@ class Repository:
         raise NotImplementedError
 
     @property
-    def contributor_count(self):
-        raise NotImplementedError
-
-    @property
-    def organization_count(self):
-        raise NotImplementedError
-
-    @property
     def dependency_count(self):
         raise NotImplementedError
 
@@ -120,15 +114,11 @@ class Repository:
         raise NotImplementedError
 
     @property
-    def vulnerability_exploit_ability(self):
-        raise NotImplementedError
-
-    @property
     def commit_count(self):
         raise NotImplementedError
 
     @property
-    def security_related_commit_count(self):
+    def commit_frequency(self):
         raise NotImplementedError
 
     @property
@@ -148,7 +138,7 @@ class Repository:
         raise NotImplementedError
 
     @property
-    def comment_count(self):
+    def comment_frequency(self):
         raise NotImplementedError
 
     @property
@@ -334,32 +324,6 @@ class GitHubRepository(Repository):
         return self._repo.forks_count
 
     @property
-    def contributor_count(self):
-        try:
-            return self._repo.get_contributors(anon='true').totalCount
-        except Exception:
-            # Very large number of contributors, i.e. 5000+. Cap at 5,000.
-            return 5000
-
-    @property
-    def org_count(self):
-
-        def __filter_name(org_name):
-            return org_name.lower().replace('inc.', '').replace(
-                'llc', '').replace('@', '').replace(' ', '').rstrip(',')
-
-        orgs = set()
-        contributors = self._repo.get_contributors()[:TOP_CONTRIBUTOR_COUNT]
-        try:
-            for contributor in contributors:
-                if contributor.company:
-                    orgs.add(__filter_name(contributor.company))
-        except Exception:
-            # Very large number of contributors, i.e. 5000+. Cap at 10.
-            return 10
-        return len(orgs)
-
-    @property
     def dependency_count(self):
         if self._dependencies:
             return len(self._dependencies)
@@ -415,23 +379,21 @@ class GitHubRepository(Repository):
         if self._vulnerability_cve_numbers:
             return len(self._vulnerability_cve_numbers)
 
-        self._vulnerability_cve_numbers = self._get_vulnerability_cve_numbers()
+        try:
+            self._vulnerability_cve_numbers = self._get_vulnerability_cve_numbers()
+        except Exception:
+            self._vulnerability_cve_numbers = []
+
         return len(self._vulnerability_cve_numbers)
 
-    def _get_branches_contain_given_commit(self, full_name, commit_sha):
-        url = f"https://api.github.com/repos/{full_name}/commits/{commit_sha}/branches-where-head"
-        headers = {
-            "Accept": "application/vnd.github.v3+json",
-            "Authorization": "token" + os.environ["GITHUB_AUTH_TOKEN"]
-        }
-        response = requests.get(url=url, headers=headers)
-        pass
-
+    def _get_branches_contain_given_commit(self, commit_sha):
+        git_instance = git.Git(TEMP_REPOSITORY_PATH)
+        return git_instance.branch("--contains", commit_sha)
 
     @property
     def unfixed_vulnerability_count(self):
         if self._unfixed_vulnerability_numbers:
-            return self._vulnerability_cve_numbers
+            return len(self._unfixed_vulnerability_numbers)
 
         # collecting unfixed cve vulnerability
         unfixed_vulnerability_numbers = []
@@ -459,10 +421,188 @@ class GitHubRepository(Repository):
                     if expected_commit_path in href:
                         # query commit
                         commit_sha = href.split("/")[-1].strip()
-                        commit_obj = self._repo.get_commits(sha=commit_sha)
-                        pass
+                        branches = self._get_branches_contain_given_commit(commit_sha)
+                        if "master" not in branches:
+                            unfixed_vulnerability_numbers.append(cve_number)
+                    else:
+                        unfixed_vulnerability_numbers.append(cve_number)
+
             else:
                 raise Exception("CVE info query error, status code:" + str(response.status_code))
+
+            return len(self._unfixed_vulnerability_numbers)
+
+    @property
+    def dependency_vulnerability_count(self):
+        if not self._dependencies:
+            self.dependency_count
+
+        total_vul_count = 0
+        for dependency in self._dependencies:
+            repo = get_repository(f"https://github.com/{dependency}")
+            repo_vul_count = repo.history_vulnerability_count
+            total_vul_count += repo_vul_count
+
+        return total_vul_count
+
+    @property
+    def history_vulnerability_severity(self):
+        if not self._vulnerability_cve_numbers:
+            self.history_vulnerability_count
+
+        nvd_api_key = os.getenv("NVD_API_KEY")
+        assert nvd_api_key, "NVD_API_KEY needs to be set."
+        effective_vul_count = 0
+        total_cvss_score = 0
+        for cve_number in self._vulnerability_cve_numbers:
+            nvd_api_request_url = f"https://services.nvd.nist.gov/rest/json/cve/1.0/{cve_number}?apiKey={nvd_api_key}"
+            params = {"q": "CVE"}
+            response = requests.get(url=nvd_api_request_url, params=params)
+            if response.status_code == 200:
+                data = json.loads(response.content)
+                cve_item_impact = data.get("result").get("CVE_Items")[0].get("impact")
+                if "baseMetricV3" in cve_item_impact:
+                    base_score = cve_item_impact.get("baseMetricV3").get("cvssV3").get("baseScore")
+                    effective_vul_count += 1
+                    total_cvss_score += base_score
+                else:
+                    continue
+
+            else:
+                raise Exception("NVD query error.")
+
+        return round(total_cvss_score / effective_vul_count, 2)
+
+    @property
+    def unfixed_vulnerability_severity(self):
+        if not self._unfixed_vulnerability_numbers:
+            self.unfixed_vulnerability_count
+
+        nvd_api_key = os.getenv("NVD_API_KEY")
+        assert nvd_api_key, "NVD_API_KEY needs to be set."
+        effective_vul_count = 0
+        total_cvss_score = 0
+        for cve_number in self._unfixed_vulnerability_numbers:
+            nvd_api_request_url = f"https://services.nvd.nist.gov/rest/json/cve/1.0/{cve_number}?apiKey={nvd_api_key}"
+            params = {"q": "CVE"}
+            response = requests.get(url=nvd_api_request_url, params=params)
+            if response.status_code == 200:
+                data = json.loads(response.content)
+                cve_item_impact = data.get("result").get("CVE_Items")[0].get("impact")
+                if "baseMetricV3" in cve_item_impact:
+                    base_score = cve_item_impact.get("baseMetricV3").get("cvssV3").get("baseScore")
+                    effective_vul_count += 1
+                    total_cvss_score += base_score
+                else:
+                    continue
+
+            else:
+                raise Exception("NVD query error.")
+
+        return round(total_cvss_score / effective_vul_count, 2)
+
+    @property
+    def commit_count(self):
+        # total commit of all time
+        return self._repo.get_commits().totalCount
+
+    @property
+    def commit_frequency(self):
+        # list the last year of commit activity grouped by week
+        total = 0
+        for week_stat in self._repo.get_stats_commit_activity():
+            total += week_stat
+
+        return round(total / 52, 1)
+
+    @property
+    def issue_count(self):
+        issues_since_time = datetime.datetime.utcnow() - datetime.timedelta(days=ISSUE_LOOKBACK_DAYS)
+        return self._repo.get_issues(state="all", since=issues_since_time).totalCOunt
+
+    @property
+    def closed_issue_count(self):
+        def issue_count(self):
+            issues_since_time = datetime.datetime.utcnow() - datetime.timedelta(days=ISSUE_LOOKBACK_DAYS)
+            return self._repo.get_issues(state="closed", since=issues_since_time).totalCOunt
+
+    @property
+    def pull_request_count(self):
+        return self._repo.get_pulls(state="all").totalCount
+
+    @property
+    def release_count(self):
+        total = 0
+        for release in self._repo.get_releases():
+            if (datetime.datetime.utcnow() - release.created_at).days < RELEASE_LOOKBACK_DAYS:
+                total += 1
+
+        if not total:
+            # make a estimation of release over the last 90 days
+            days_since_creation = self.created_since * 30
+            if not days_since_creation:
+                return 0
+            try:
+                total_tags = self._repo.get_tags().totalCount
+            except Exception:
+                # Very large number of tags, i.e. 5000+. Cap at 26.
+                return RECENT_RELEASES_THRESHOLD
+
+            total = (total_tags / days_since_creation) * RELEASE_LOOKBACK_DAYS
+
+        return total
+
+    @property
+    def comment_frequency(self):
+        issues_since_time = datetime.datetime.utcnow() - datetime.timedelta(
+            days=ISSUE_LOOKBACK_DAYS)
+        issue_count = self._repo.get_issues(state='all',
+                                            since=issues_since_time).totalCount
+        if not issue_count:
+            return 0
+
+        comment_count = self._repo.get_issues_comments(
+            since=issues_since_time).totalCount
+
+        return round(comment_count / issue_count, 1)
+
+    @property
+    def updated_since(self):
+        last_commit = self._repo.get_commits()[0]
+        last_commit_time = last_commit.commit.committer.date
+        time_delta = datetime.datetime.utcnow() - last_commit_time
+
+        return time_delta.days
+
+    @property
+    def vulnerability_fix_timeliness(self):
+        pass
+
+    @property
+    def contributor_count(self):
+        try:
+            return self._repo.get_contributors(anon='true').totalCount
+        except Exception:
+            # Very large number of contributors, i.e. 5000+. Cap at 5,000.
+            return 5000
+
+    @property
+    def organization_count(self):
+
+        def __filter_name(org_name):
+            return org_name.lower().replace('inc.', '').replace(
+                'llc', '').replace('@', '').replace(' ', '').rstrip(',')
+
+        orgs = set()
+        contributors = self._repo.get_contributors()[:TOP_CONTRIBUTOR_COUNT]
+        try:
+            for contributor in contributors:
+                if contributor.company:
+                    orgs.add(__filter_name(contributor.company))
+        except Exception:
+            # Very large number of contributors, i.e. 5000+. Cap at 10.
+            return 10
+        return len(orgs)
 
 
 # return expiry information of the given github token
@@ -521,7 +661,22 @@ def get_repository(url):
     raise Exception("Unsupported url!")
 
 
+def init(repo_url):
+    git_url = repo_url + ".git"
+    if not os.path.exists(TEMP_REPOSITORY_PATH):
+        os.mkdir(TEMP_REPOSITORY_PATH)
+
+    os.system("rmdir /s /q ..\\temp_repository")
+
+    git.Repo.clone_from(git_url, TEMP_REPOSITORY_PATH)
+
+
+def close():
+    os.system("rmdir /s /q ..\\temp_repository")
+
+
 def main():
+    # init("https://github.com/microweber/microweber")
     repo = get_repository("https://github.com/microweber/microweber")
     # print(repo.name)
     # print(repo.url)
@@ -534,15 +689,20 @@ def main():
     # print(repo.contributor_count)
     # print(repo.dependency_count)
     # print(repo.history_vulnerability_count)
-    print(repo.unfixed_vulnerability_count)
-    pass
+    # print(repo.unfixed_vulnerability_count)
+    # print(repo.dependency_vulnerability_count)
+    # print(repo.history_vulnerability_severity)
+    # print(repo.commit_count)
+    # print(repo.commit_frequency)
+    # print(repo.issue_count)
+    # print(repo.closed_issue_count)
+    print(repo.pull_request_count)
+    # close()
 
 
 if __name__ == "__main__":
     # http(s) proxy setting
-    os.environ["http_proxy"] = "http://127.0.0.1:60377"
-    os.environ["https_proxy"] = "http://127.0.0.1:60377"
-
-    os.environ["GITHUB_AUTH_TOKEN"] = "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"
+    os.environ["http_proxy"] = "http://127.0.0.1:33210"
+    os.environ["https_proxy"] = "http://127.0.0.1:33210"
 
     main()
