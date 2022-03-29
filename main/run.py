@@ -3,10 +3,11 @@
 Main script for calculating open source software security score.
 
 """
+from abc import ABC
 
 import requests
 import urllib
-from constants import *
+from main.constants import *
 import time
 import datetime
 import github
@@ -16,7 +17,6 @@ from bs4 import BeautifulSoup
 from urllib.parse import quote
 import re
 import git
-import shutil
 
 _CACHED_GITHUB_TOKEN = None
 _CACHED_GITHUB_TOKEN_OBJ = None
@@ -409,6 +409,9 @@ class GitHubRepository(Repository):
 
         url = "https://cve.mitre.org/cgi-bin/cvename.cgi"
         for cve_number in vulnerability_cve_numbers:
+            if cve_number != "CVE-2018-1000826":
+                continue
+
             # see if there is a commit for the CVE
             response = requests.get(url=url, headers=HTTP_REQUEST_HEADER, params=__pad_params(cve_number))
             if response.status_code == 200:
@@ -417,18 +420,43 @@ class GitHubRepository(Repository):
                 result_set = bs.select("li a[target='_blank']")
                 for result in result_set:
                     href = result.attrs["href"]
-                    expected_commit_path = "https://github.com/" + self._repo.full_name + "/commit"
+                    expected_commit_path = f"https://github.com/{self._repo.full_name}/commit"
                     if expected_commit_path in href:
                         # query commit
                         commit_sha = href.split("/")[-1].strip()
                         branches = self._get_branches_contain_given_commit(commit_sha)
-                        if "master" not in branches:
+                        default_branch = self._repo.default_branch
+                        if default_branch not in branches:
                             unfixed_vulnerability_numbers.append(cve_number)
-                    else:
-                        unfixed_vulnerability_numbers.append(cve_number)
+
+                        continue
+
+                    expected_issue_path = f"https://github.com/{self._repo.full_name}/issues"
+                    if expected_issue_path in href:
+                        contributors = self._repo.get_contributors()
+                        issue_number = int(href.split("/")[-1].strip())
+                        issue = self._repo.get_issue(issue_number)
+                        state = issue.state
+                        if "closed" in state:
+                            continue
+                        else:
+                            comments = issue.get_comments()
+                            # see if any contributor comment to this issue
+                            flag = False
+                            for comment in comments:
+                                comment_user = comment.user
+                                if comment_user in contributors:
+                                    flag = True
+
+                        if flag:
+                            continue
+
+                    unfixed_vulnerability_numbers.append(cve_number)
 
             else:
                 raise Exception("CVE info query error, status code:" + str(response.status_code))
+
+            self._unfixed_vulnerability_numbers = unfixed_vulnerability_numbers
 
             return len(self._unfixed_vulnerability_numbers)
 
@@ -689,14 +717,14 @@ def main():
     # print(repo.contributor_count)
     # print(repo.dependency_count)
     # print(repo.history_vulnerability_count)
-    # print(repo.unfixed_vulnerability_count)
+    print(repo.unfixed_vulnerability_count)
     # print(repo.dependency_vulnerability_count)
     # print(repo.history_vulnerability_severity)
     # print(repo.commit_count)
     # print(repo.commit_frequency)
     # print(repo.issue_count)
     # print(repo.closed_issue_count)
-    print(repo.pull_request_count)
+    # print(repo.pull_request_count)
     # close()
 
 
