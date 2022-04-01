@@ -161,12 +161,12 @@ class Repository:
     def contributor_capacity(self):
         raise NotImplementedError
 
-    @property
-    def contributor_background(self):
-        raise NotImplementedError
+    # @property
+    # def contributor_background(self):
+    #     raise NotImplementedError
 
     @property
-    def contribution_centralization(self):
+    def contribution_centrality(self):
         raise NotImplementedError
 
     @property
@@ -409,9 +409,6 @@ class GitHubRepository(Repository):
 
         url = "https://cve.mitre.org/cgi-bin/cvename.cgi"
         for cve_number in vulnerability_cve_numbers:
-            if cve_number != "CVE-2018-1000826":
-                continue
-
             # see if there is a commit for the CVE
             response = requests.get(url=url, headers=HTTP_REQUEST_HEADER, params=__pad_params(cve_number))
             if response.status_code == 200:
@@ -604,7 +601,94 @@ class GitHubRepository(Repository):
 
     @property
     def vulnerability_fix_timeliness(self):
-        pass
+        # start date: CVE record release date, issue opened date, and the date report on huntr.dev
+        # fix date: commit date, issue closed date, the date release security advisory
+
+        if not self._vulnerability_cve_numbers:
+            self.history_vulnerability_count
+
+        total_days = 0
+        for cve_number in self._vulnerability_cve_numbers:
+            # CVE record release date
+            url = f"https://cve.mitre.org/cgi-bin/cvename.cgi?name={cve_number}"
+            response = requests.get(url=url, headers=HTTP_REQUEST_HEADER)
+            if response.status_code == 200:
+                html = response.text
+                bs = BeautifulSoup(html, "html.parser")
+                record_release_date_regex = re.compile("[0-9]{8}")
+                result = bs.find(name="b", text=record_release_date_regex).text
+                ref_set = bs.select("li a[target='_blank']")
+                cve_release_date = datetime.datetime.strptime(f"{result[0: 4]}-{result[4: 6]}-{result[6:]}", "%Y-%m"
+                                                                                                             "-%d")
+            else:
+                raise Exception("CVE query error.")
+
+            issue_href = None
+            huntr_href = None
+            commit_href = None
+            # advisory_href = None
+            # TODO: add feature the date that release a security advisory
+
+            for ref in ref_set:
+                href = ref.attrs["href"]
+                expected_issue_path = f"https://github.com/{self._repo.full_name}/issues"
+                if expected_issue_path in href:
+                    issue_href = href
+
+                expected_huntr_path = "https://huntr.dev/bounties"
+                if expected_huntr_path in href:
+                    huntr_href = href
+
+                expected_commit_path = f"https://github.com/{self._repo.full_name}/commit"
+                if expected_commit_path in href:
+                    commit_href = expected_commit_path
+
+            # issue opened date
+            if issue_href:
+                issue_number = int(issue_href.split("/")[-1].strip())
+                issue = self._repo.get_issue(issue_number)
+                issue_opened_date = issue.created_at
+            else:
+                issue_opened_date = datetime.datetime.utcnow()
+
+            # huntr report date
+            if huntr_href:
+                response = requests.get(url=huntr_href, headers=HTTP_REQUEST_HEADER)
+                if response.status_code == 200:
+                    html = response.text
+                    bs = BeautifulSoup(html, "html.parser")
+                    result = bs.find(name="p", text="Reported on").findNext("p").text.strip()
+                    splitted_result = result.split(" ", 2)
+                    formatted_result = f"{splitted_result[0]} {splitted_result[1][: -2]} {splitted_result[2]}"
+                    huntr_report_date = datetime.datetime.strptime(formatted_result, "%b %d %Y")
+                else:
+                    raise Exception("huntr.dev query error.")
+            else:
+                huntr_report_date = datetime.datetime.utcnow()
+
+            # commit date
+            if commit_href:
+                commit_sha = href.split("/")[-1].strip()
+                commit = self._repo.get_commit(commit_sha)
+                commit_date = commit.commit.author.date
+            else:
+                commit_date = datetime.datetime.strptime("1970-1-1 0:00:00", "%Y-%m-%d %H:%M:%S")
+
+            # issue close date
+            if issue_href:
+                issue_closed_date = issue.closed_at
+                if issue_closed_date:
+                    issue_closed_date = datetime.datetime.strptime("1970-1-1 0:00:00", "%Y-%m-%d %H:%M:%S")
+
+            else:
+                issue_closed_date = datetime.datetime.strptime("1970-1-1 0:00:00", "%Y-%m-%d %H:%M:%S")
+
+            reported_date = min(cve_release_date, issue_opened_date, huntr_report_date)
+            fix_date = max(commit_date, issue_closed_date)
+            time_gap = max((fix_date - reported_date).days, 0)
+            total_days += time_gap
+
+        return round(total_days / len(self._vulnerability_cve_numbers), 2)
 
     @property
     def contributor_count(self):
@@ -631,6 +715,29 @@ class GitHubRepository(Repository):
             # Very large number of contributors, i.e. 5000+. Cap at 10.
             return 10
         return len(orgs)
+
+    @property
+    def contributor_capacity(self):
+        contributors = self._repo.get_contributors()
+        valid_contributor_count = 0
+        follower_count = 0
+        for contributor in contributors:
+            contributions = contributor.contributions
+            if contributions < 50:
+                continue
+
+            valid_contributor_count += 1
+            company = contributor.company
+            if company:
+                follower_count += contributor.followers
+            else:
+                follower_count += round(contributor.followers * 0.5)
+
+        return round(follower_count / valid_contributor_count, 2)
+
+    @property
+    def contribution_centrality(self):
+        pass
 
 
 # return expiry information of the given github token
@@ -717,7 +824,7 @@ def main():
     # print(repo.contributor_count)
     # print(repo.dependency_count)
     # print(repo.history_vulnerability_count)
-    print(repo.unfixed_vulnerability_count)
+    # print(repo.unfixed_vulnerability_count)
     # print(repo.dependency_vulnerability_count)
     # print(repo.history_vulnerability_severity)
     # print(repo.commit_count)
@@ -725,6 +832,8 @@ def main():
     # print(repo.issue_count)
     # print(repo.closed_issue_count)
     # print(repo.pull_request_count)
+    # print(repo.vulnerability_fix_timeliness)
+    print(repo.contributor_capacity)
     # close()
 
 
