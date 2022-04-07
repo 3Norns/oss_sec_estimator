@@ -1,16 +1,72 @@
 GitHub relative path,CVE number,Vulnerability description,Release date
-microweber/microweber,CVE-2022-0968,"The microweber application allows large characters to insert in the input field ""fist & last name"" which can allow attackers to cause a Denial of Service (DoS) via a crafted HTTP request. in microwebe",Mar 14th 2022
+mruby/mruby,CVE-2022-1201,NULL Pointer Dereference in mrb_vm_exec with super,Apr 1st 2022
+phpipam/phpipam,,Incorrect Privilege Assignment,Apr 1st 2022
+phpipam/phpipam,,Improper Authorization,Apr 1st 2022
+phpipam/phpipam,,Improper Access Control,Apr 1st 2022
+gpac/gpac,,Inf loop,Mar 31st 2022
+livehelperchat/livehelperchat,,EXIF Geolocation Data Not Stripped From Uploaded Images (vulnerability),Mar 31st 2022
+livehelperchat/livehelperchat,CVE-2022-1191,SSRF on index.php/cobrowse/proxycss/,Mar 31st 2022
+livehelperchat/livehelperchat,,Weak secrethash can be brute-forced,Mar 30th 2022
+livehelperchat/livehelperchat,CVE-2022-1176,Loose comparison causes IDOR on multiple endpoints,Mar 30th 2022
+getgrav/grav,,"The grav application allows large characters to insert in the input field ""Full...",Mar 30th 2022
+zmister2016/mrdoc,,Cross-Site Request Forgery (CSRF),Mar 30th 2022
+gpac/gpac,,Stack buffer overflow in XML entity parsing,Mar 30th 2022
+vim/vim,CVE-2022-1160,heap buffer overflow in get_one_sourceline,Mar 30th 2022
+gpac/gpac,CVE-2022-1172,Null Pointer Dereference Caused Segmentation Fault,Mar 30th 2022
+snipe/snipe-it,CVE-2022-1155,Old sessions are not blocked by the login enable function.,Mar 29th 2022
+vim/vim,CVE-2022-1154,Use after free in utf_ptr2char,Mar 29th 2022
+openemr/openemr,CVE-2022-1181,Stored Cross Site Scripting,Mar 28th 2022
+sissbruecker/linkding,,csrf bug to remove a bookmark,Mar 27th 2022
+sissbruecker/linkding,,Open Redirect (Bypass Of #59d7c660-744c-4fee-88b7-6117b6846aea),Mar 27th 2022
+mruby/mruby,CVE-2022-1106,use after free in mrb_vm_exec,Mar 26th 2022
+sissbruecker/linkding,,Multiple Open redirect,Mar 26th 2022
+sissbruecker/linkding,,Multiple Idor,Mar 26th 2022
+mruby/mruby,CVE-2022-1071,User after free in mrb_vm_exec,Mar 25th 2022
+forkcms/forkcms,CVE-2022-1064,SQL injection through marking blog comments on bulk as spam,Mar 24th 2022
+radareorg/radare2,CVE-2022-1061,Heap Buffer Overflow in parseDragons,Mar 24th 2022
+vfleaking/uoj,,Cross-site Scripting (XSS) - Reflected,Mar 24th 2022
+go-gitea/gitea,,Obscure Email Vulnerability allow anyone to signup with target email id without...,Mar 24th 2022
+go-gitea/gitea,CVE-2022-1058,Open Redirect on login,Mar 23rd 2022
+openemr/openemr,CVE-2022-1180,Reflected Cross Site Scripting,Mar 23rd 2022
+openemr/openemr,CVE-2022-1179,Non-Privilege User Can Created New Rule and Lead to Stored Cross Site Scripting,Mar 23rd 2022
+forkcms/forkcms,,Reflected XSS,Mar 23rd 2022
+radareorg/radare2,CVE-2022-1052,Heap Buffer Overflow in iterate_chained_fixups,Mar 22nd 2022
+posthog/posthog,,Stored XSS in organisation name field,Mar 22nd 2022
+evdama/is-it-check,,ReDoS in is-it-check,Mar 22nd 2022
+evdama/is-it-check,,ReDoS in is-it-check,Mar 22nd 2022
+microweber/microweber,CVE-2022-1036,Able to create an account with long password leads to memory corruption / Intege...,Mar 21st 2022
+microweber/microweber,,stored xss in uploaded photo checkbox,Mar 21st 2022
+microweber/microweber,,The microweber application allows large characters to insert in the input field...,Mar 21st 2022
+gpac/gpac,,Untrusted Pointer Dereference,Mar 21st 2022
+star7th/showdoc,CVE-2022-1034,There is a Unrestricted Upload of File vulnerability in ShowDoc v2.10.3,Mar 21st 2022
+crater-invoice/crater,CVE-2022-1033,Unrestricted Upload of File with Dangerous Type,Mar 21st 2022
+crater-invoice/crater,CVE-2022-1032,Insecure deserialization of not validated module file,Mar 21st 2022
+radareorg/radare2,CVE-2022-1031,Use After Free in op_is_set_bp,Mar 21st 2022
+openemr/openemr,CVE-2022-1177,Accounting User Can Download Patient Reports in openemr,Mar 21st 2022
+openemr/openemr,CVE-2022-1178,Stored Cross Site Scripting,Mar 21st 2022
+tsolucio/corebos,,File Descriptor Leak,Mar 20th 2022
+star7th/showdoc,,Using vulnerable dependencies in package.json,Mar 20th 2022
+gpac/gpac,CVE-2022-1035,Segmentation Fault caused by MP4Box -lsr,Mar 18th 2022
+clusterlabs/pcs,CVE-2022-1049,Improper Authorization,Mar 17th 2022
+go-gitea/gitea,,Arbitrary file deletion in Gitea,Mar 17th 2022
+microweber/microweber,,The microweber application allows large characters to insert in the input field...,Mar 15th 2022
+microweber/microweber,,The microweber application allows large characters to insert in the input field...,Mar 15th 2022
+microweber/microweber,,No Rate Limit on Copoun Code Functionality,Mar 15th 2022
+microweber/microweber,,Path Traversal,Mar 15th 2022
+hestiacp/hestiacp,CVE-2022-0986,Reflected Cross-site Scripting (XSS) Vulnerability,Mar 15th 2022
+getgrav/grav,CVE-2022-0970,Cross-site Scripting (XSS) - Stored,Mar 15th 2022
+microweber/microweber,CVE-2022-0968,The microweber application allows large characters to insert in the input field...,Mar 14th 2022
 star7th/showdoc,CVE-2022-0967,Stored XSS via File Upload in star7th/showdoc in star7th/showdoc,Mar 14th 2022
 star7th/showdoc,CVE-2022-0966,Stored XSS via File Upload in star7th/showdoc,Mar 14th 2022
 star7th/showdoc,CVE-2022-0965,Stored XSS viva .ofd file upload,Mar 14th 2022
 star7th/showdoc,CVE-2022-0964,Stored XSS viva .webmv file upload,Mar 14th 2022
 microweber/microweber,CVE-2022-0963,Unrestricted XML Files Leads to Stored XSS,Mar 14th 2022
 star7th/showdoc,CVE-2022-0962,Stored XSS viva .webma file upload,Mar 14th 2022
-microweber/microweber,CVE-2022-0961,"The microweber application allows large characters to insert in the input field ""post title"" which can allow attackers to cause a Denial of Service (DoS) via a crafted HTTP request.",Mar 14th 2022
+microweber/microweber,CVE-2022-0961,The microweber application allows large characters to insert in the input field...,Mar 14th 2022
 star7th/showdoc,CVE-2022-0960,Stored XSS viva .properties file upload,Mar 14th 2022
 star7th/showdoc,CVE-2022-0957,Stored XSS via File Upload,Mar 14th 2022
 star7th/showdoc,CVE-2022-0956,Stored XSS via File Upload,Mar 14th 2022
-microweber/microweber,CVE-2022-0954,"Multiple Stored Cross-site Scripting (XSS) Vulnerabilities in Shop's Other Settings, Shop's Autorespond E-mail Settings and Shops' Payments Methods",Mar 14th 2022
+microweber/microweber,CVE-2022-0954,Multiple Stored Cross-site Scripting (XSS) Vulnerabilities in Shop's Other Setti...,Mar 14th 2022
 star7th/showdoc,CVE-2022-0951,File Upload Restriction Bypass leading to Stored XSS Vulnerability,Mar 14th 2022
 star7th/showdoc,CVE-2022-0950,Unrestricted Upload of File with Dangerous Type,Mar 14th 2022
 star7th/showdoc,CVE-2022-0946,Stored XSS viva cshtm file upload,Mar 14th 2022
@@ -18,11 +74,15 @@ star7th/showdoc,CVE-2022-0945,Stored XSS viva axd and cshtml file upload in star
 sqlpad/sqlpad,CVE-2022-0944,Template injection in connection test endpoint leads to RCE,Mar 14th 2022
 openwall/john,,Classic Buffer Overflow in john,Mar 14th 2022
 vim/vim,CVE-2022-0943,Heap-based Buffer Overflow occurs in vim,Mar 14th 2022
+openframeworks/openframeworks,,SSL certificate verification disabled,Mar 14th 2022
 star7th/showdoc,CVE-2022-0942,Stored XSS due to Unrestricted File Upload,Mar 13th 2022
 star7th/showdoc,CVE-2022-0941,Stored XSS due to Unrestricted File Upload,Mar 13th 2022
 star7th/showdoc,CVE-2022-0940,Stored XSS due to Unrestricted File Upload,Mar 13th 2022
 star7th/showdoc,CVE-2022-0938,Stored XSS via file upload,Mar 13th 2022
 star7th/showdoc,CVE-2022-0937,Stored xss in showdoc through file upload,Mar 13th 2022
+pylons/waitress,CVE-2022-24761,HTTP Request Smuggling,Mar 13th 2022
+admidio/admidio,CVE-2022-0991,Insufficient Session Expiration,Mar 12th 2022
+gogs/gogs,CVE-2022-0415,Remote Command Execution in uploading repository file,Mar 12th 2022
 alanaktion/phproject,,Cross-site Scripting (XSS) - Stored,Mar 12th 2022
 alanaktion/phproject,,Cross-site Scripting (XSS) - Stored,Mar 12th 2022
 alanaktion/phproject,,Unrestricted Upload of File with Dangerous Type,Mar 12th 2022
@@ -37,17 +97,22 @@ gnuboard/gnuboard5,,Cross-site Scripting (XSS) - Reflected,Mar 11th 2022
 microweber/microweber,CVE-2022-0921,Abusing Backup/Restore feature to achieve Remote Code Execution,Mar 11th 2022
 microweber/microweber,CVE-2022-0913,Integer Overflow or Wraparound,Mar 10th 2022
 microweber/microweber,CVE-2022-0912,Unrestricted Upload of File with Dangerous Type,Mar 10th 2022
+pimcore/pimcore,CVE-2022-0911,Cross-site Scripting (XSS) - Stored,Mar 10th 2022
 athlon1600/youtube-downloader,,Server-Side Request Forgery (SSRF),Mar 10th 2022
 fredhutch/motuz,,Improper Authorization,Mar 10th 2022
-prasathmani/tinyfilemanager,,Path Traversal,Mar 9th 2022
+bareos/bareos,CVE-2022-24755,Improper Authorization and possible DoS when using PAM Auth,Mar 10th 2022
+prasathmani/tinyfilemanager,CVE-2022-1000,Path Traversal,Mar 9th 2022
 microweber/microweber,CVE-2022-0906,Unrestricted file upload leads to stored XSS,Mar 9th 2022
 go-gitea/gitea,CVE-2022-0905,Improper Authorization,Mar 9th 2022
 microweber/microweber,,Insufficient Granularity of Access Control,Mar 9th 2022
 microweber/microweber,CVE-2022-0896,Improper Neutralization of Special Elements Used in a Template Engine,Mar 9th 2022
 microweber/microweber,CVE-2022-0895,Static Code Injection,Mar 9th 2022
+pimcore/pimcore,CVE-2022-0894,Cross-site Scripting (XSS) - Stored,Mar 9th 2022
+pimcore/pimcore,CVE-2022-0893,Cross-site Scripting (XSS) - Stored,Mar 9th 2022
+pimcore/data-hub,CVE-2022-0955,Cross-site Scripting (XSS) - Stored,Mar 9th 2022
 serviejs/popsicle-redirects,,Exposure of Sensitive Information to an Unauthorized Actor,Mar 9th 2022
 mruby/mruby,CVE-2022-0890,NULL Pointer Dereference,Mar 9th 2022
-mineweb/minewebcms,,Cross-site Scripting (XSS) - Stored,Mar 8th 2022
+mineweb/minewebcms,CVE-2022-1163,Cross-site Scripting (XSS) - Stored,Mar 8th 2022
 chocobozzz/peertube,CVE-2022-0881,Insecure Storage of Sensitive Information,Mar 8th 2022
 star7th/showdoc,CVE-2022-0880,Cross-site Scripting (XSS) - Stored,Mar 8th 2022
 gpac/gpac,,NULL Pointer Dereference,Mar 7th 2022
@@ -75,6 +140,7 @@ microweber-dev/whmcs_plugin,CVE-2022-0855,Improper Resolution of Path Equivalenc
 dolibarr/dolibarr,CVE-2022-0819,Code Injection,Mar 1st 2022
 slidevjs/slidev,,External Control of File Name or Path,Mar 1st 2022
 tapjs/tap-mocha-reporter,,Inefficient Regular Expression Complexity,Mar 1st 2022
+tsolucio/corebos,,Improper Preservation of Permissions,Mar 1st 2022
 microweber/microweber,CVE-2022-0777,Weak Password Recovery Mechanism for Forgotten Password,Feb 28th 2022
 hakimel/reveal.js,CVE-2022-0776,Cross-site Scripting (XSS) - DOM,Feb 28th 2022
 librenms/librenms,CVE-2022-0772,Cross-site Scripting (XSS) - Stored,Feb 28th 2022
@@ -114,6 +180,8 @@ mautic/mautic,,Improper Access Control,Feb 22nd 2022
 radareorg/radare2,CVE-2022-0712,NULL Pointer Dereference,Feb 22nd 2022
 laravelio/laravel.io,,Cross-Site Request Forgery (CSRF),Feb 21st 2022
 silvanmelchior/rpi_cam_web_interface,,Path Traversal in silvanmelchior/RPi_Cam_Web_Interface,Feb 21st 2022
+pimcore/pimcore,CVE-2022-0705,Cross-site Scripting (XSS) - Stored,Feb 21st 2022
+pimcore/pimcore,CVE-2022-0704,Cross-site Scripting (XSS) - Stored,Feb 21st 2022
 archivy/archivy,CVE-2022-0697,Open Redirect,Feb 21st 2022
 webmin/webmin,CVE-2022-0824,Improper Access Control to Remote Code Execution,Feb 21st 2022
 vim/vim,CVE-2022-0696,NULL Pointer Dereference,Feb 21st 2022
@@ -135,7 +203,7 @@ microweber/microweber,CVE-2022-0678,Cross-site Scripting (XSS) - Reflected,Feb 1
 radareorg/radare2,CVE-2022-0676,Heap-based Buffer Overflow,Feb 18th 2022
 microweber/microweber,,Improper Handling of Length Parameter Inconsistency,Feb 17th 2022
 microweber/microweber,,Improper Input Validation,Feb 17th 2022
-microweber/microweber,CVE-2022-0666,CRLF Injection leads to Stack Trace Exposure due to lack of filtering at https://demo.microweber.org/,Feb 17th 2022
+microweber/microweber,CVE-2022-0666,CRLF Injection leads to Stack Trace Exposure due to lack of filtering at https:...,Feb 17th 2022
 pimcore/pimcore,CVE-2022-0665,Path Traversal,Feb 17th 2022
 gravitl/netmaker,CVE-2022-0664,Use of Hard-coded Cryptographic Key,Feb 17th 2022
 microweber/microweber,CVE-2022-0660,Generation of Error Message Containing Sensitive Information,Feb 17th 2022
@@ -201,6 +269,9 @@ radareorg/radare2,CVE-2022-0521,Access of Memory Location After End of Buffer,Fe
 radareorg/radare2,CVE-2022-0520,Use After Free,Feb 8th 2022
 radareorg/radare2,CVE-2022-0519,Buffer Access with Incorrect Length Value,Feb 8th 2022
 radareorg/radare2,CVE-2022-0518,Heap-based Buffer Overflow,Feb 8th 2022
+crater-invoice/crater,CVE-2022-0515,Cross-Site Request Forgery (CSRF),Feb 8th 2022
+crater-invoice/crater,CVE-2022-0514,Business Logic Errors,Feb 8th 2022
+bytefury/crater,,Cross-Site Request Forgery (CSRF),Feb 8th 2022
 unshiftio/url-parse,CVE-2022-0512,Authorization Bypass Through User-Controlled Key,Feb 7th 2022
 clasp-developers/clasp,,Generation of Error Message Containing Sensitive Information,Feb 7th 2022
 pimcore/pimcore,CVE-2022-0510,Cross-site Scripting (XSS) - Reflected,Feb 7th 2022
@@ -290,6 +361,7 @@ feross/simple-get,CVE-2022-0355,Exposure of Sensitive Information to an Unauthor
 janeczku/calibre-web,CVE-2022-0352,Cross-site Scripting (XSS) - Reflected,Jan 25th 2022
 vim/vim,CVE-2022-0351,Access of Memory Location Before Start of Buffer,Jan 25th 2022
 pimcore/web2print-tools,,Cross-site Scripting (XSS) - Stored,Jan 25th 2022
+vanessa219/vditor,CVE-2022-0350,Cross-site Scripting (XSS) - Stored,Jan 24th 2022
 pimcore/pimcore,CVE-2022-0348,Cross-site Scripting (XSS) - Stored,Jan 24th 2022
 liangliangyy/djangoblog,,Cross-Site Request Forgery (CSRF),Jan 24th 2022
 getgrav/grav,,Reliance on Cookies without Validation and Integrity Checking,Jan 24th 2022
@@ -320,6 +392,7 @@ bobthecow/mustache.php,CVE-2022-0323,Improper Neutralization of Special Elements
 admidio/admidio,,Cross-site Scripting (XSS) - Stored,Jan 20th 2022
 vim/vim,CVE-2022-0319,Out-of-bounds Read,Jan 20th 2022
 vim/vim,CVE-2022-0318,Heap-based Buffer Overflow,Jan 20th 2022
+horovod/horovod,CVE-2022-0315,Insecure Temporary File,Jan 20th 2022
 playframework/play-samples,,Static Code Injection,Jan 20th 2022
 admidio/admidio,,Cross-site Scripting (XSS) - Stored,Jan 20th 2022
 part-db/part-db,,Cross-site Scripting (XSS) - Reflected,Jan 20th 2022
@@ -354,7 +427,7 @@ pimcore/pimcore,CVE-2022-0251,Cross-site Scripting (XSS) - Stored,Jan 17th 2022
 livehelperchat/livehelperchat,,Improper Use of Validation Framework,Jan 17th 2022
 livehelperchat/livehelperchat,CVE-2022-0245,Cross-Site Request Forgery (CSRF),Jan 17th 2022
 orchardcms/orchardcore,CVE-2022-0243,Cross-site Scripting (XSS) - Stored,Jan 17th 2022
-mineweb/minewebcms,,Failure to Sanitize Special Elements into a Different Plane (Special Element Injection),Jan 17th 2022
+mineweb/minewebcms,,Failure to Sanitize Special Elements into a Different Plane (Special Element Inj...,Jan 17th 2022
 crater-invoice/crater,CVE-2022-0242,Unrestricted Upload of File with Dangerous Type,Jan 17th 2022
 mruby/mruby,CVE-2022-0240,NULL Pointer Dereference,Jan 16th 2022
 mineweb/minewebcms,,Cross-site Scripting (XSS) - Stored,Jan 16th 2022
@@ -406,8 +479,10 @@ vim/vim,CVE-2022-0156,Use After Free,Jan 8th 2022
 zulip/zulip,CVE-2021-3866,Cross-site Scripting (XSS) - Stored,Jan 8th 2022
 admidio/admidio,,Cross-site Scripting (XSS) - Stored,Jan 8th 2022
 follow-redirects/follow-redirects,CVE-2022-0155,Exposure of Private Personal Information to an Unauthorized Actor,Jan 8th 2022
+forkcms/forkcms,CVE-2022-0153,SQL Injection,Jan 8th 2022
 tensorflow/tensorflow,CVE-2022-23563,Insecure Temporary File,Jan 8th 2022
 rodber/chevereto-free,,Server-Side Request Forgery (SSRF),Jan 8th 2022
+forkcms/forkcms,CVE-2022-0145,Cross-site Scripting (XSS) - Stored,Jan 7th 2022
 shelljs/shelljs,CVE-2022-0144,Improper Privilege Management,Jan 7th 2022
 radareorg/radare2,CVE-2022-0139,Use After Free,Jan 7th 2022
 chocobozzz/peertube,CVE-2022-0133,Improper Access Control,Jan 6th 2022
@@ -685,6 +760,7 @@ bookstackapp/bookstack,CVE-2021-3906,Unrestricted Upload of File with Dangerous 
 shopware/shopware,,Cross-site Scripting (XSS) - Stored,Oct 26th 2021
 hzxie/voj,,Cross-Site Request Forgery (CSRF),Oct 26th 2021
 getgrav/grav,CVE-2021-3904,Cross-site Scripting (XSS) - Stored,Oct 26th 2021
+forkcms/forkcms,,SQL Injection,Oct 26th 2021
 vim/vim,CVE-2021-3903,Heap-based Buffer Overflow,Oct 25th 2021
 dolibarr/dolibarr,,Improper Handling of Insufficient Privileges,Oct 25th 2021
 kasuganosoras/pigeon,,Sensitive Cookie Without 'HttpOnly' Flag,Oct 25th 2021
@@ -716,17 +792,21 @@ gunet/openeclass,,Session Fixation,Oct 22nd 2021
 pimcore/pimcore,,Server-Side Request Forgery (SSRF),Oct 22nd 2021
 attendize/attendize,,Cross-Site Request Forgery (CSRF),Oct 22nd 2021
 attendize/attendize,,Insufficient Granularity of Access Control,Oct 22nd 2021
+forkcms/forkcms,,SQL Injection,Oct 22nd 2021
 clean-css/clean-css,,Inefficient Regular Expression Complexity,Oct 21st 2021
 rmuif/web,,Cross-site Scripting (XSS) - Stored,Oct 21st 2021
 admidio/admidio,,Cross-site Scripting (XSS) - Reflected,Oct 21st 2021
 admidio/admidio,,Session Fixation,Oct 21st 2021
 erxes/erxes,,Inefficient Regular Expression Complexity,Oct 21st 2021
+forkcms/forkcms,,Cross-site Scripting (XSS) - Stored,Oct 21st 2021
 ampache/ampache,,SQL Injection,Oct 20th 2021
 pimcore/demo,,Cross-Site Request Forgery (CSRF),Oct 20th 2021
 pixelfed/pixelfed,,Insufficient Granularity of Access Control,Oct 20th 2021
 yeswiki/yeswiki,,SQL Injection,Oct 20th 2021
 opensourcepos/opensourcepos,,Cross-site Scripting (XSS) - Stored,Oct 20th 2021
 squell/id3,,Buffer Access with Incorrect Length Value,Oct 20th 2021
+forkcms/forkcms,,Cross-site Scripting (XSS) - Stored,Oct 20th 2021
+forkcms/forkcms,,Cross-site Scripting (XSS) - Stored,Oct 20th 2021
 fisharebest/webtrees,,Improper Restriction of Rendered UI Layers or Frames,Oct 19th 2021
 phili67/ecclesiacrm,,SQL Injection,Oct 19th 2021
 kunstmaan/kunstmaanbundlescms,,Cross-Site Request Forgery (CSRF),Oct 19th 2021
@@ -740,6 +820,7 @@ ikus060/rdiffweb,,Cross-Site Request Forgery (CSRF),Oct 19th 2021
 chevereto/chevereto-free,,Improper Restriction of Rendered UI Layers or Frames,Oct 19th 2021
 stylelint/stylelint,,Inefficient Regular Expression Complexity,Oct 19th 2021
 hoene/libmysofa,,Heap-based Buffer Overflow,Oct 19th 2021
+forkcms/forkcms,,Open Redirect,Oct 19th 2021
 atmosphere/atmosphere,,Improper Restriction of XML External Entity Reference,Oct 18th 2021
 openwhyd/openwhyd,,Open Redirect,Oct 18th 2021
 openwhyd/openwhyd,,Cross-site Scripting (XSS) - Stored,Oct 18th 2021
@@ -770,6 +851,7 @@ yiminghe/async-validator,,Inefficient Regular Expression Complexity,Oct 15th 202
 siwapp/siwapp,,Sensitive Cookie in HTTPS Session Without 'Secure' Attribute,Oct 15th 2021
 admidio/admidio,,Cross-site Scripting (XSS) - Stored,Oct 15th 2021
 ampache/ampache,,Cross-site Scripting (XSS) - Stored,Oct 15th 2021
+forkcms/forkcms,,Insufficient Session Expiration,Oct 15th 2021
 namelessmc/nameless,,Improper Restriction of Rendered UI Layers or Frames,Oct 15th 2021
 kasuganosoras/pigeon,,Cross-site Scripting (XSS) - Reflected,Oct 15th 2021
 mariotti94/webrisc-v,,Cross-site Scripting (XSS) - Reflected,Oct 15th 2021
@@ -840,7 +922,7 @@ opensourcepos/opensourcepos,,Cross-Site Request Forgery (CSRF),Oct 7th 2021
 terkelg/prompts,,Inefficient Regular Expression Complexity,Oct 7th 2021
 kevinpapst/kimai2,,Sensitive Cookie in HTTPS Session Without 'Secure' Attribute,Oct 7th 2021
 rotheross/otobo,,Open Redirect,Oct 7th 2021
-flarum/core,,The UI Performs the Wrong Action,Oct 7th 2021
+flarum/framework,,The UI Performs the Wrong Action,Oct 7th 2021
 netdisco/netdisco,,Improper Restriction of Rendered UI Layers or Frames,Oct 6th 2021
 pkp/pkp-lib,,Cross-Site Request Forgery (CSRF),Oct 6th 2021
 anonaddy/anonaddy,,Use of a Broken or Risky Cryptographic Algorithm,Oct 6th 2021
@@ -899,6 +981,7 @@ collectiveaccess/pawtucket2,,Improper Access Control,Oct 1st 2021
 gwsw/less,,Stack-based Buffer Overflow,Oct 1st 2021
 osticket/osticket,,Server-Side Request Forgery (SSRF),Sep 30th 2021
 osticket/osticket,,Observable Response Discrepancy,Sep 30th 2021
+sylius/sylius,CVE-2021-3841,Cross-site Scripting (XSS) - Stored,Sep 30th 2021
 crankyoldgit/irremoteesp8266,,Inefficient Regular Expression Complexity,Sep 30th 2021
 collectiveaccess/providence,,Cross-site Scripting (XSS) - Reflected,Sep 30th 2021
 podcastgenerator/podcastgenerator,,Cross-site Scripting (XSS) - Reflected,Sep 29th 2021
@@ -1014,7 +1097,7 @@ cdr/code-server,CVE-2021-3810,Inefficient Regular Expression Complexity,Sep 17th
 area17/twill,,Cross-site Scripting (XSS) - Reflected,Sep 17th 2021
 khodakhah/nodcms,,The UI Performs the Wrong Action,Sep 17th 2021
 chalk/ansi-regex,CVE-2021-3807,Inefficient Regular Expression Complexity,Sep 17th 2021
-tildeclub/site,,Failure to Sanitize Special Elements into a Different Plane (Special Element Injection),Sep 16th 2021
+tildeclub/site,,Failure to Sanitize Special Elements into a Different Plane (Special Element Inj...,Sep 16th 2021
 fisharebest/webtrees,,Insufficient Isolation of System-Dependent Functions,Sep 16th 2021
 mariocasciaro/object-path,CVE-2021-3805,Prototype Pollution,Sep 16th 2021
 nervjs/taro,CVE-2021-3804,Inefficient Regular Expression Complexity,Sep 16th 2021
@@ -1278,7 +1361,7 @@ tsolucio/corebos,,Cross-Site Request Forgery (CSRF),Aug 16th 2021
 tsolucio/corebos,,Cross-Site Request Forgery (CSRF),Aug 16th 2021
 tsolucio/corebos,,Cross-Site Request Forgery (CSRF),Aug 16th 2021
 tsolucio/corebos,,Cross-Site Request Forgery (CSRF),Aug 16th 2021
-devcode-it/openstamanager,,Failure to Sanitize Special Elements into a Different Plane (Special Element Injection),Aug 15th 2021
+devcode-it/openstamanager,,Failure to Sanitize Special Elements into a Different Plane (Special Element Inj...,Aug 15th 2021
 slackero/phpwcms,,Open Redirect,Aug 14th 2021
 changeweb/unifiedtransform,,Cross-Site Request Forgery (CSRF),Aug 14th 2021
 changeweb/unifiedtransform,,Cross-site Scripting (XSS) - Stored,Aug 14th 2021
@@ -1576,7 +1659,7 @@ sofianehamlaoui/lockdoor-framework,,Command Injection,Jun 14th 2021
 sofianehamlaoui/lockdoor-framework,,Command Injection,Jun 14th 2021
 laravel/framework,,Relative Path Traversal,Jun 13th 2021
 s-cart/core,,SQL Injection,Jun 12th 2021
-flarum/core,,Relative Path Traversal,Jun 12th 2021
+flarum/framework,,Relative Path Traversal,Jun 12th 2021
 cortezaproject/corteza-server,,Cross-site Scripting (XSS) - Stored,Jun 11th 2021
 hascheksolutions/pictshare,,Insufficient Documentation of Error Handling Techniques,Jun 11th 2021
 rup0rt/pcapfix,,Heap-based Buffer Overflow,Jun 10th 2021
@@ -1646,6 +1729,7 @@ utmsigep/member-directory,,Cross-site Scripting (XSS) - Generic,May 16th 2021
 utmsigep/member-directory,,Cross-site Scripting (XSS) - Generic,May 16th 2021
 utmsigep/member-directory,,Improper Handling of Values,May 16th 2021
 demon1a/discord-recon,,Path Traversal,May 15th 2021
+bytefury/crater,,Cross-site Scripting (XSS) - Stored,May 14th 2021
 cythron/tweango,,Use of Hard-coded Credentials,May 13th 2021
 flitbit/json-ptr,,Code Injection,May 13th 2021
 axiomatic-systems/bento4,,NULL Pointer Dereference,May 13th 2021
@@ -1682,7 +1766,7 @@ thewawar/simple-http-server,,Cross-Site Request Forgery (CSRF),Apr 15th 2021
 braitsch/node-login,,Business Logic Errors,Apr 14th 2021
 harish81/digidocu,,Cross-site Scripting (XSS) - Stored,Apr 12th 2021
 robinvdvleuten/shvl,CVE-2020-28278,Prototype Pollution,Apr 12th 2021
-sebhildebrandt/systeminformation,,Failure to Sanitize Special Elements into a Different Plane (Special Element Injection),Apr 9th 2021
+sebhildebrandt/systeminformation,,Failure to Sanitize Special Elements into a Different Plane (Special Element Inj...,Apr 9th 2021
 bigprof-software/online-invoicing-system,,Cross-site Scripting (XSS) - Generic,Apr 8th 2021
 frenchbread/private-ip,CVE-2020-28360,Server-Side Request Forgery (SSRF),Apr 7th 2021
 storybookjs/telejson,,Code Injection,Apr 6th 2021

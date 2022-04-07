@@ -7,15 +7,18 @@ from selenium.common.exceptions import StaleElementReferenceException
 import pymysql
 import csv
 
+
 def get_record_release_year(selenium_item):
     record_release_date = selenium_item.find_element_by_xpath(release_date_xpath).text
     record_release_year = int(record_release_date.strip().split()[2])
     return record_release_year
 
+
 def trim_relative_path(project_relative_path):
-    list = project_relative_path.split("/", 2)
-    trimmed_path = list[0].strip() + "/" + list[1].strip()
+    list_ = project_relative_path.split("/", 2)
+    trimmed_path = list_[0].strip() + "/" + list_[1].strip()
     return trimmed_path
+
 
 def save_data_to_csv(data, file_path):
     with open(file_path, "w", newline="") as t:
@@ -28,6 +31,7 @@ def save_data_to_csv(data, file_path):
         writer.writerows(data)
     print("data has been written into csv file")
 
+
 def save_data_to_mysql(data):
     conn = pymysql.connect(
         host="localhost",
@@ -37,7 +41,8 @@ def save_data_to_mysql(data):
         charset="utf8"
     )
     cursor = conn.cursor()
-    sql = "INSERT INTO vulnerable_project_in_huntre (github_project_relative_path, cve_number, vulnerability_description, release_date) VALUES (%s, %s, %s, %s)"
+    sql = "INSERT INTO vulnerable_project_in_huntre (github_project_relative_path, cve_number, " \
+          "vulnerability_description, release_date) VALUES (%s, %s, %s, %s) "
     try:
         cursor.executemany(sql, data)
         conn.commit()
@@ -47,6 +52,7 @@ def save_data_to_mysql(data):
     finally:
         cursor.close()
         conn.close()
+
 
 driver = webdriver.Chrome()
 driver.maximize_window()
@@ -84,14 +90,14 @@ while True:
         break
 
     if last_record_release_year >= 2020:
-        for record in hacktivity_table[total_record : ]:
+        for record in hacktivity_table[total_record:]:
             row = []
             project_relative_path = record.find_element_by_xpath(project_relative_path_xpath).text
             trimmed_path = trim_relative_path(project_relative_path)
             cve_number = record.find_element_by_xpath(cve_number_xpath).text
             vul_description = record.find_element_by_xpath(vul_description_xpath).text
             if len(vul_description) > 200:
-                vul_description = vul_description[ : 200]
+                vul_description = vul_description[: 200]
             date = record.find_element_by_xpath(release_date_xpath).text
 
             row.append(trimmed_path)
@@ -121,7 +127,7 @@ while True:
 
     elif first_record_release_year >= 2020 and last_record_release_year < 2020:
         flag = False
-        for record in hacktivity_table[total_record : ]:
+        for record in hacktivity_table[total_record:]:
             this_record_release_date = get_record_release_year(record)
             if this_record_release_date >= 2020:
                 row = []

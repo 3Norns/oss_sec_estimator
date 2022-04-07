@@ -114,6 +114,10 @@ class Repository:
         raise NotImplementedError
 
     @property
+    def potential_vulnerability_count(self):
+        raise NotImplementedError
+
+    @property
     def commit_count(self):
         raise NotImplementedError
 
@@ -240,6 +244,12 @@ class Repository:
 
 # source repository on github
 class GitHubRepository(Repository):
+
+    def __init__(self, repo):
+        is_forked = repo.fork
+        # TODO: define a Exception
+        if is_forked:
+            raise Exception("Please use original repository for inquery")
 
     @property
     def name(self):
@@ -448,6 +458,14 @@ class GitHubRepository(Repository):
                         if flag:
                             continue
 
+                    expected_release_path = f"https://github.com/{self._repo.full_name}/releases"
+                    if expected_release_path in href:
+                        continue
+
+                    expected_pull_request_path = f"https://github.com/{self._repo.full_name}/pull"
+                    if expected_pull_request_path in href:
+                        continue
+
                     unfixed_vulnerability_numbers.append(cve_number)
 
             else:
@@ -480,8 +498,11 @@ class GitHubRepository(Repository):
         effective_vul_count = 0
         total_cvss_score = 0
         for cve_number in self._vulnerability_cve_numbers:
-            nvd_api_request_url = f"https://services.nvd.nist.gov/rest/json/cve/1.0/{cve_number}?apiKey={nvd_api_key}"
-            params = {"q": "CVE"}
+            nvd_api_request_url = f"https://services.nvd.nist.gov/rest/json/cve/1.0/{cve_number}"
+            params = {
+                "q": "CVE",
+                "apiKey": nvd_api_key
+            }
             response = requests.get(url=nvd_api_request_url, params=params)
             if response.status_code == 200:
                 data = json.loads(response.content)
@@ -525,6 +546,11 @@ class GitHubRepository(Repository):
                 raise Exception("NVD query error.")
 
         return round(total_cvss_score / effective_vul_count, 2)
+
+    @property
+    def potential_vulnerability_count(self):
+        # TODO: estimator potential the number of vulnerability in huntr reports
+        pass
 
     @property
     def commit_count(self):
@@ -626,9 +652,8 @@ class GitHubRepository(Repository):
             issue_href = None
             huntr_href = None
             commit_href = None
-            # advisory_href = None
-            # TODO: add feature the date that release a security advisory
-
+            advisory_href = None
+            release_href = None
             for ref in ref_set:
                 href = ref.attrs["href"]
                 expected_issue_path = f"https://github.com/{self._repo.full_name}/issues"
@@ -641,7 +666,15 @@ class GitHubRepository(Repository):
 
                 expected_commit_path = f"https://github.com/{self._repo.full_name}/commit"
                 if expected_commit_path in href:
-                    commit_href = expected_commit_path
+                    commit_href = href
+
+                expected_advisory_path = f"https://github.com/{self._repo.full_name}/security/advisories"
+                if expected_advisory_path in href:
+                    advisory_href = href
+
+                expected_release_path = f"https://github.com/{self._repo.full_name}/releases"
+                if expected_release_path in href:
+                    release_href = href
 
             # issue opened date
             if issue_href:
@@ -683,8 +716,35 @@ class GitHubRepository(Repository):
             else:
                 issue_closed_date = datetime.datetime.strptime("1970-1-1 0:00:00", "%Y-%m-%d %H:%M:%S")
 
+            # security advisory publish date
+            if advisory_href:
+                response = requests.get(advisory_href)
+                if response.status_code == 200:
+                    html = response.text
+                    bs = BeautifulSoup(html, "html.parser")
+                    result = bs.find(name="relative-time").attrs["relative-time"]
+                    advisory_data = datetime.datetime.strptime(result, "%Y-%m-%dT%H:%M:%SZ")
+                else:
+                    advisory_date = datetime.datetime.strptime("1970-1-1 0:00:00", "%Y-%m-%d %H:%M:%S")
+
+            else:
+                advisory_date = datetime.datetime.strptime("1970-1-1 0:00:00", "%Y-%m-%d %H:%M:%S")
+
+            # release date
+            if release_href:
+                response = requests.get(release_href)
+                if response.status_code == 200:
+                    html = response.text
+                    bs = BeautifulSoup(html, "html.parser")
+                    result = bs.find(name="relative-time").attrs["relative-time"]
+                    release_date = datetime.datetime.strptime(result, "%Y-%m-%dT%H:%M:%SZ")
+                else:
+                    release_date = datetime.datetime.strptime("1970-1-1 0:00:00", "%Y-%m-%d %H:%M:%S")
+            else:
+                release_href = datetime.datetime.strptime("1970-1-1 0:00:00", "%Y-%m-%d %H:%M:%S")
+
             reported_date = min(cve_release_date, issue_opened_date, huntr_report_date)
-            fix_date = max(commit_date, issue_closed_date)
+            fix_date = max(commit_date, issue_closed_date, advisory_data, release_date)
             time_gap = max((fix_date - reported_date).days, 0)
             total_days += time_gap
 
@@ -812,7 +872,8 @@ def close():
 
 def main():
     # init("https://github.com/microweber/microweber")
-    repo = get_repository("https://github.com/microweber/microweber")
+    repo_url = "https://github.com/microweber/microweber"
+    repo = get_repository(repo_url)
     # print(repo.name)
     # print(repo.url)
     # print(repo.description)
@@ -833,7 +894,7 @@ def main():
     # print(repo.closed_issue_count)
     # print(repo.pull_request_count)
     # print(repo.vulnerability_fix_timeliness)
-    print(repo.contributor_capacity)
+    # print(repo.contributor_capacity)
     # close()
 
 
