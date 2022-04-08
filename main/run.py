@@ -3,20 +3,21 @@
 Main script for calculating open source software security score.
 
 """
-from abc import ABC
 
-import requests
-import urllib
-from main.constants import *
-import time
 import datetime
-import github
-import os
 import json
-from bs4 import BeautifulSoup
-from urllib.parse import quote
+import os
 import re
+import time
+import urllib
+from urllib.parse import quote
+
 import git
+import github
+import requests
+from bs4 import BeautifulSoup
+
+from main.constants import *
 
 _CACHED_GITHUB_TOKEN = None
 _CACHED_GITHUB_TOKEN_OBJ = None
