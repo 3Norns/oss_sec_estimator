@@ -115,10 +115,6 @@ class Repository:
         raise NotImplementedError
 
     @property
-    def potential_vulnerability_count(self):
-        raise NotImplementedError
-
-    @property
     def commit_count(self):
         raise NotImplementedError
 
@@ -549,11 +545,6 @@ class GitHubRepository(Repository):
         return round(total_cvss_score / effective_vul_count, 2)
 
     @property
-    def potential_vulnerability_count(self):
-        # TODO: estimator potential the number of vulnerability in huntr reports
-        pass
-
-    @property
     def commit_count(self):
         # total commit of all time
         return self._repo.get_commits().totalCount
@@ -634,8 +625,14 @@ class GitHubRepository(Repository):
         if not self._vulnerability_cve_numbers:
             self.history_vulnerability_count
 
+        if not self._unfixed_vulnerability_numbers:
+            self.unfixed_vulnerability_count
+
         total_days = 0
         for cve_number in self._vulnerability_cve_numbers:
+            if cve_number in self._unfixed_vulnerability_numbers:
+                continue
+
             # CVE record release date
             url = f"https://cve.mitre.org/cgi-bin/cvename.cgi?name={cve_number}"
             response = requests.get(url=url, headers=HTTP_REQUEST_HEADER)
@@ -697,6 +694,7 @@ class GitHubRepository(Repository):
                     huntr_report_date = datetime.datetime.strptime(formatted_result, "%b %d %Y")
                 else:
                     raise Exception("huntr.dev query error.")
+
             else:
                 huntr_report_date = datetime.datetime.utcnow()
 
@@ -706,16 +704,16 @@ class GitHubRepository(Repository):
                 commit = self._repo.get_commit(commit_sha)
                 commit_date = commit.commit.author.date
             else:
-                commit_date = datetime.datetime.strptime("1970-1-1 0:00:00", "%Y-%m-%d %H:%M:%S")
+                commit_date = datetime.datetime.utcnow()
 
             # issue close date
             if issue_href:
                 issue_closed_date = issue.closed_at
                 if issue_closed_date:
-                    issue_closed_date = datetime.datetime.strptime("1970-1-1 0:00:00", "%Y-%m-%d %H:%M:%S")
+                    issue_closed_date = datetime.datetime.utcnow()
 
             else:
-                issue_closed_date = datetime.datetime.strptime("1970-1-1 0:00:00", "%Y-%m-%d %H:%M:%S")
+                issue_closed_date = datetime.datetime.utcnow()
 
             # security advisory publish date
             if advisory_href:
@@ -726,10 +724,10 @@ class GitHubRepository(Repository):
                     result = bs.find(name="relative-time").attrs["relative-time"]
                     advisory_data = datetime.datetime.strptime(result, "%Y-%m-%dT%H:%M:%SZ")
                 else:
-                    advisory_date = datetime.datetime.strptime("1970-1-1 0:00:00", "%Y-%m-%d %H:%M:%S")
+                    advisory_date = datetime.datetime.utcnow()
 
             else:
-                advisory_date = datetime.datetime.strptime("1970-1-1 0:00:00", "%Y-%m-%d %H:%M:%S")
+                advisory_date = datetime.datetime.utcnow()
 
             # release date
             if release_href:
@@ -740,12 +738,13 @@ class GitHubRepository(Repository):
                     result = bs.find(name="relative-time").attrs["relative-time"]
                     release_date = datetime.datetime.strptime(result, "%Y-%m-%dT%H:%M:%SZ")
                 else:
-                    release_date = datetime.datetime.strptime("1970-1-1 0:00:00", "%Y-%m-%d %H:%M:%S")
+                    release_date = datetime.datetime.utcnow()
+
             else:
-                release_href = datetime.datetime.strptime("1970-1-1 0:00:00", "%Y-%m-%d %H:%M:%S")
+                release_date = datetime.datetime.utcnow()
 
             reported_date = min(cve_release_date, issue_opened_date, huntr_report_date)
-            fix_date = max(commit_date, issue_closed_date, advisory_data, release_date)
+            fix_date = min(commit_date, issue_closed_date, advisory_date, release_date)
             time_gap = max((fix_date - reported_date).days, 0)
             total_days += time_gap
 
