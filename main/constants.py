@@ -20,3 +20,7 @@ TEMP_REPOSITORY_PATH = "..\\temp_repository"
 
 # Regex to match dependents count
 DEPENDENTS_REGEX = re.compile(b'.*[^0-9,]([0-9,]+).*commit result', re.DOTALL)
+
+# Constant for scorecard checks
+max_score = 10
+min_score = 0
