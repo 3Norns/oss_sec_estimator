@@ -799,6 +799,44 @@ class GitHubRepository(Repository):
     def contribution_centrality(self):
         pass
 
+    @property
+    def binary_artifact(self):
+        # File suffixes are associated with binary artifacts.
+        _binary_artifact_list = [
+            "crx",
+            "deb",
+            "dex",
+            "dey",
+            "elf",
+            "o",
+            "so",
+            "iso",
+            "class",
+            "jar",
+            "bundle",
+            "dylib",
+            "lib",
+            "msi",
+            "dll",
+            "drv",
+            "efi",
+            "exe",
+            "ocx",
+            "pyc",
+            "pyo",
+            "par",
+            "rpm",
+            "whl"
+        ]
+
+        # List all files in GitHub repository.
+        default_branch = self._repo.default_branch
+        files = self._repo.get_git_tree(sha=default_branch, recursive=True)
+        for file in files:
+            if file.get("type", "") is "blob":
+                path = file.get["path"]
+                suffix = path.split(".")[-1].tolower()
+
 
 # return expiry information of the given github token
 def get_github_token_info(token_obj):

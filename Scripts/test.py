@@ -2,16 +2,22 @@ import requests
 from bs4 import BeautifulSoup
 import datetime
 import os
+import pathlib
 
 # relate to network operation
-os.environ["http_proxy"] = "http://127.0.0.1:33210"
-os.environ["https_proxy"] = "http://127.0.0.1:33210"
+os.environ["http_proxy"] = "http://127.0.0.1:60377"
+os.environ["https_proxy"] = "http://127.0.0.1:60377"
 
-response = requests.get("https://github.com/podium-lib/proxy/security/advisories/GHSA-3hjg-vc7r-rcrw")
-if response.status_code == 200:
-    html = response.text
-    bs = BeautifulSoup(html, "html.parser")
-    result = bs.find(name="relative-time").attrs["datetime"]
-    advisory_data = datetime.datetime.strptime(result, "%Z")
-else:
-    advisory_date = datetime.datetime.strptime("1970-1-1 0:00:00", "%Y-%m-%dT%H:%M:%SZ")
+
+def list_files(repo_url):
+    directory = pathlib.Path(repo_url)
+    for file_name in os.listdir(directory):
+        path = os.path.join(directory, file_name)
+        if os.path.isfile(path):
+            print(file_name)
+        elif os.path.isdir(path):
+            list_files(path)
+
+
+if __name__ == "__main__":
+    list_files("https://github.com/3norns/oss_sec_estimator")
