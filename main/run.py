@@ -10,7 +10,9 @@ import os
 import re
 import time
 import urllib
+from abc import ABC
 from urllib.parse import quote
+from copy import deepcopy
 
 import git
 import github
@@ -241,13 +243,6 @@ class Repository:
 
 # source repository on github
 class GitHubRepository(Repository):
-
-    def __init__(self, repo):
-        is_forked = repo.fork
-        # TODO: define a Exception
-        if is_forked:
-            raise Exception("Please use original repository for inquery")
-
     @property
     def name(self):
         return self._repo.name
@@ -801,6 +796,8 @@ class GitHubRepository(Repository):
 
     @property
     def binary_artifact(self):
+        score = MAX_SCORE
+
         # File suffixes are associated with binary artifacts.
         _binary_artifact_list = [
             "crx",
@@ -833,12 +830,278 @@ class GitHubRepository(Repository):
         default_branch = self._repo.default_branch
         files = self._repo.get_git_tree(sha=default_branch, recursive=True)
         for file in files:
-            if file.get("type", "") is "blob":
+            if file.get("type", "") == "blob":
                 path = file.get["path"]
-                suffix = path.split(".")[-1].tolower()
+                suffix = path.split(".")[-1].lower()
+                if suffix in _binary_artifact_list:
+                    score -= 1
+
+                if score <= MIN_SCORE:
+                    break
+
+        return score
+
+    @property
+    def branch_protection(self):
+        # Points increment at each level
+        _basic_level = 3  # Tier 1
+        _review_level = 3  # Tier 2
+        _context_level = 2  # Tier 3
+        _thorough_review_level = 2  # Tier 4
+
+        # Max scores for each tier.
+        _max_score_for_basic_protection = 2
+        _max_score_for_review_protection = 1
+        _max_score_for_context_protection = 1
+        _max_score_for_thorough_review_protection = 1
+
+        # Checks branch protection on release and development branch.
+        branch_name_list = []
+        # Get development branches.
+        repo_branches = self._repo.get_branches()
+        for branch in repo_branches:
+            branch_name_list.append(branch.name)
+
+        # Get release branches.
+        releases = self._repo.get_releases()
+        for release in releases:
+            target_commitish = release.target_commitish
+            if target_commitish:
+                if target_commitish not in branch_name_list:
+                    branch_name_list.append(target_commitish)
+
+        # Add default branch.
+        if self._repo.default_branch not in branch_name_list:
+            branch_name_list.append(self._repo.default_branch)
+
+        branch_reference_list = []
+        # Checks protection on all branches.
+        for branch_name in branch_name_list:
+            branch = self._repo.get_branch(branch_name)
+            protected = branch.protected
+
+            # Initialize branch protection.
+            branch_protection = {
+                "required_pull_request_reviews": {
+                    "required_approving_review_count": 0,
+                    "require_code_owner_reviews": False
+                },
+                "allow_deletions": False,
+                "allow_force_pushes": False,
+                "required_linear_history": False,
+                "required_status_checks": {
+                    "strict": False,
+                    "required_status_checks": False,
+                    "context": []
+                }
+            }
+
+            # Check protection.
+            protection = branch.get_protection()
+            branch_protection["required_pull_request_reviews"]["required_approving_review_count"] = \
+                protection.required_pill_request.reviews.required_approving_review_count
+            branch_protection["required_pull_request_reviews"]["require_code_owner_reviews"] = \
+                protection.required_pill_request.require_code_owner_reviews
+            branch_protection["allow_deletions"] = protection.allow_deletions.enabled
+            branch_protection["allow_force_pushes"] = protection.allow_force_pushes.enabled
+            branch_protection["required_linear_history"] = protection.required_linear_history.enable
+            branch_protection["required_status_checks"]["strict"] = protection.required_status_checks.strict
+            branch_protection["required_status_checks"]["required_status_checks"] = True if \
+                len(protection.required_status_checks.checks) != 0 else False
+            branch_protection["required_status_checks"]["context"] = protection.required_status_checks.context
+
+            branch_reference = {
+                "protected": protected,
+                "branch_protection": branch_protection
+            }
+            branch_reference_list.append(deepcopy(branch_reference))
+
+        scores = []
+        for branch_reference in branch_reference_list:
+            is_protected = branch_reference["protected"]
+            branch_protection = branch_reference["branch_protection"]
+            if not is_protected:
+                continue
+
+            # Score template for calculating scores.
+            score_template = {
+                "basic": 0,
+                "review": 0,
+                "context": 0,
+                "thorough_review": 0
+            }
+
+            # Calculating basic score.
+            basic_score = 0
+            if not branch_protection["allow_deletions"]:
+                basic_score += 1
+
+            if not branch_protection["allow_force_pushes"]:
+                basic_score += 1
+
+            score_template["basic"] = basic_score
+
+            # Calculating review score.
+            review_score = 0
+            if branch_protection["required_pull_request_reviews"]["required_approving_review_count"] > 0:
+                review_score += 1
+
+            score_template["review"] = review_score
+
+            # Calculating context score.
+            context_score = 0
+            if len(branch_protection["required_status_checks"]["context"]) > 0:
+                context_score += 1
+
+            score_template["context"] = context_score
+
+            # Calculating thorough review score.
+            thorough_review_score = 0
+            if branch_protection["required_pull_request_reviews"]["required_approving_review_count"] >= 2:
+                thorough_review_score += 1
+
+            score_template["thorough_review"] = thorough_review_score
+
+            scores.append(deepcopy(score_template))
+
+        # Calculate score for all branches.
+        if len(scores) == 0:  # No branch enables branch protection
+            return 0
+
+        score_sum = 0
+
+        # Calculate score in terms of basic score.
+        max_basic_score = len(scores) * _max_score_for_basic_protection
+        basic_score = 0
+        for score in scores:
+            basic_score += score["basic"]
+
+        # Add normalized result for basic score.
+        score_sum += int(basic_score / max_basic_score * _basic_level)
+
+        # Calculate score in terms of review score.
+        max_review_score = len(scores) * _max_score_for_review_protection
+        review_score = 0
+        for score in scores:
+            review_score += score["review"]
+
+        # Add normalized result for review score.
+        score_sum += int(review_score / max_review_score * _review_level)
+
+        # Calculate score in terms of context score.
+        max_context_score = len(scores) * _max_score_for_context_protection
+        context_score = 0
+        for score in scores:
+            context_score += score["context"]
+
+        # Add normalized result for context score.
+        score_sum += int(context_score / max_context_score * _context_level)
+
+        # Calculate score in terms of thorough review score.
+        max_thorough_review_score = len(scores) * _max_score_for_thorough_review_protection
+        thorough_review_score = 0
+        for score in scores:
+            thorough_review_score += score["thorough_review"]
+
+        # Add normalized result for thorough review score.
+        score_sum += int(thorough_review_score / max_thorough_review_score * _thorough_review_level)
+
+        return score_sum
+
+    @property
+    def ci_test(self):
+        def _is_test(string):
+            patterns = [
+                "appveyor",
+                "buildkite",
+                "circleci",
+                "e2e",
+                "github-actions",
+                "jenkins",
+                "mergeable",
+                "packit-as-a-service",
+                "semaphoreci",
+                "test",
+                "travis-ci",
+                "flutter-dashboard",
+                "Cirrus CI"
+            ]
+
+            for pattern in patterns:
+                if pattern in string.lower():
+                    return True
+
+            return False
+
+        total_merged = 0
+        total_tested = 0
+
+        # Get recent commits.
+        commits = self._repo.get_commits()[: 30]
+        for commit in commits:
+            associated_pulls = commit.get_pulls()
+            if associated_pulls.totalCount == 0:
+                # This commit is not associated with any pull request.
+                continue
+
+            total_merged += 1
+            associated_pull = self._repo.get_pull(associated_pulls[0].number)
+
+            # GitHub statuses.
+            statuses = commit.get_statuses()
+            for status in statuses:
+                if status.state != "success":
+                    continue
+
+                if _is_test(status.context) or _is_test(status.target_url):
+                    total_tested += 1
+                    continue
+
+            # GitHub check runs.
+            check_runs = commit.get_check_runs()
+            for check_run in check_runs:
+                if check_run.status != "completed" or check_run.conclusion != "success":
+                    continue
+
+                if _is_test(check_run.app.slug):
+                    total_tested += 1
+
+        return int(min(MAX_SCORE * total_tested / total_merged), MAX_SCORE)
+
+    @property
+    def cii_best_practice(self):
+        _non_badge_score = MIN_SCORE
+        _in_progress_score = 2
+        _passing_score = 5
+        _silver_score = 7
+        _gold_score = 10
+
+        _in_progress_resp = "in_progress"
+        _passing_resp = "passing"
+        _silver_resp = "silver"
+        _gold_resp = "gold"
+
+        repo_url = f"https://github.com/{self._repo.full_name}"
+        response = requests.get(f"https://bestpractices.coreinfrastructure.org/projects.json?url={repo_url}")
+        data = json.loads(response.content)
+
+        if len(data) == 0:
+            return _non_badge_score
+
+        badge_level = data[0]["badge_level"]
+        if badge_level == _in_progress_resp:
+            return _in_progress_score
+        elif badge_level == _passing_resp:
+            return _passing_score
+        elif badge_level == _silver_resp:
+            return _silver_score
+        elif badge_level == _gold_resp:
+            return _gold_score
+        else:
+            return _non_badge_score
 
 
-# return expiry information of the given github token
+# Return expiry information of the given GitHub token.
 def get_github_token_info(token_obj):
     rate_limit = token_obj.get_rate_limit()
     near_expiry = rate_limit.core.remaining < 50
@@ -889,6 +1152,11 @@ def get_repository(url):
         except github.GithubException as e:
             if e.status == 404:
                 return None
+
+        # TODO: To determine whether the repo is a forked repo.
+        if repo.fork:
+            raise Exception("You MUST input a url of original repository.")
+
         return GitHubRepository(repo)
 
     raise Exception("Unsupported url!")
@@ -910,7 +1178,7 @@ def close():
 
 def main():
     # init("https://github.com/microweber/microweber")
-    repo_url = "https://github.com/microweber/microweber"
+    repo_url = "https://github.com/3norns/criticality_score"
     repo = get_repository(repo_url)
     # print(repo.name)
     # print(repo.url)
@@ -933,6 +1201,8 @@ def main():
     # print(repo.pull_request_count)
     # print(repo.vulnerability_fix_timeliness)
     # print(repo.contributor_capacity)
+    # repo.ci_test
+    # repo.cii_best_practice
     # close()
 
 
