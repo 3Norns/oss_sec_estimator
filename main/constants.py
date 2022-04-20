@@ -3,11 +3,16 @@
 Constant Variables used in security score calculation.
 
 """
+
 import re
 
 FAIL_RETRIES = 7
 TOP_CONTRIBUTOR_COUNT = 15
+ACTIVITY_PER_WEEK = 1
+DAY_IN_ONT_WEEK = 7
+LOOK_BACK_DAYS = 90
 ISSUE_LOOKBACK_DAYS = 90
+COMMIT_LOOKBACK_DAYS = 90
 RELEASE_LOOKBACK_DAYS = 365
 RECENT_RELEASES_THRESHOLD = 26
 VULNERABILITY_LOOKBACK_DAYS = 365
@@ -24,3 +29,4 @@ DEPENDENTS_REGEX = re.compile(b'.*[^0-9,]([0-9,]+).*commit result', re.DOTALL)
 # Constant for scorecard checks
 MAX_SCORE = 10
 MIN_SCORE = 0
+INCONCLUSIVE_RESULT_SCORE = -1
