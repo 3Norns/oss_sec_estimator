@@ -5,7 +5,6 @@ A subclass of Repository, the abstract of repository on GitHub.
 """
 
 import os
-import git
 import json
 import time
 import yaml
@@ -191,14 +190,7 @@ class GitHubRepository(Repository):
                     href = result.attrs["href"]
                     expected_commit_path = f"https://github.com/{self._repo.full_name}/commit"
                     if expected_commit_path in href:
-                        # query commit
-                        commit_sha = href.split("/")[-1].strip()
-                        branches = get_branches_contain_given_commit(commit_sha)
-                        default_branch = self._repo.default_branch
-                        if default_branch not in branches:
-                            unfixed_vulnerability_numbers.append(cve_number)
-
-                        continue
+                        unfixed_vulnerability_numbers.append(cve_number)
 
                     expected_issue_path = f"https://github.com/{self._repo.full_name}/issues"
                     if expected_issue_path in href:
@@ -523,6 +515,20 @@ class GitHubRepository(Repository):
         except NumberExceedCapException:
             # Very large number of contributors, i.e. 5000+. Cap at 5,000.
             return 5000
+
+    @property
+    def outside_contributor_count(self):
+        org = self._repo.organization.login
+        outside_contributor_count = 0
+        contributors = self._repo.get_contributors()
+        for contributor in contributors[: 5000]:
+            contributor_orgs = contributor.get_orgs()
+            for contributor_org in contributor_orgs:
+                if contributor_org.login == org:
+                    outside_contributor_count += 1
+                    break
+
+        return outside_contributor_count
 
     @property
     def organization_count(self):
@@ -903,6 +909,36 @@ class GitHubRepository(Repository):
         return int(total_reviewed / total_commits * MAX_SCORE)
 
     @property
+    def dangerous_workflow(self):
+        file_paths = []
+        default_branch = self._repo.default_branch
+        files = self._repo.get_git_tree(sha=default_branch, recursive=True).tree
+        for file in files:
+            if file.type == "blob":
+                path = file.path
+                path = path.lower()
+                if is_workflow_file(path):
+                    file_name = path.split("/")[-1]
+                    if get_file_dir(path, file_name) == ".github/workflows/":
+                        file_paths.append(path)
+
+        for file_path in file_paths:
+            if is_workflow_file(file_path):
+                continue
+            try:
+                workflow = get_yaml_content(self._repo.full_name, self._repo.default_branch, file_path)
+                if not validate_untrusted_code_checkout(workflow):
+                    return MIN_SCORE
+
+                if not validate_script_injection(workflow):
+                    return MAX_SCORE
+
+            except yaml.YAMLError:
+                break
+
+        return MAX_SCORE
+
+    @property
     def dependency_update_tool(self):
         _dependabot_configuration_ = [
             ".github/dependabot.yml",
@@ -963,6 +999,28 @@ class GitHubRepository(Repository):
         return MAX_SCORE
 
     @property
+    def fuzzing(self):
+        default_branch = self._repo.default_branch
+        files = self._repo.get_git_tree(sha=default_branch, recursive=True).tree
+        for file in files:
+            if file.type == "blob":
+                path = file.path
+                if path == "project.yaml":
+                    return MAX_SCORE
+
+                if is_workflow_file(path):
+                    file_name = path.split("/")[-1]
+                    if get_file_dir(path, file_name) == ".clusterfuzzlite":
+                        if file_name == "Dockerfile":
+                            text = get_text(self._repo.full_name, default_branch, path)
+                            lines = text.split("\s*")
+                            for line in lines:
+                                if line.strip().index("#") == 0:
+                                    return MAX_SCORE
+
+        return MIN_SCORE
+
+    @property
     def maintained(self):
         _roles_ = [
             "COLLABORATOR",
@@ -987,8 +1045,8 @@ class GitHubRepository(Repository):
             "Authorization": f"bearer {_CACHED_GITHUB_TOKEN}"
         }
         graphql_url = "https://api.github.com/graphql"
+        temp = self._repo.full_name.split("/")
         for issue in recent_issues:
-            temp = self._repo.full_name.split("/")
             query = 'query($owner:String!, $name:String!, $issue_number:Int!) {repository(owner:$owner, name:$name) {' \
                     'issue(number:$issue_number) {authorAssociation}}} '
             data = {
@@ -1038,8 +1096,7 @@ class GitHubRepository(Repository):
             if file.type == "blob":
                 path = file.path
                 path = path.lower()
-                suffix = path.split(".")[-1]
-                if suffix == "yml" or suffix == "yaml":
+                if is_workflow_file(path):
                     file_name = path.split("/")[-1]
                     if get_file_dir(path, file_name) == ".github/workflows/":
                         file_paths.append(path)
@@ -1047,11 +1104,506 @@ class GitHubRepository(Repository):
         for file_path in file_paths:
             workflow = get_yaml_content(self._repo.full_name, self._repo.default_branch, file_path)
             if not workflow:
-                return INCONCLUSIVE_RESULT_SCORE
+                return MIN_SCORE
+
+            if not is_packaging_workflow(workflow):
+                continue
+
+            runs = self._repo.get_workflow(file_path.split("/")[-1]).get_runs(status="success")
+            if runs.totalCount > 0:
+                return MAX_SCORE
+
+        return MIN_SCORE
+
+    @property
+    def sast(self):
+        sast_weight = 0.3
+        codeql_weight = 0.7
+        sast_score = sast_tools_in_check_run(self._repo)
+        codeql_score = codeql_in_check_definitions(self._repo)
+
+        # Both results are inconclusive.
+        if sast_score == INCONCLUSIVE_RESULT_SCORE and codeql_score == INCONCLUSIVE_RESULT_SCORE:
+            return MIN_SCORE
+
+        # Both results are conclusive.
+        if sast_score != INCONCLUSIVE_RESULT_SCORE and codeql_score != INCONCLUSIVE_RESULT_SCORE:
+            if sast_score == MAX_SCORE:
+                return MAX_SCORE
+            elif codeql_score == MIN_SCORE:
+                return sast_score
+            elif codeql_score == MAX_SCORE:
+                return int(sast_score * sast_weight + codeql_weight * codeql_score)
+            else:
+                return MIN_SCORE
+
+        # Sast inconclusive
+        if codeql_score != INCONCLUSIVE_RESULT_SCORE:
+            return codeql_score
+
+        # Codeql inconclusive.
+        if sast_score != INCONCLUSIVE_RESULT_SCORE:
+            return sast_score
+
+        return MIN_SCORE
+
+    @property
+    def security_polity(self):
+        security_policy_file_path = {
+            "security.md": True,
+            ".github/security.md": True,
+            "docs/security.md": True,
+            "security.adoc": True,
+            ".github/security.adoc": True,
+            "docs/security.adoc": True,
+            "doc/security.rst": True,
+            "docs/security.rst": True
+        }
+
+        default_branch = self._repo.default_branch
+        files = self._repo.get_git_tree(sha=default_branch, recursive=True).tree
+        for file in files:
+            if file.type == "blob":
+                path = file.path
+                path = path.lower()
+                if security_policy_file_path[path]:
+                    return MAX_SCORE
+
+        return MIN_SCORE
+
+    @property
+    def signed_release(self):
+        artifact_extension = {
+            "asc": True,
+            "minising": True,
+            "sig": True,
+            "sign": True
+        }
+        releases = self._repo.get_releases()[: 5]
+        if releases.totalCount == 0:
+            return MIN_SCORE
+
+        total_releases = 0
+        total_signed = 0
+        for release in releases:
+            assets = release.get_assets()
+            if assets.totalCount == 0:
+                continue
+
+            total_releases += 1
+            for asset in assets:
+                suffix = asset.name.split(".")[-1]
+                if artifact_extension[suffix]:
+                    total_signed += 1
+                    break
+
+        if total_releases == 0:
+            return MIN_SCORE
+
+        return int(total_signed / total_releases * MAX_SCORE)
+
+    @property
+    def token_permission(self):
+        permission_of_interest = [
+            "statuses",
+            "checks",
+            "security-events",
+            "deployments",
+            "contents",
+            "packages",
+            "actions"
+        ]
+
+        ignored_permissions_for_job_level = [
+            "packages",
+            "contents",
+            "security-events"
+        ]
+        file_paths = []
+        default_branch = self._repo.default_branch
+        files = self._repo.get_git_tree(sha=default_branch, recursive=True).tree
+        for file in files:
+            if file.type == "blob":
+                path = file.path
+                path = path.lower()
+                if is_workflow_file(path):
+                    file_name = path.split("/")[-1]
+                    if get_file_dir(path, file_name) == ".github/workflows/":
+                        file_paths.append(path)
+
+        data = {}
+        for file_path in file_paths:
+            data[file_path] = {
+                "top_level_write_permissions": {
+                    "statuses": False,
+                    "checks": False,
+                    "security-events": False,
+                    "deployments": False,
+                    "contents": False,
+                    "packages": False,
+                    "actions": False,
+                    "all": False
+                },
+                "job_level_write_permissions": {
+                    "statuses": False,
+                    "checks": False,
+                    "security-events": False,
+                    "deployments": False,
+                    "contents": False,
+                    "packages": False,
+                    "actions": False,
+                    "all": False
+                }
+            }
+            try:
+                workflow = get_yaml_content(self._repo.full_name, self._repo.default_branch, file_path)
+                # Top level
+                if workflow.get("permissions"):
+                    permissions = workflow["permissions"]
+                    if isinstance(permissions, dict):
+                        for k, v in permissions.items():
+                            if k in permission_of_interest:
+                                if v == "write":
+                                    data[file_path]["top_level_write_permissions"][k] = True
+
+                else:
+                    data[file_path]["top_level_write_permissions"]["all"] = True
+
+                # Job level
+                jobs = workflow.get("jobs", {})
+                find_permission = False
+                for job in jobs.values():
+                    if job.get("permissions"):
+                        find_permission = True
+                        data[file_path]["job_level_write_permissions"]["all"] = False
+                        permissions = job["permissions"]
+                        if isinstance(permissions, str):
+                            continue
+
+                        for k, v in permissions.items():
+                            if k in permission_of_interest and k not in ignored_permissions_for_job_level:
+                                if v == "write":
+                                    data[file_path]["job_level_write_permissions"][k] = True
+
+                    else:
+                        if not find_permission:
+                            data[file_path]["job_level_write_permissions"]["all"] = True
+
+            except yaml.YAMLError:
+                break
+
+        score = MAX_SCORE
+        for permissions in data.values():
+            # No top level permissions are defined.
+            if permission_present_in_top_level(permissions, "all"):
+                if permission_present_in_job_level(permissions, "all"):
+                    # No run level permissions are defined either.
+                    score = MIN_SCORE
+                    return score
+                else:
+                    score -= 0.5
+
+            # May allow an attacker to change the result of pre-submit and get a PR merged.
+            # Low risk: -0.5.
+            if permission_present(permissions, "statuses"):
+                score -= 0.5
+
+            # May allow an attacker to edit checks to remove pre-submit and introduce a bug.
+            # Low risk: -0.5.
+            if permission_present(permissions, "checks"):
+                score -= 0.5
+
+            # May allow attacker to read vulnerability reports before patch available.
+            # Low risk: -1.
+            if permission_present(permissions, "security-events"):
+                score -= 1
+
+            # May allow attacker to charge repo owner by triggering VM runs,
+            # and tiny chance an attacker can trigger a remote
+            # service with code they own if server accepts code/location var unsanitized.
+            # Low risk: -1.
+            if permission_present(permissions, "deployments"):
+                score -= 1
+
+            # Allows attackers to commit unreviewed code.
+            # High risk: -10.
+            if permission_present(permissions, "contents"):
+                score -= 10
+
+            # Allow attackers to publish packages.
+            # High risk: -10.
+            if permission_present(permissions, "packages"):
+                score -= 10
+
+            # May allow an attacker to steal GitHub secrets by approving to run an action that needs approval.
+            if permission_present(permissions, "actions"):
+                score -= 10
+
+            if score <= MIN_SCORE:
+                break
+
+        if score < MIN_SCORE:
+            score = MIN_SCORE
+
+        return int(score)
+
+    @property
+    def community_standards(self):
+        meet_requirement_count = 0
+        total_requirement_count = 7
+
+        # Find Description
+        if self._repo.description:
+            meet_requirement_count += 1
+
+        # Find readme.
+        default_branch = self._repo.default_branch
+        files = self._repo.get_git_tree(sha=default_branch, recursive=True).tree
+        for file in files:
+            if file.type == "blob":
+                path = file.path
+                path = path.lower()
+                if is_readme(path):
+                    file_name = path.split("/")[-1]
+                    if get_file_dir(path, file_name) == ".github/" or \
+                            get_file_dir(path, file_name) == "docs" or \
+                            get_file_dir(path, file_name) == "":
+                        meet_requirement_count += 1
+                        break
+
+        # Find code of conduct
+        for file in files:
+            if file.type == "blob":
+                path = file.path
+                path = path.lower()
+                if is_code_of_conduct(path):
+                    file_name = path.split("/")[-1]
+                    if get_file_dir(path, file_name) == ".github/" or \
+                            get_file_dir(path, file_name) == "docs" or \
+                            get_file_dir(path, file_name) == "":
+                        meet_requirement_count += 1
+                        break
+
+        # Find contributing.
+        for file in files:
+            if file.type == "blob":
+                path = file.path
+                path = path.lower()
+                if is_contributing(path):
+                    file_name = path.split("/")[-1]
+                    if get_file_dir(path, file_name) == ".github/" or \
+                            get_file_dir(path, file_name) == "docs" or \
+                            get_file_dir(path, file_name) == "":
+                        meet_requirement_count += 1
+                        break
+
+        # Find License.
+        for file in files:
+            if file.type == "blob":
+                path = file.path
+                path = path.lower()
+                if is_license(path):
+                    file_name = path.split("/")[-1]
+                    if get_file_dir(path, file_name) == "":
+                        meet_requirement_count += 1
+                        break
+
+        # Find issue template.
+        for file in files:
+            path = file.path
+            path = path.lower()
+            if is_issue_template(path):
+                file_name = path.split("/")[-1]
+                if get_file_dir(path, file_name) == ".github/":
+                    meet_requirement_count += 1
+                    break
+
+        # Find pull request template.
+        for file in files:
+            path = file.path
+            path = path.lower()
+            if is_pull_request_template(path):
+                file_name = path.split("/")[-1]
+                if get_file_dir(path, file_name) == ".github/":
+                    meet_requirement_count += 1
+                    break
+
+        return int(meet_requirement_count / total_requirement_count * MAX_SCORE)
 
 
 _CACHED_GITHUB_TOKEN = None
 _CACHED_GITHUB_TOKEN_OBJ = None
+
+
+def use_event_trigger(workflow, trigger_name):
+    events = workflow[True]
+    if isinstance(events, str):
+        if events == trigger_name:
+            return True
+    elif isinstance(events, list):
+        for event in events:
+            if event == trigger_name:
+                return True
+
+    return False
+
+
+def contains_untrusted_context_pattern(string):
+    untrusted_context_pattern = ".*(issue\.title|)" \
+                                "issue\.body|" \
+                                "pull_request\.title|" \
+                                "pull_request\.body|" \
+                                "comment\.body|" \
+                                "review\.body|" \
+                                "review_comment\.body|" \
+                                "pages.*\.page_name|" \
+                                "commits.*\.message|" \
+                                "head_commit\.message|" \
+                                "head_commit\.author\.email|" \
+                                "head_commit\.author\.name|" \
+                                "commits.*\.author\.email|" \
+                                "commits.*\.author\.name|" \
+                                "pull_request\.head\.ref|" \
+                                "pull_request\.head\.label|" \
+                                "pull_request\.head\.repo\.default_branch).*"
+
+    if "github.head_ref" in string:
+        return True
+
+    return "github.event." in string and re.search(untrusted_context_pattern, string)
+
+
+def check_job_untrusted_code_checkout(job):
+    if not job:
+        return True
+
+    for step in job["steps"]:
+        uses = step.get("uses")
+        # Check for a step that uses actions/checkout
+        if "actions/checkout" not in uses:
+            continue
+
+        # Check for reference. If not defined for a pull_request_target event, this defaults to
+        # the base branch of the pull request.
+        with_ = step.get("with")
+        if not isinstance(with_, dict):
+            continue
+
+        ref = with_.get("ref")
+        if "github.event.pull_request" in ref or \
+                "github.event.workflow_run" in ref:
+            return False
+
+    return True
+
+
+def validate_untrusted_code_checkout(workflow):
+    if not use_event_trigger(workflow, "github.event.pull_request") and \
+            not use_event_trigger(workflow, "github.event.workflow_run"):
+        return True
+
+    jobs = workflow.get("jobs", {})
+    for job in jobs.values():
+        return check_job_untrusted_code_checkout(job)
+
+    return True
+
+
+def check_variables_in_script(script):
+    while True:
+        try:
+            s = script.index("${{")
+        except ValueError:
+            break
+
+        try:
+            e = script.index("}}$")
+        except ValueError:
+            return False
+
+        variable = script[s+3: e]
+        if contains_untrusted_context_pattern(variable):
+            return False
+
+        script = script[s+e:]
+
+    return True
+
+
+def validate_script_injection(workflow):
+    jobs = workflow.get("jobs", {})
+    for job in jobs.values():
+        if not job:
+            continue
+
+        for step in job["steps"]:
+            if not step:
+                continue
+
+            with_ = step.get("with")
+            if not with_:
+                continue
+
+            ref = with_.get("ref")
+            return check_variables_in_script(ref)
+
+    return True
+
+
+def is_readme(file_path):
+    if file_path.lower().split("/")[-1] == "readme.md":
+        return True
+    else:
+        return False
+
+
+def is_code_of_conduct(file_path):
+    if file_path.lower().split("/")[-1] == "code_of_conduct.md":
+        return True
+    else:
+        return False
+
+
+def is_contributing(file_path):
+    if file_path.lower().split("/")[-1] == "contributing.md":
+        return True
+    else:
+        return False
+
+
+def is_license(file_path):
+    if "license" in file_path.lower().split("/")[-1]:
+        return True
+    else:
+        return False
+
+
+def is_issue_template(file_path):
+    if "issue_template" in file_path.lower().split("/")[-1]:
+        return True
+    else:
+        return False
+
+
+def is_pull_request_template(file_path):
+    if "pull_request_template" in file_path.lower().split("/")[-1]:
+        return True
+    else:
+        return False
+
+
+def permission_present_in_top_level(permissions, name):
+    top_level_write_permissions = permissions["top_level_write_permissions"]
+    return top_level_write_permissions[name]
+
+
+def permission_present_in_job_level(permissions, name):
+    job_level_write_permissions = permissions["job_level_write_permissions"]
+    return job_level_write_permissions[name]
+
+
+def permission_present(permissions, name):
+    return permission_present_in_top_level(permissions, name) or permission_present_in_job_level(permissions, name)
 
 
 def get_file_dir(file_path, file_name):
@@ -1067,6 +1619,14 @@ def get_file_dir(file_path, file_name):
     return result
 
 
+def is_workflow_file(file_path):
+    suffix = file_path.split(".")[-1]
+    if suffix == "yml" or suffix == "yaml":
+        return True
+    else:
+        return False
+
+
 def get_yaml_content(full_name, default_branch, file_path):
     url = f"https://raw.githubusercontent.com/{full_name}/{default_branch}/{file_path}"
     response = requests.get(url)
@@ -1076,27 +1636,119 @@ def get_yaml_content(full_name, default_branch, file_path):
         return {}
 
 
+def get_text(full_name, default_branch, file_path):
+    url = f"https://raw.githubusercontent.com/{full_name}/{default_branch}/{file_path}"
+    response = requests.get(url)
+    if response.status_code == 200:
+        return response.text
+    else:
+        return ""
+
+
+def get_file_content(full_name, default_branch, file_path):
+    url = f"https://raw.githubusercontent.com/{full_name}/{default_branch}/{file_path}"
+    response = requests.get(url)
+    if response.status_code != 200:
+        raise PageOpenException
+
+    return response.text
+
+
 def is_packaging_workflow(workflow):
-    jobs = workflow.get("jobs")
-    for job in jobs.values():
-        steps = job.get("steps")
-        for step in steps.value:
-            for matcher in JOB_MATCHERS.values:
-                steps_in_matcher = matcher.get("steps")
-                matched = True
-                for step_in_matcher in steps_in_matcher:
-                    for k, v in step_in_matcher:
-                        if type(v) == "str":
-                            if not re.match(v, step.get(k)):
-                                matched = False
-                        elif type(v) == "dict": # With dict
-                            for k_, v_ in v.values():
-                                if not re.match(v_, step.get(k).get(k_)):
-                                    matched = False
-                if matched:
-                    return True
+    jobs = workflow.get("jobs", {})
+    for matcher in JOB_MATCHERS:
+        steps = matcher.get("steps")
+        expected_matched_step_count = len(steps)
+        matched_step_count = 0
+        for step in steps:
+            expected_matched_action_count = len(step)
+            matched_action_count = 0
+            for k, v in step.items():
+                for job in jobs.values():
+                    steps_in_job = job.get("steps")
+                    for step_in_job in steps_in_job:
+                        for k_, v_ in step_in_job.items():
+                            if k != k_:
+                                continue
+
+                            if isinstance(step.get(k), str) and isinstance(step_in_job.get(k_), str):
+                                if re.match(step.get(k), step_in_job.get(k_)):
+                                    matched_action_count += 1
+                            elif isinstance(step.get(k), dict) and isinstance(step_in_job.get(k_), dict):
+                                if re.match(step.get(k).get("registry-url"), step_in_job.get(k_).get("registry-url")):
+                                    matched_action_count += 1
+
+            if matched_action_count >= expected_matched_action_count:
+                matched_step_count += 1
+
+        if matched_step_count >= expected_matched_step_count:
+            return True
 
     return False
+
+
+def sast_tools_in_check_run(repo):
+    allow_conclusion = {
+        "success": True,
+        "neural": True
+    }
+    sast_tools = {
+        "github-code-scanning": True,
+        "lgtm-com": True,
+        "sonarcloud": True
+    }
+    # Get sast score.
+    commits = repo.get_commits()[: 30]
+    total_merged = 0
+    total_tested = 0
+    if commits.totalCount == 0:
+        return INCONCLUSIVE_RESULT_SCORE
+
+    for commit in commits:
+        associated_pulls = commit.get_pulls()
+        if associated_pulls.totalCount == 0:
+            continue
+
+        check_runs = commit.get_check_runs()
+
+        for check_run in check_runs:
+            if check_run.status != "completed":
+                continue
+
+            if not allow_conclusion[check_run.conclusion]:
+                continue
+
+            if sast_tools[check_runs.app.slug]:
+                total_tested += 1
+
+    return int(total_tested / total_merged * MAX_SCORE)
+
+
+def codeql_in_check_definitions(repo):
+    # Get codeql score.
+    file_paths = []
+    default_branch = repo.default_branch
+    files = repo.get_git_tree(sha=default_branch, recursive=True).tree
+    for file in files:
+        if file.type == "blob":
+            path = file.path
+            path = path.lower()
+            if is_workflow_file(path):
+                file_name = path.split("/")[-1]
+                if get_file_dir(path, file_name) == ".github/workflows/":
+                    file_paths.append(path)
+
+    pattern = re.compile("github/codeql-action/analyze")
+    for file_path in file_paths:
+        try:
+            file_content = get_file_content(repo.full_name, default_branch, file_path)
+            if pattern.findall(file_content):
+                return MAX_SCORE
+
+        except PageOpenException:
+            return INCONCLUSIVE_RESULT_SCORE
+
+    return MIN_SCORE
 
 
 # Source repository on GitHub.
@@ -1106,11 +1758,6 @@ def request_url_with_auth_header(url):
         headers = {'Authorization': f'token {_CACHED_GITHUB_TOKEN}'}
 
     return requests.get(url, headers=headers)
-
-
-def get_branches_contain_given_commit(commit_sha):
-    git_instance = git.Git(TEMP_REPOSITORY_PATH)
-    return git_instance.branch("--contains", commit_sha)
 
 
 # Return expiry information of the given GitHub token.

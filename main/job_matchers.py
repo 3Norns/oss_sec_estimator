@@ -1,14 +1,14 @@
 JOB_MATCHERS = [
-    # {
-    #     "steps": [
-    #         {
-    #             "uses": "actions/setup-node",
-    #             "with": {
-    #                 "registry-url": "https://registry.npmjs.org"
-    #             }
-    #         }
-    #     ]
-    # },
+    {
+        "steps": [
+            {
+                "uses": "actions/setup-node",
+                "with": {
+                    "registry-url": "https://registry.npmjs.org"
+                }
+            }
+        ]
+    },
     {
         "steps": [
             {

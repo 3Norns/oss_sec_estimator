@@ -110,23 +110,15 @@ class Repository:
         raise NotImplementedError
 
     @property
+    def outside_contributor_count(self):
+        raise NotImplementedError
+
+    @property
     def organization_count(self):
         raise NotImplementedError
 
     @property
     def contributor_capacity(self):
-        raise NotImplementedError
-
-    # @property
-    # def contributor_background(self):
-    #     raise NotImplementedError
-
-    @property
-    def contribution_centrality(self):
-        raise NotImplementedError
-
-    @property
-    def organization_centralization(self):
         raise NotImplementedError
 
     @property
@@ -150,7 +142,15 @@ class Repository:
         raise NotImplementedError
 
     @property
+    def dangerous_workflow(self):
+        raise NotImplementedError
+
+    @property
     def dependency_update_tool(self):
+        raise NotImplementedError
+
+    @property
+    def fuzzing(self):
         raise NotImplementedError
 
     @property
@@ -159,10 +159,6 @@ class Repository:
 
     @property
     def packaging(self):
-        raise NotImplementedError
-
-    @property
-    def pinned_dependency(self):
         raise NotImplementedError
 
     @property
@@ -182,13 +178,5 @@ class Repository:
         raise NotImplementedError
 
     @property
-    def code_complexity(self):
-        raise NotImplementedError
-
-    @property
-    def code_standardization(self):
-        raise NotImplementedError
-
-    @property
-    def code_obfuscation(self):
+    def community_standards(self):
         raise NotImplementedError

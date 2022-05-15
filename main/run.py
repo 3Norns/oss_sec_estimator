@@ -5,9 +5,7 @@ Main script for calculating open source software security score.
 """
 
 import os
-import git
 
-from constants import *
 from exceptions import *
 from github_repository import get_repository
 
@@ -39,16 +37,6 @@ PARAMS = {
         "code_complexity", "code_standardization", "code_obfuscation"
     ]
 }
-
-
-def init(repo_url):
-    git_url = repo_url + ".git"
-    if not os.path.exists(TEMP_REPOSITORY_PATH):
-        os.mkdir(TEMP_REPOSITORY_PATH)
-
-    os.system("rmdir /s /q ..\\temp_repository")
-
-    git.Repo.clone_from(git_url, TEMP_REPOSITORY_PATH)
 
 
 def close():
@@ -85,8 +73,11 @@ def main():
     # print(repo.contributor_capacity)
     # repo.ci_test
     # repo.cii_best_practice
-    repo.packaging
-    # close()
+    # repo.packaging
+    # repo.sast
+    # print(repo.token_permission)
+    # print(repo.community_standards)
+    repo.outside_contributor_count
 
 
 if __name__ == "__main__":
